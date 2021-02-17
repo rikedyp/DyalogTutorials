@@ -9,3 +9,9 @@
 code {
 	font-family: APL;
 }
+/* Custom colors */
+:root {
+	--md-primary-fg-color: #ED7F00;
+	--md-primary-fg-color--dark: #563336;
+	--md-default-bg-color: #F8F8F8;
+}
