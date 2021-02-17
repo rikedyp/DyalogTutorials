@@ -1,0 +1,817 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How-to guides for Dyalog APL">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>Quick Start - Dyalog Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../style/main.css">
+    
+      <link rel="stylesheet" href="../style/quickstart.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Dyalog Tutorials" class="md-header-nav__button md-logo" aria-label="Dyalog Tutorials">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Dyalog Tutorials
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Quick Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/rikedyp/DyalogTutorials/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rikedyp/DyalogTutorials
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Quick Start
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../tips/" class="md-tabs__link">
+      Helpful Tips
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dyalog Tutorials" class="md-nav__button md-logo" aria-label="Dyalog Tutorials">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Dyalog Tutorials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/rikedyp/DyalogTutorials/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rikedyp/DyalogTutorials
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quick Start
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typing-apl-symbols" class="md-nav__link">
+    Typing APL Symbols
+  </a>
+  
+    <nav class="md-nav" aria-label="Typing APL Symbols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-including-raspberry-pi-and-macos" class="md-nav__link">
+    Linux (including Raspberry Pi) and macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-and-clearing-names" class="md-nav__link">
+    Listing and Clearing Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-functions-and-operators" class="md-nav__link">
+    Creating functions and operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating functions and operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradfns" class="md-nav__link">
+    Tradfns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfns" class="md-nav__link">
+    Dfns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tacit" class="md-nav__link">
+    Tacit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-work" class="md-nav__link">
+    Saving Your Work
+  </a>
+  
+    <nav class="md-nav" aria-label="Saving Your Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    Link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-without-closing" class="md-nav__link">
+    Save without closing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspaces" class="md-nav__link">
+    Workspaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        Helpful Tips
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typing-apl-symbols" class="md-nav__link">
+    Typing APL Symbols
+  </a>
+  
+    <nav class="md-nav" aria-label="Typing APL Symbols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-including-raspberry-pi-and-macos" class="md-nav__link">
+    Linux (including Raspberry Pi) and macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-and-clearing-names" class="md-nav__link">
+    Listing and Clearing Names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-functions-and-operators" class="md-nav__link">
+    Creating functions and operators
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating functions and operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tradfns" class="md-nav__link">
+    Tradfns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfns" class="md-nav__link">
+    Dfns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tacit" class="md-nav__link">
+    Tacit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-your-work" class="md-nav__link">
+    Saving Your Work
+  </a>
+  
+    <nav class="md-nav" aria-label="Saving Your Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    Link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-without-closing" class="md-nav__link">
+    Save without closing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspaces" class="md-nav__link">
+    Workspaces
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/rikedyp/DyalogTutorials/edit/master/docs/quickstart.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="quick-start">Quick Start</h1>
+<p>This is a guide to getting started with the Dyalog Integrated Development Environments on supported platforms. For help with the APL language, see <a href="https://apl.wiki/Learning_resources">the APL Wiki page of learning resources</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>Dyalog provides installation packages for popular operating systems. You can download them from <a href="https://www.dyalog.com/download-zone.htm">the Dyalog website</a>.</p>
+<h3 id="windows">Windows</h3>
+<p>Windows installations come with the Dyalog Integrated Development Environment for Windows. The full Installation and Configuration Guide is available <a href="https://docs.dyalog.com/18.0/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf">from the Dyalog website</a>.</p>
+<h3 id="macos">macOS</h3>
+<p>Installations on macOS come with the <a href="https://github.com/Dyalog/ride">Remote Integrated Development Environment (RIDE)</a>. The full Installation and Configuration Guide is available <a href="https://docs.dyalog.com/18.0/Dyalog%20for%20macOS%20Installation%20and%20Configuration%20Guide.pdf">from the Dyalog website</a>.</p>
+<h3 id="linux">Linux</h3>
+<p>Linux installations do not come with RIDE, but it can be downloaded <a href="https://github.com/Dyalog/ride/releases/latest">from GitHub</a>.</p>
+<p>Dyalog can be installed on Raspberry Pi using the apt package manager - details are on <a href="https://packages.dyalog.com/">packages.dyalog.com</a>.</p>
+<h2 id="typing-apl-symbols">Typing APL Symbols</h2>
+<h3 id="windows_1">Windows</h3>
+<p>If you select "Install the Dyalog APL IME for 64 bit Windows" during installation, you will have an additional keyboard input method with the ability to type APL symbols by holding the <kbd>Ctrl</kbd> key. </p>
+<p>In Windows 10, you can use <kbd>⊞ Win</kbd>+<kbd>Space</kbd> to choose between available keyboard layouts.</p>
+<p><img alt="Windows installation options" src="/img/installwin.png" /></p>
+<p>Dyalog APL's standard US English layout is as follows:</p>
+<pre class="language-APL" id="kbd-en-US">
+┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬─────────┐
+│~ ⌺ │! ⌶ │@ ⍫ │# ⍒ │$ ⍋ │% ⌽ │^ ⍉ │& ⊖ │* ⍟ │( ⍱ │) ⍲ │_ ! │+ ⌹ │Backspace│
+│` ⋄ │1 ¨ │2 ¯ │3 < │4 ≤ │5 = │6 ≥ │7 > │8 ≠ │9 ∨ │0 ∧ │- × │= ÷ │         │
+├────┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬──────┤
+│Tab    │Q   │W   │E ⍷ │R   │T ⍨ │Y   │U   │I ⍸ │O ⍥ │P ⍣ │{ ⍞ │} ⍬ │| ⊣   │
+│       │q ? │w ⍵ │e ∊ │r ⍴ │t ~ │y ↑ │u ↓ │i ⍳ │o ○ │p * │[ ← │] → │\ ⊢   │
+├───────┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴┬───┴──────┤
+│Caps    │A   │S   │D   │F   │G   │H   │J ⍤ │K ⌸ │L ⌷ │: ≡ │" ≢ │Enter     │
+│Lock    │a ⍺ │s ⌈ │d ⌊ │f _ │g ∇ │h ∆ │j ∘ │k ' │l ⎕ │; ⍎ │' ⍕ │          │
+├────────┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──┬─┴──────────┤
+│Shift      │Z ⊆ │X   │C   │V   │B   │N   │M   │< ⍪ │> ⍙ │? ⍠ │Shift       │
+│           │z ⊂ │x ⊃ │c ∩ │v ∪ │b ⊥ │n ⊤ │m | │, ⍝ │. ⍀ │/ ⌿ │            │
+└───────────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────────────┘
+</pre>
+<p>Several international keyboard layouts exist with charts available from <a href="https://dfns.dyalog.com/n_keyboards.htm">the dfns website</a>.</p>
+<h3 id="linux-including-raspberry-pi-and-macos">Linux (including Raspberry Pi) and macOS</h3>
+<p>See <a href="https://apl.wiki/Typing_glyphs">the APL Wiki page on Typing Glyphs</a>.</p>
+<h2 id="listing-and-clearing-names">Listing and Clearing Names</h2>
+<p>In APL, arrays are the first class entities, but they are not the only things that can be named. In Dyalog there are many <a href="http://help.dyalog.com/latest/#Language/System%20Functions/nc.htm">name classes</a>, but in general we refer to any named entity as a name, and together the functions, variables, operators, namespaces, classes, instances etc. are just called names.</p>
+<p>You can list the names in the workspace using the <code>]names</code> user command.</p>
+<p>You can clear the workspace using <code>)CLEAR</code>. An unsaved workspace will be lost, but a <a href="#link">file system link</a> will be broken such that the files are still in tact.</p>
+<h2 id="creating-functions-and-operators">Creating functions and operators</h2>
+<p>With your cursor highlighting a name, press <kbd>Shift</kbd>+<kbd>Enter</kbd> to open the editor.</p>
+<p>While editing, you can use the forward-slash <code>/</code> on the <a href="https://en.wikipedia.org/wiki/Numeric_keypad">numpad</a> to automatically format your code.</p>
+<h3 id="tradfns">Tradfns</h3>
+<p>Traditional functions and operators, called "tradfns" (trad-funs with a short "u" sound) and "tradops", have a header which follows a similar syntax to how they are called.</p>
+<pre><code class="language-APL"> result←{left}Tradfn right   ⍝ Optional left argument denoted by {}
+ :If 0=⎕NC'left'
+     result←right
+ :Else
+     result←left right
+ :EndIf
+</code></pre>
+<h3 id="dfns">Dfns</h3>
+<p>Dfns and dops use <code>⍺</code> to refer to their left argument, and <code>⍵</code> to refer to their right argument. Dops use <code>⍺⍺</code> to refer to their left operand, and <code>⍵⍵</code> to refer to their right operand.</p>
+<pre><code class="language-APL">Dfn ← {
+   ⍺ ← 'default'   ⍝ Assign ⍺ to create a default left argument
+   ⍺ ⍵
+}
+</code></pre>
+<h3 id="tacit">Tacit</h3>
+<p>Tacit <a href="https://apl.wiki/Tacit_programming#Trains">trains</a> and <a href="https://apl.wiki/Tacit_programming#Derived_functions">derived functions</a> do not explicitly refer to their arguments. However, they can still be assigned to names and used just like any other functions.</p>
+<pre><code class="language-APL">      Mean ← +⌿÷≢
+</code></pre>
+<h2 id="saving-your-work">Saving Your Work</h2>
+<h3 id="link">Link</h3>
+<p>The system called <a href="https://github.com/dyalog/link">Link</a> can be used to create a bi-directional link between the active workspace and a folder on the file system. In the session:</p>
+<pre><code class="language-APL">      ]LINK.Create # \d\tmp   ⍝ ]create can be used as a shortcut
+Linked: # ←→ C:\d\tmp
+</code></pre>
+<p>Only <a href="">names</a> which are created in the editor are automatically updated on the file system. Any name can be added using <code>]LINK.Add</code>, for example:</p>
+<pre><code class="language-APL">      MyDfn ← {⍺+⍵}
+      ]add MyDfn
+Added: #.MyDfn
+</code></pre>
+<p>With Link, any changes fixed using the editor will be reflected on the file system. You can also use a text editor to make changes, and those changes will be reflected in the workspace.</p>
+<blockquote>
+<p>Note: Link cannot save tacit functions. These must be wrapped inside dfns, tradfns or scripted namespaces to be used with Link.</p>
+</blockquote>
+<h3 id="save-without-closing">Save without closing</h3>
+<p>By default, the only way to save changes made using the editor is to close the editor using the <kbd>Esc</kbd> key. However, you can set up a keyboard shortcut to save your changes without closing the editor. </p>
+<ol>
+<li>
+<ul>
+<li>In the Windows IDE, go to Options▸Configure▸Keyboard Shorcuts. </li>
+<li>In RIDE, click the keyboard icon (<img alt="mini keyboard logo" src="/img/kbdmini.svg" width="15px">) at the top-right of the language bar. </li>
+</ul>
+</li>
+<li>Look (or search in RIDE) for the code <code>FX</code> and set it to a shortcut of your choosing.</li>
+</ol>
+<h3 id="workspaces">Workspaces</h3>
+<p>Link is the recommended method to keep work saved as text files, as it allows easy integration with <a href="https://betterexplained.com/articles/a-visual-guide-to-version-control/">version control software</a> (e.g. Git, SVN).</p>
+<p>However, we continue to maintain and support binary <code>.dws</code> workspace files. In particular, these can still be useful for deploying your application as a single file.</p>
+<p>Binary <code>.dws</code> workspace files contain everything in your workspace - this includes all named entities e.g. variables, functions, classes and namespaces as well as system variable settings such as <a href="https://aplwiki.com/wiki/Index_origin"><code>⎕IO</code></a>, <a href="https://aplwiki.com/wiki/Migration_level"><code>⎕ML</code></a> and other <a href="https://aplwiki.com/wiki/Quad_name">quad names</a>.</p>
+<p>To save your workspace, simply do:</p>
+<pre><code class="language-APL">      )SAVE /path/to/my/workspace.dws
+</code></pre>
+<p>Loading your work again later is as simple as:</p>
+<pre><code class="language-APL">      )LOAD /path/to/my/workspace.dws
+</code></pre>
+<blockquote>
+<p>Note: <code>)LOAD</code>-ing a workspace overwrites everything in the current workspace.</p>
+</blockquote>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../tips/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Helpful Tips
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.instant', 'navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
