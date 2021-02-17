@@ -1,4 +1,8 @@
-site_name: My Docs
+site_name: Dyalog Tutorials
+site_description: How-to guides for Dyalog APL
+docs_dir: docs/
+repo_name: 'rikedyp/DyalogTutorials'
+repo_url: 'https://github.com/rikedyp/DyalogTutorials'
 theme:
   name: material
   features:
