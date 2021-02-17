@@ -12,7 +12,7 @@ Create prototypes (or "MVPs" as the agilers call them) in a matter of hours that
 See more on [the APL Wiki](https://apl.wiki/Simple_examples).
 
 <b>Monte carlo simulation</b>  
-Estimate Pi with 10,000 random numbers:
+Estimate Pi with 10,000 pairs of random numbers:
 ```APL
       {4×(+⌿÷≢)1>0.5*⍨+/2*⍨?⍵ 2⍴0 0}10000
 3.1456
