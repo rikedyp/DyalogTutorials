@@ -3,6 +3,10 @@ site_description: How-to guides for Dyalog APL
 docs_dir: docs/
 repo_name: 'rikedyp/DyalogTutorials'
 repo_url: 'https://github.com/rikedyp/DyalogTutorials'
+nav:
+    - About: index.md
+    - Quick Start: quickstart.md
+    - Helpful Tips: tips.md
 theme:
   name: material
   features:
