@@ -5,8 +5,8 @@ repo_name: 'rikedyp/DyalogTutorials'
 repo_url: 'https://github.com/rikedyp/DyalogTutorials'
 theme:
   name: material
-  favicon: '/img/favicon-32.png'
-  logo: '/img/favicon-180-bg.png'
+  favicon: 'img/favicon-32.png'
+  logo: 'img/favicon-180-bg.png'
   features:
     - navigation.instant
 extra_css:
