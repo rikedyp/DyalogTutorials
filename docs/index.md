@@ -33,8 +33,8 @@ raabcadraab
 
 <b>A powerful date time converter</b>
 ```APL
-      now ← 1613552859   ⍝ Unix Timestamp
-      
+      now ← 1613552859          ⍝ Unix Timestamp
+                                ⍝ 1200⌶ is experimental
       'Dddd Doo Mmmm YYYY hh:mm' (1200⌶) 20 1 ⎕DT now
 ┌──────────────────────────────────┐
 │Wednesday 17th February 2021 09:07│
