@@ -9,6 +9,13 @@
 code {
 	font-family: APL;
 }
+.md-logo > img{
+	width: 100%!important;
+	height: 1.2rem!important;
+}
+@media screen and (max-width: 76.1875em) {
+	.md-logo > img{height: 1.8rem!important;}
+}
 /* Custom colors */
 :root {
 	--md-primary-fg-color: #ED7F00;
