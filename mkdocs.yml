@@ -1,0 +1,9 @@
+site_name: My Docs
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+extra_css:
+  - style/main.css
+  - style/quickstart.css
