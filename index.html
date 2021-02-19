@@ -356,13 +356,13 @@ Convert what you say into what your dog Rex hears:</p>
       Rex 'Rex, I told you not to do that! Now, Rex, go and wait outside'
 Rex, * **** *** *** ** ** ****! ***, Rex, ** *** **** *******
 </code></pre>
-<p>Swap two substrings  </p>
+<p>Swap two substrings:</p>
 <pre><code class="language-APL">      'ab' 'ra'⎕R'ra' 'ab'⊢'abracadabra'
 raabcadraab
 </code></pre>
 <p><b>A powerful date time converter</b></p>
-<pre><code class="language-APL">      now ← 1613552859   ⍝ Unix Timestamp
-
+<pre><code class="language-APL">      now ← 1613552859          ⍝ Unix Timestamp
+                                ⍝ 1200⌶ is experimental
       'Dddd Doo Mmmm YYYY hh:mm' (1200⌶) 20 1 ⎕DT now
 ┌──────────────────────────────────┐
 │Wednesday 17th February 2021 09:07│
