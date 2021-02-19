@@ -22,7 +22,7 @@ If you select "Install the Dyalog APL IME for 64 bit Windows" during installatio
 
 In Windows 10, you can use <kbd>⊞ Win</kbd>+<kbd>Space</kbd> to choose between available keyboard layouts.
 
-![Windows installation options](/img/installwin.png)
+![Windows installation options](img/installwin.png)
 
 Dyalog APL's standard US English layout is as follows:
 <pre class="language-APL" id="kbd-en-US">

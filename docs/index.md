@@ -25,7 +25,7 @@ Convert what you say into what your dog Rex hears:
       Rex 'Rex, I told you not to do that! Now, Rex, go and wait outside'
 Rex, * **** *** *** ** ** ****! ***, Rex, ** *** **** *******
 ```
-Swap two substrings  
+Swap two substrings:
 ```APL
       'ab' 'ra'⎕R'ra' 'ab'⊢'abracadabra'
 raabcadraab
