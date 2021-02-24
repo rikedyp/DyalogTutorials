@@ -16,7 +16,7 @@
     
     
       
-        <title>Helpful Tips - Tutorials</title>
+        <title>Tips - Tutorials</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#helpful-tips" class="md-skip">
+        <a href="#tips" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Helpful Tips
+              Tips
             
           </span>
         </div>
@@ -239,12 +239,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Helpful Tips
+          Tips
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Helpful Tips
+        Tips
       </a>
       
         
@@ -296,13 +296,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-utilities" class="md-nav__link">
-    Quick utilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#display-forms" class="md-nav__link">
     Display forms
   </a>
@@ -310,8 +303,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#external-tools" class="md-nav__link">
-    External tools
+  <a href="#quick-utilities" class="md-nav__link">
+    Quick utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    More...
   </a>
   
 </li>
@@ -384,13 +384,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-utilities" class="md-nav__link">
-    Quick utilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#display-forms" class="md-nav__link">
     Display forms
   </a>
@@ -398,8 +391,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#external-tools" class="md-nav__link">
-    External tools
+  <a href="#quick-utilities" class="md-nav__link">
+    Quick utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    More...
   </a>
   
 </li>
@@ -421,31 +421,27 @@
                   </a>
                 
                 
-                <h1 id="helpful-tips">Helpful Tips</h1>
+                <h1 id="tips">Tips</h1>
 <h2 id="getting-help">Getting Help</h2>
 <p>Place the cursor on a symbol or other built-in and press <kbd>F1</kbd> to go straight to the help page for it.</p>
+<p>The <code>]help</code> user command will take you to the web help.</p>
 <h2 id="editing">Editing</h2>
 <p>Try the <code>F1</code> tip above for <code>)ed</code> to learn how to quickly create new items of various types.</p>
 <p>Use <kbd>Shift</kbd>+<kbd>Enter</kbd> to edit a name.</p>
 <p><code>)ed "file:///path/file.ext"</code> lets you edit plain-text files, and upon closing, APL will ask you how to use the content.</p>
-<p>You can load APL functions/operators/objects from plain-text files with <code>2⎕FIX'file:///path/file.ext'</code>.</p>
+<p>You can load APL functions/operators/objects from plain-text files with <code>2⎕FIX'file:///path/file.ext'</code></p>
 <h2 id="saving-your-work">Saving Your Work</h2>
 <p>... and picking up from where you left off.</p>
 <p>If you enter <code>)off</code> then your session log is saved before APL closes, so you can simply scroll up when you're ready to continue.</p>
-<p>If you enter <code>)continue</code> then your workspace is saved with a temporary name and you can get it back with <code>)load continue</code>.</p>
+<p>If you enter <code>)continue</code> then your workspace is saved with a temporary name and you can get it back with <code>)load continue</code></p>
 <h2 id="debugging-and-meta-information">Debugging and Meta Information</h2>
 <p>Use <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to trace into a function and execute it one line at a time.</p>
 <p>Use <kbd>Shift</kbd>+<kbd>Enter</kbd> with the cursor on white space to edit a suspended function.</p>
-<p>Use <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Backspace</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> to scroll backward and forwards in your input history. They can also be used as Undo and Redo in the editor.</p>
 <p>Get all the technical details of the last error or event with <code>⎕JSON⍠'Compact'0⊢⎕DMX</code> .</p>
-<p><code>]map</code> displays the content and structure of your workspace.</p>
 <h2 id="shortcuts">Shortcuts</h2>
-<p>Many built-in functionalities have neither menu items, nor keyboard shortcuts assigned by default. Go to Options▸Configure▸Keyboard Shorcuts in the IDE or click the keyboard icon (<img alt="mini keyboard logo" src="/img/kbdmini.svg" width="15px">) in RIDE to set up keyboard shortcuts.</p>
+<p>Use <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Backspace</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> to scroll backward and forwards in your input history. They can also be used as Undo and Redo in the editor.</p>
+<p>Many built-in functionalities have neither menu items, nor keyboard shortcuts assigned by default. Go to&emsp;Options&thinsp;▸&thinsp;Configure&thinsp;▸&thinsp;Keyboard Shortcuts&emsp;in the IDE or click the keyboard icon (<img alt="mini keyboard logo" src="img/kbdmini.svg" width="15px">) in RIDE to set up keyboard shortcuts.</p>
 <p>In the Windows IDE, you can use the copy and paste buttons on the Object (not Edit!) tool bar to copy and paste tables as matrices, documents as vectors of character vectors, and images as bitmap objects.</p>
-<h2 id="quick-utilities">Quick utilities</h2>
-<p><code>]plot data</code> will draw simple graphs of your data. See <code>]plot -??</code> for details.</p>
-<p><code>]open filename</code> opens a file in its default application.</p>
-<p><code>]cd dir</code> lets you change directory from inside APL.</p>
 <h2 id="display-forms">Display forms</h2>
 <p>Turn boxing on to make the display of nested arrays more clear:</p>
 <pre><code class="language-APL">      ]box on
@@ -467,20 +463,19 @@ Was -trains=box
 +      
 </code></pre>
 <p>With the <code>fns</code> modifier, nested arrays will have boxed display even if they are printed to the session from within functions.</p>
-<pre><code class="language-APL">      Print←{⎕←⍵}
-      Print ⍳2 3
+<pre><code class="language-APL">      PrintShape←{⍴⎕←⍵}
+      PrintShape ⍳1 3
  1 1  1 2  1 3 
- 2 1  2 2  2 3 
-      ]box on -fns=on
-Was ON -fns=off
-      Print ⍳2 3
+1 3
+      ]box -fns=on
+Was -fns=off
+      PrintShape ⍳1 3
 ┌───┬───┬───┐
 │1 1│1 2│1 3│
-├───┼───┼───┤
-│2 1│2 2│2 3│
 └───┴───┴───┘
+1 3
 </code></pre>
-<p>With the <code>style</code> modifier you can get a more verbose view including hints for axes and data types. See all the options with <code>]box -??</code> .</p>
+<p>With the <code>style</code> modifier you can get a more verbose view including hints for axes and data types.</p>
 <pre><code class="language-APL">      ]box -style=max
 ┌→─────────────┐
 │Was -style=min│
@@ -492,22 +487,19 @@ Was ON -fns=off
 │ └───┘ │
 └∊──────┘
 </code></pre>
+<p>See all the options with <code>]box -??</code></p>
 <p><code>]rows on -fold=3</code> will let you scroll horizontally and trim large outputs so they don't flood your screen vertically.</p>
-<p>The above settings can be made permanent by saving your session (Session▸Save in the Windows IDE or <code>2⎕NQ⎕SE'FileWrite'</code>)</p>
-<p>In general, help for user commands can be found with <code>]command -?</code>.</p>
+<p>The above settings can be made permanent by saving your session:&emsp;Session&thinsp;▸&thinsp;Save&emsp;in the Windows IDE or <code>2⎕NQ⎕SE'FileWrite'</code></p>
+<h2 id="quick-utilities">Quick utilities</h2>
+<p><code>]map</code> displays the content and structure of your workspace.</p>
+<p><code>]plot data</code> will draw simple graphs of your data. See <code>]plot -??</code> for details.</p>
+<p><code>]open filename</code> opens a file in its default application.</p>
+<p><code>]cd dir</code> lets you change directory from inside APL.</p>
+<p>In general, help for user commands can be found with <code>]command -?</code></p>
 <p>Use <code>⎕SE.Dyalog.Utils.repObj myArray</code> to generate an expression for (almost) any given array.</p>
-<h2 id="external-tools">External tools</h2>
-<p>The <code>]APLcart</code> user command can be used to search <a href="https://aplcart.info">APLcart.info</a> from within the session. 
-For example:</p>
-<pre><code class="language-APL">      ]aplcart autosave workspace
-X, Y, Z: any type array  M, N: numeric array  I, J: integer array  A, B: Boolean array  C, D: character array  f, g, h: function  ax: bracket axis  s: scalar  v: vector  m: matrix
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Cv{∇⌊⎕DL⍵⊣0#.⎕SAVE⍺}&amp;Ns  Save workspace as Cv every Ns seconds                                                                                                                     
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Showing 1 of 1 matches  
-</code></pre>
-<p>You can <a href="https://raw.githubusercontent.com/abrudz/aplcart/master/APLcart.dyalog">download the APLcart user command from GitHub</a>.</p>
-<p>The <code>]Get</code> tool is a general way to bring code or data into the workspace from your file system or the internet. You can <a href="https://github.com/abrudz/get">download the Get tool from GitHub</a>.</p>
+<p>Use the workspace explorer to see a tree view of your workspace. In the Windows IDE go to&emsp;Tools&thinsp;▸&thinsp;Explorer&hellip;&emsp;and in RIDE go to&emsp;View&thinsp;▸&thinsp;Show Workspace Explorer.</p>
+<h2 id="more">More...</h2>
+<p>Visit <a href="https://apl.wiki/APL_Orchard">The APL Orchard</a> to chat with friendly APLers and get more tips. </p>
                 
               
               
