@@ -4,20 +4,20 @@ This is a guide to getting started with the Dyalog Integrated Development Enviro
 ## Installation
 Dyalog provides installation packages for popular operating systems. You can download them from [the Dyalog website](https://www.dyalog.com/download-zone.htm).
 
-### Windows
-Windows installations come with the Dyalog Integrated Development Environment for Windows. The full Installation and Configuration Guide is available [from the Dyalog website](https://docs.dyalog.com/18.0/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf).
+### Microsoft Windows
+Microsoft Windows installations come with the Dyalog Integrated Development Environment for Windows. The full Installation and Configuration Guide is available [from the Dyalog website](https://docs.dyalog.com/18.0/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf).
 
 ### macOS
 Installations on macOS come with the [Remote Integrated Development Environment (RIDE)](https://github.com/Dyalog/ride). The full Installation and Configuration Guide is available [from the Dyalog website](https://docs.dyalog.com/18.0/Dyalog%20for%20macOS%20Installation%20and%20Configuration%20Guide.pdf).
 
 ### Linux
-Linux installations do not come with RIDE, but it can be downloaded [from GitHub](https://github.com/Dyalog/ride/releases/latest).
+Linux installations do not come with the RIDE, but it can be downloaded [from GitHub](https://github.com/Dyalog/ride/releases/latest).
 
 Dyalog can be installed on Raspberry Pi using the apt package manager - details are on [packages.dyalog.com](https://packages.dyalog.com/).
 
 ## Typing APL Symbols
 
-### Windows
+### Microsoft Windows
 If you select "Install the Dyalog APL IME for 64 bit Windows" during installation, you will have an additional keyboard input method with the ability to type APL symbols by holding the <kbd>Ctrl</kbd> key. 
 
 In Windows 10, you can use <kbd>⊞ Win</kbd>+<kbd>Space</kbd> to choose between available keyboard layouts.
@@ -48,11 +48,9 @@ See [the APL Wiki page on Typing Glyphs](https://apl.wiki/Typing_glyphs).
 ## Listing and Clearing Names
 In APL, arrays are the first class entities, but they are not the only things that can be named. In Dyalog there are many [name classes](http://help.dyalog.com/latest/#Language/System%20Functions/nc.htm), but in general we refer to any named entity as a name, and together the functions, variables, operators, namespaces, classes, instances etc. are just called names.
 
-You can list the names in the workspace using the `]names` user command.
-
 You can clear the workspace using `)CLEAR`. An unsaved workspace will be lost, but a [file system link](#link) will be broken such that the files are still in tact.
 
-## Creating functions and operators
+## Creating Functions and Operators
 With your cursor highlighting a name, press <kbd>Shift</kbd>+<kbd>Enter</kbd> to open the editor.
 
 While editing, you can use the forward-slash `/` on the [numpad](https://en.wikipedia.org/wiki/Numeric_keypad) to automatically format your code.
@@ -88,26 +86,26 @@ Tacit [trains](https://apl.wiki/Tacit_programming#Trains) and [derived functions
 ### Link
 The system called [Link](https://github.com/dyalog/link) can be used to create a bi-directional link between the active workspace and a folder on the file system. In the session:
 ```APL
-      ]LINK.Create # \d\tmp   ⍝ ]create can be used as a shortcut
+      ]LINK.Create # \d\tmp   ⍝ ]Create can be used as a shortcut
 Linked: # ←→ C:\d\tmp
 ```
 Only [names]() which are created in the editor are automatically updated on the file system. Any name can be added using `]LINK.Add`, for example:
 ```APL
       MyDfn ← {⍺+⍵}
-      ]add MyDfn
+      ]Add MyDfn
 Added: #.MyDfn
 ```
 With Link, any changes fixed using the editor will be reflected on the file system. You can also use a text editor to make changes, and those changes will be reflected in the workspace.
 
 > Note: Link cannot save tacit functions. These must be wrapped inside dfns, tradfns or scripted namespaces to be used with Link.
 
-### Save without closing
+### Save Without Closing
 By default, the only way to save changes made using the editor is to close the editor using the <kbd>Esc</kbd> key. However, you can set up a keyboard shortcut to save your changes without closing the editor. 
 
 1. 
-	* In the Windows IDE, go to Options▸Configure▸Keyboard Shorcuts. 
-	* In RIDE, click the keyboard icon (<img alt="mini keyboard logo" src="/img/kbdmini.svg" width="15px">) at the top-right of the language bar. 
-1. Look (or search in RIDE) for the code `FX` and set it to a shortcut of your choosing.
+	* In the Microsoft Windows IDE, go to Options▸Configure▸Keyboard Shorcuts. 
+	* In the RIDE, click the keyboard icon (<img alt="mini keyboard logo" src="/img/kbdmini.svg" width="15px">) at the top-right of the language bar. 
+1. Look (or search in the RIDE) for the code `FX` and set it to a shortcut of your choosing.
 
 ### Workspaces
 Link is the recommended method to keep work saved as text files, as it allows easy integration with [version control software](https://betterexplained.com/articles/a-visual-guide-to-version-control/) (e.g. Git, SVN).
