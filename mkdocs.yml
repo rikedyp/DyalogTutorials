@@ -9,6 +9,7 @@ theme:
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
+  custom_dir: overrides
 extra_css:
   - style/main.css
   - style/quickstart.css
