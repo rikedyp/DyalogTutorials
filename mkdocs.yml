@@ -1,8 +1,6 @@
 site_name: Learn Dyalog APL
 site_description: The definitive Dyalog APL reference.
 docs_dir: docs/
-repo_name: 'hashslingrz/learn-dyalog'
-repo_url: 'https://github.com/hashslingrz/learn-dyalog'
 theme:
   name: material
   favicon: 'img/favicon.png'
