@@ -1,8 +1,8 @@
-site_name: Tutorials
-site_description: How-to guides for Dyalog APL
+site_name: Learn Dyalog APL
+site_description: The definitive Dyalog APL reference.
 docs_dir: docs/
-repo_name: 'rikedyp/DyalogTutorials'
-repo_url: 'https://github.com/rikedyp/DyalogTutorials'
+repo_name: 'hashslingrz/learn-dyalog'
+repo_url: 'https://github.com/hashslingrz/learn-dyalog'
 theme:
   name: material
   favicon: 'img/favicon-32.png'
