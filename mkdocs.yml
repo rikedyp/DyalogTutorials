@@ -5,7 +5,7 @@ repo_name: 'hashslingrz/learn-dyalog'
 repo_url: 'https://github.com/hashslingrz/learn-dyalog'
 theme:
   name: material
-  favicon: 'img/favicon-32.png'
+  favicon: 'img/favicon.png'
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
