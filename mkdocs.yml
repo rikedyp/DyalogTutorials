@@ -13,3 +13,5 @@ theme:
 extra_css:
   - style/main.css
   - style/quickstart.css
+extra_javascript:
+  - js/announce.js
