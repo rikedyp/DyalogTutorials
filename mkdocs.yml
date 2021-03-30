@@ -1,4 +1,4 @@
-site_name: Learn Dyalog APL
+site_name: Developer Center
 site_description: The definitive Dyalog APL reference.
 docs_dir: docs/
 theme:
@@ -8,7 +8,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.indexes
     - navigation.top
   plugins:
@@ -20,3 +19,21 @@ extra_css:
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
+nav:
+  - index.md
+  - Learn Dyalog APL:
+    - learn-dyalog-apl/index.md
+    - Getting Started:
+      - learn-dyalog-apl/getting-started/index.md
+      - Typing APL Symbols: learn-dyalog-apl/getting-started/type-apl-symbols.md
+      - Name Classes: learn-dyalog-apl/getting-started/name-classes.md
+      - Functions and Operators: learn-dyalog-apl/getting-started/functions-and-operators.md
+      - Saving Your Work: learn-dyalog-apl/getting-started/saving-your-work.md
+    - learn-dyalog-apl/mastering-dyalog-apl.md 
+  - APL Fundamentals:
+    - apl-fundamentals/index.md
+  - Tools:
+    - tools/index.md
+  - Interfaces:
+    - interfaces/index.md
+  - tips.md
