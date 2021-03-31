@@ -1,4 +1,4 @@
 ---
-title: Introduction to Array Programmnig
+title: Introduction to Array Programming
 tab_title: APL Fundamentals
 ---
