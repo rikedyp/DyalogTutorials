@@ -2,6 +2,19 @@ site_name: Developer Center
 site_description: The definitive Dyalog APL reference.
 docs_dir: docs/
 theme:
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
   name: material
   favicon: 'img/favicon.png'
   logo: 'img/dyalog-white.svg'
@@ -24,11 +37,11 @@ nav:
   - Learn Dyalog APL:
     - learn-dyalog-apl/index.md
     - Getting Started:
-      - learn-dyalog-apl/getting-started/index.md
-      - Typing APL Symbols: learn-dyalog-apl/getting-started/type-apl-symbols.md
-      - Name Classes: learn-dyalog-apl/getting-started/name-classes.md
-      - Functions and Operators: learn-dyalog-apl/getting-started/functions-and-operators.md
-      - Saving Your Work: learn-dyalog-apl/getting-started/saving-your-work.md
+      - getting-started/index.md
+      - Typing APL Symbols: getting-started/type-apl-symbols.md
+      - Name Classes: getting-started/name-classes.md
+      - Functions and Operators: getting-started/functions-and-operators.md
+      - Saving Your Work: getting-started/saving-your-work.md
     - learn-dyalog-apl/mastering-dyalog-apl.md 
   - APL Fundamentals:
     - apl-fundamentals/index.md
