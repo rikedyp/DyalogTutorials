@@ -7,3 +7,16 @@
     </span>
   </a>
 {% endblock %}
+
+ 
+{% block htmltitle %}
+  {% if page %}
+    {% if page.parent %}
+      <title>{{ page.parent.title }}: {{ page.title }} - {{ config.head_title }}</title>
+    {% else %}
+      <title>{{ page.title }} - {{ config.head_title }}</title>
+    {% endif %}
+  {% else %}
+    <title>{{ config.head_title }}</title>
+  {% endif %}
+{% endblock %}
