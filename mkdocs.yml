@@ -43,8 +43,8 @@ nav:
       - Functions and Operators: getting-started/functions-and-operators.md
       - Saving Your Work: getting-started/saving-your-work.md
     - learn-dyalog-apl/mastering-dyalog-apl.md 
-  - APL Fundamentals:
-    - apl-fundamentals/index.md
+  - APL Language:
+    - apl-language/index.md
   - Tools:
     - tools/index.md
   - Interfaces:
