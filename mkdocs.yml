@@ -1,5 +1,5 @@
-site_name: Developer Center
-site_description: The definitive Dyalog APL reference.
+site_name: Tutorials
+site_description: How-to guides and tutorials for Dyalog APL
 docs_dir: docs/
 theme:
   palette:
@@ -32,16 +32,5 @@ extra_css:
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
-nav:
-  - index.md
-  - Learn Dyalog APL:
-    - learn-dyalog-apl/index.md
-    - Getting Started:
-      - getting-started/index.md
-  - APL Language:
-    - apl-language/index.md
-  - Tools:
-    - tools/index.md
-  - Interfaces:
-    - interfaces/index.md
-  - tips-matt.md
+markdown_extensions:
+  - admonition

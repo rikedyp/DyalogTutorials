@@ -1,4 +1,5 @@
 # Tips
+These tips have been suggested by users as useful for newcomers. To suggest a tip or tell us something you wish you'd known when you first started, send an email to [tips@dyalog.com](mailto:tips@dyalog.com) for consideration for inclusion on this page.
 
 ## Getting Help
 Place the cursor on a symbol or other built-in and press <kbd>F1</kbd> to go straight to the help page for it.
