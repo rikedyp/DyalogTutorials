@@ -38,15 +38,10 @@ nav:
     - learn-dyalog-apl/index.md
     - Getting Started:
       - getting-started/index.md
-      - Typing APL Symbols: getting-started/type-apl-symbols.md
-      - Name Classes: getting-started/name-classes.md
-      - Functions and Operators: getting-started/functions-and-operators.md
-      - Saving Your Work: getting-started/saving-your-work.md
-    - learn-dyalog-apl/mastering-dyalog-apl.md 
   - APL Language:
     - apl-language/index.md
   - Tools:
     - tools/index.md
   - Interfaces:
     - interfaces/index.md
-  - tips.md
+  - tips-matt.md
