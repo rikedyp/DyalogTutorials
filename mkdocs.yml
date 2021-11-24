@@ -1,4 +1,5 @@
 site_name: Tutorials
+head_title: Dyalog Tutorials
 site_description: How-to guides and tutorials for Dyalog APL
 docs_dir: docs/
 theme:
@@ -30,7 +31,5 @@ theme:
 extra_css:
   - style/main.css
   - style/quickstart.css
-extra_javascript:
-  - js/announce.js
 markdown_extensions:
   - admonition
