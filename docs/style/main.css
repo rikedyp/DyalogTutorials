@@ -20,18 +20,6 @@ code {
 	}
 }
 
-.md-announce {
-	background-color: var(--md-announce-bg-color);
-}
-
-.md-announce a {
-	color: var(--md-announce-fg-color);
-}
-
-.md-announce-icon {
-	color: var(--md-announce-icon-color);
-}
-
 .landing-container {
 	position: relative;
 	height: 75vh;
@@ -51,7 +39,7 @@ code {
 }
 
 .landing-container > svg > path {
-	fill: var(--md-hero-svg-color);
+	fill: var(--md-default-bg-color);
 }
 
 .landing-hero {
@@ -135,8 +123,5 @@ a.landing-button:hover {
 	--md-primary-fg-color: #3B475E;
 	--md-accent-fg-color: #5A6D8F;
 	--md-typeset-a-color: #928ABD;
-	--md-announce-bg-color:   #404040;
-	--md-announce-fg-color:   #EAECFF;
-	--md-announce-icon-color: #5A6D8F;
 	--md-hero-svg-color:   #2e303e;
   }
