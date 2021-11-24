@@ -31,9 +31,10 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          VER=$( cat version | grep -oP "(^version: \w+){1}" |  cut -c 10- )
+          VER=$( cat version | grep -o "^version: \w\+" |  cut -c 10- )
           git config user.name "GitHub Actions CI Publisher"
           git config user.email "RikedyPGithubActions@github.com"
           git fetch origin gh-pages --depth=1
           git remote set-url --push origin https://rikedyp:$GITHUB_TOKEN@github.com/rikedyp/DyalogTutorials
+          echo ${VER}
           mike deploy ${VER}
