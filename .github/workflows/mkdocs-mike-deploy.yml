@@ -37,4 +37,4 @@ jobs:
           git fetch origin gh-pages --depth=1
           git remote set-url --push origin https://rikedyp:$GITHUB_TOKEN@github.com/rikedyp/DyalogTutorials
           echo ${VER}
-          mike deploy ${VER}
+          mike deploy --push ${VER}
