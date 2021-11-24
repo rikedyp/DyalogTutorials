@@ -1,0 +1,39 @@
+# Deploy mkdocs using mike for the version found in the /version file
+
+name: mkdocs-mike-deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  docs_deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: rikedyp/dtools
+    # runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Inject version and document revision information into docs/ source      
+      # Build and deploy docs site and pdf
+      - name: docs-deploy
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VER=$( cat version | grep -oP "(^version: \w+){1}" |  cut -c 10- )
+          git config user.name "GitHub Actions CI Publisher"
+          git config user.email "RikedyPGithubActions@github.com"
+          git fetch origin gh-pages --depth=1
+          git remote set-url --push origin https://rikedyp:$GITHUB_TOKEN@github.com/rikedyp/DyalogTutorials
+          mike deploy ${VER}
