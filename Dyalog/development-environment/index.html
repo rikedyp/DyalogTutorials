@@ -17,7 +17,7 @@
     
   
     
-      <title>Development environment: Development Environment - Dyalog Tutorials</title>
+      <title>Development environment: Development Environment - </title>
     
   
 
@@ -325,7 +325,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
       
@@ -490,6 +492,11 @@
 
       <!-- Render table of contents, if not empty -->
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Development Environment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a
         href="./"
         class="md-nav__link md-nav__link--active"
@@ -498,6 +505,109 @@
       </a>
 
       <!-- Show table of contents -->
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+    
+  
+
+  <!-- Render item list -->
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <!-- Table of contents -->
+      <h4>Table of Contents</h4>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-layout" class="md-nav__link">
+    Basic layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-active-workspace" class="md-nav__link">
+    The active workspace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-session" class="md-nav__link">
+    The session
+  </a>
+  
+    <nav class="md-nav" aria-label="The session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-session-log" class="md-nav__link">
+    The session log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-session-object" class="md-nav__link">
+    The session object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-session-file" class="md-nav__link">
+    The session file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-workspace-explorer" class="md-nav__link">
+    The workspace explorer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
 
@@ -671,52 +781,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
-  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Table of contents -->
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-
-  <!--
-    Hack: check whether the content contains a h1 headline. If it does, the
-    top-level anchor must be skipped, since it would be redundant to the link
-    to the current page that is located just above the anchor. Therefore we
-    directly continue with the children of the anchor.
-  -->
-  
-    
-  
-
-  <!-- Render item list -->
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -724,7 +788,53 @@
                 
                 
                 <h1 id="development-environment">Development Environment</h1>
-<p>This is a guide to getting started with the Dyalog Integrated Development Environments on supported platforms. For help with the APL language, see <a href="/language/index.md">our language guide</a>.</p>
+<p>This is a guide to getting started with the Dyalog Integrated Development Environments on supported platforms. For help with the APL language, see <a href="../language/">our language guide</a>.</p>
+<p>Dyalog provides two <a href="https://www.codecademy.com/article/what-is-an-ide">integrated development environments</a> (IDEs). There is the Dyalog IDE for Microsoft Windows, and the Remote IDE or <a href="https://github.com/dyalog/ride">(RIDE)</a> for use on Linux and macOS. As the name suggests, the RIDE also provides remote interaction and debugging capabilities over a network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The RIDE must be installed separately on Linux. For more information, see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for UNIX Installation and Configuration Guide</a>.</p>
+</div>
+<p>This page talks about parts of the development environment common to both IDEs. While you do not need to know all of this to get started using APL to solve problems, it is useful to understand the terminology when you want to develop applications, ask for help or report issues.</p>
+<h2 id="basic-layout">Basic layout</h2>
+<p>The basic layouts for both standard development environments are described in <a href="https://mastering.dyalog.com/Getting-Started.html#first-contact">section 2.2 of Mastering Dyalog APL</a>.</p>
+<h2 id="the-active-workspace">The active workspace</h2>
+<p>This is the currently running collection of names. That is, functions, operators, objects and variables which are accessible to the currently running application.</p>
+<p>List names in the active workspace:</p>
+<div class="highlight"><pre><span></span><code>      <span class="nv">var</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+      <span class="nv">Sum</span> <span class="kd">←</span> <span class="kt">{</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="kt">}</span>
+      <span class="sr">]</span><span class="nv">names</span>
+<span class="nv">Sum</span> <span class="nv">var</span> 
+</code></pre></div>
+<p>Use <a href="#the-workspace-explorer">the workspace explorer</a> to view names in the active workspace (including the <a href="#the-session-object">session object</a>).</p>
+<h2 id="the-session">The session</h2>
+<p>This can refer to <a href="#the-session-log">the session log</a>, <a href="#the-session-object">the session object</a> and <a href="#the-session-file">the session file</a>. Sometimes, the term is used to mean executing code directly in the <abbr title="Read Evaluate Print Loop">REPL</abbr>, in contrast to the phrase "<em>under program control</em>". Something <em>under program control</em> is a line in a function which is run when that function is run. For example, you can use <a href="https://docs.dyalog.com/latest/User%20Commands%20User%20Guide.pdf">user commands</a> in the session, but not under program control.</p>
+<h3 id="the-session-log">The session log</h3>
+<p>This is a record of everything you have typed into the session and output from those expressions.</p>
+<p>You can save this log as a <strong>.dlf</strong> file using <strong>Log</strong> → <strong>Save As</strong> on Windows.</p>
+<p>Log files with the extension <strong>.dlf</strong> can only be opened in Dyalog. To save the log as plain text, on any platform, use the following expression <a href="https://aplcart.info/?q=save%20session%20file#">obtained from APLcart</a>:</p>
+<div class="highlight"><pre><span></span><code>      <span class="kt">{</span><span class="bp">⍵</span> <span class="nf">⎕NPUT</span><span class="na">⍨</span><span class="o">⊂</span><span class="nf">⎕SE⎕WG</span><span class="s1">&#39;Log&#39;</span><span class="kt">}</span> <span class="s1">&#39;/path/to/file.dlf&#39;</span>
+</code></pre></div>
+<p>The log file is updated when Dyalog closes. Delete the log file before opening Dyalog to start with a clean log file.</p>
+<p>TODO: can .dlf be saved from APL? in RIDE?</p>
+<h3 id="the-session-object">The session object</h3>
+<p>The <strong>session object</strong> (<a href="http://help.dyalog.com/latest/#UserGuide/The%20APL%20Environment/Session%20Object.htm">documentation</a>), or <strong>session namespace</strong>, is a special system object called <code>⎕SE</code> which is accessible from APL. It contains all of your settings for things like <code>]boxing</code> and <a href="http://help.dyalog.com/latest/#Language/System%20Functions/pw.htm">print width (<code>⎕PW</code>)</a>, as well as window and toolbar settings in the Windows IDE.</p>
+<h3 id="the-session-file">The session file</h3>
+<p>This is a file with the extension <strong>.dse</strong>. It contains the value of a <a href="#the-session-object">session object</a>. You can use multiple session files to save separate configurations of your development environment.</p>
+<p>The current session file location is the value of the <code>Session_File</code> <a href="http://help.dyalog.com/latest/#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters/session_file.htm">configuration parameter</a>.</p>
+<div class="highlight"><pre><span></span><code>      <span class="sr">]</span><span class="nv">config</span> <span class="nv">Session_File</span>
+ <span class="nv">Session_File</span>  <span class="nv">C</span><span class="bp">:</span><span class="na">\</span><span class="nv">Users</span><span class="na">\</span><span class="nv">Dyalog</span><span class="na">\</span><span class="nv">Documents</span><span class="na">\</span><span class="nv">Dyalog</span> <span class="nv">APL</span><span class="o">-</span><span class="m">64</span> <span class="m">18.2</span> <span class="nv">Unicode</span> <span class="nv">Files</span><span class="na">\</span><span class="nv">def_uk</span><span class="na">.</span><span class="nv">dse</span> 
+</code></pre></div>
+<p>On Windows, you can overwrite the current session file with <strong>Session → Save</strong> in the menu.</p>
+<p>On any platform, the following expression can be used to save the current session configuration to a new file:</p>
+<div class="highlight"><pre><span></span><code>      <span class="kt">{</span><span class="m">2</span><span class="nf">⎕NQ⎕SE</span><span class="s1">&#39;FileWrite&#39;</span><span class="o">⊣</span><span class="nf">⎕SE⎕WS</span><span class="s1">&#39;File&#39;</span><span class="bp">⍵</span><span class="kt">}</span><span class="s1">&#39;/path/to/file.dse&#39;</span>
+</code></pre></div>
+<p>On Windows, go to <strong>Options → Configure</strong> to set the session file in the <strong>Session</strong> tab. On Linux and macOS, set the <code>Session_File</code> configuration parameter. See the documentation for <a href="http://help.dyalog.com/latest/#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters.htm">how to use configuration parameters</a>.</p>
+<p>TODO: are ALLCAPS config params safer cross platform than otherwise?</p>
+<h2 id="the-workspace-explorer">The workspace explorer</h2>
+<p>This tool provides an overview of all of the names in your active workspace.</p>
+<p><img alt="The Workspace Explorer in the RIDE" src="../img/workspace-explorer-wide.png" /></p>
+<p>In the Windows IDE, go to <strong>Tools → Explorer</strong>.</p>
+<p>In the RIDE, go to <strong>View → Show Workspace Explorer</strong>.</p>
                 
               
               
@@ -799,10 +909,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="../javascripts/darkmode.js"></script>
       
     
   </body>

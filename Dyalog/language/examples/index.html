@@ -17,7 +17,7 @@
     
   
     
-      <title>Language: Quick and dirty examples - Dyalog Tutorials</title>
+      <title>Language: Quick and dirty examples - </title>
     
   
 
@@ -325,7 +325,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
       
@@ -671,52 +673,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
-  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Table of contents -->
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-
-  <!--
-    Hack: check whether the content contains a h1 headline. If it does, the
-    top-level anchor must be skipped, since it would be redundant to the link
-    to the current page that is located just above the anchor. Therefore we
-    directly continue with the children of the anchor.
-  -->
-  
-    
-  
-
-  <!-- Render item list -->
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -731,39 +687,39 @@
     <p><a href="https://tryapl.org/?clear&q=%7B4%C3%97(%2B%E2%8C%BF%C3%B7%E2%89%A2)1%3E0.5*%E2%8D%A8%2B%2F2*%E2%8D%A8%3F%E2%8D%B5%202%E2%8D%B40%200%7D10000&run">Try it now!</a></p>
 </div>
 
-<pre><code class="language-APL">      {4×(+⌿÷≢)1&gt;0.5*⍨+/2*⍨?⍵ 2⍴0 0}10000
-3.1456
-</code></pre>
+<div class="highlight"><pre><span></span><code>      <span class="kt">{</span><span class="m">4</span><span class="o">×</span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="o">÷≢</span><span class="p">)</span><span class="m">1</span><span class="o">&gt;</span><span class="m">0.5</span><span class="o">*</span><span class="na">⍨</span><span class="o">+</span><span class="na">/</span><span class="m">2</span><span class="o">*</span><span class="na">⍨</span><span class="o">?</span><span class="bp">⍵</span> <span class="m">2</span><span class="o">⍴</span><span class="m">0</span> <span class="m">0</span><span class="kt">}</span><span class="m">10000</span>
+<span class="m">3.1456</span>
+</code></pre></div>
 <p><b>Regex like you've never seen</b>  </p>
 <div style="display:flex; justify-content:space-between;" id="apl-example-title">
     <p>Convert what you say into what your dog Rex hears:</p>
     <p><a href="https://tryapl.org/?clear&q=Rex%20%E2%86%90%20%27rex%27%20%27\w%27%E2%8E%95R%27\0%27%20%27*%27%E2%8D%A01%20%20%20%E2%8B%84%20%20%20Rex%20%27Rex%2C%20I%20told%20you%20not%20to%20do%20that!%20Now%2C%20Rex%2C%20go%20and%20wait%20outside%27&run">Try it now!</a></p>
 </div>
 
-<pre><code class="language-APL">      Rex ← 'rex' '\w'⎕R'\0' '*'⍠1
-      Rex 'Rex, I told you not to do that! Now, Rex, go and wait outside'
-Rex, * **** *** *** ** ** ****! ***, Rex, ** *** **** *******
-</code></pre>
+<div class="highlight"><pre><span></span><code>      <span class="nv">Rex</span> <span class="kd">←</span> <span class="s1">&#39;rex&#39;</span> <span class="s1">&#39;\w&#39;</span><span class="nf">⎕R</span><span class="s1">&#39;\0&#39;</span> <span class="s1">&#39;*&#39;</span><span class="na">⍠</span><span class="m">1</span>
+      <span class="nv">Rex</span> <span class="s1">&#39;Rex, I told you not to do that! Now, Rex, go and wait outside&#39;</span>
+<span class="nv">Rex</span><span class="o">,</span> <span class="o">*</span> <span class="o">****</span> <span class="o">***</span> <span class="o">***</span> <span class="o">**</span> <span class="o">**</span> <span class="o">****!</span> <span class="o">***,</span> <span class="nv">Rex</span><span class="o">,</span> <span class="o">**</span> <span class="o">***</span> <span class="o">****</span> <span class="o">*******</span>
+</code></pre></div>
 <div style="display:flex; justify-content:space-between;" id="apl-example-title">
     <p>Swap two substrings:</p>
     <p><a href="https://tryapl.org/?clear&q=%27ab%27%20%27ra%27%E2%8E%95R%27ra%27%20%27ab%27%E2%8A%A2%27abracadabra%27&run">Try it now!</a></p>
 </div>
 
-<pre><code class="language-APL">      'ab' 'ra'⎕R'ra' 'ab'⊢'abracadabra'
-raabcadraab
-</code></pre>
+<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;ab&#39;</span> <span class="s1">&#39;ra&#39;</span><span class="nf">⎕R</span><span class="s1">&#39;ra&#39;</span> <span class="s1">&#39;ab&#39;</span><span class="o">⊢</span><span class="s1">&#39;abracadabra&#39;</span>
+<span class="nv">raabcadraab</span>
+</code></pre></div>
 <div style="display:flex; justify-content:space-between;" id="apl-example-title">
 <p><b>A powerful date time converter:</b></p>
 <p><a href="https://tryapl.org/?clear&q=%27Dddd%20Doo%20Mmmm%20YYYY%20hh%3Amm%27%20(1200%E2%8C%B6)%201%20%E2%8E%95DT%20%E2%8A%82%E2%8E%95TS&run">Try it now!</a></p>
 </div>
 
-<pre><code class="language-APL">      now ← 1613552859          ⍝ Unix Timestamp
-                                ⍝ 1200⌶ is experimental
-      'Dddd Doo Mmmm YYYY hh:mm' (1200⌶) 20 1 ⎕DT now
-┌──────────────────────────────────┐
-│Wednesday 17th February 2021 09:07│
-└──────────────────────────────────┘
-</code></pre>
+<div class="highlight"><pre><span></span><code>      <span class="nv">now</span> <span class="kd">←</span> <span class="m">1613552859</span>          <span class="c1">⍝ Unix Timestamp</span>
+                                <span class="c1">⍝ 1200⌶ is experimental</span>
+      <span class="s1">&#39;Dddd Doo Mmmm YYYY hh:mm&#39;</span> <span class="p">(</span><span class="m">1200</span><span class="na">⌶</span><span class="p">)</span> <span class="m">20</span> <span class="m">1</span> <span class="nf">⎕DT</span> <span class="nv">now</span>
+<span class="err">┌──────────────────────────────────┐</span>
+<span class="err">│</span><span class="nv">Wednesday</span> <span class="m">17</span><span class="nv">th</span> <span class="nv">February</span> <span class="m">2021</span> <span class="m">09</span><span class="bp">:</span><span class="m">07</span><span class="err">│</span>
+<span class="err">└──────────────────────────────────┘</span>
+</code></pre></div>
                 
               
               
@@ -823,10 +779,12 @@ raabcadraab
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="../../javascripts/darkmode.js"></script>
       
     
   </body>

@@ -17,7 +17,7 @@
     
   
     
-      <title>Development environment: Installation - Dyalog Tutorials</title>
+      <title>Development environment: Installation - </title>
     
   
 
@@ -325,7 +325,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
       
@@ -569,6 +571,33 @@
     Microsoft Windows
   </a>
   
+    <nav class="md-nav" aria-label="Microsoft Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-dyalog-and-begin-installation" class="md-nav__link">
+    Download Dyalog and Begin Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-your-apl-keyboard" class="md-nav__link">
+    Choose your APL keyboard.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finish-installation" class="md-nav__link">
+    Finish Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -576,11 +605,72 @@
     macOS
   </a>
   
+    <nav class="md-nav" aria-label="macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-and-install-dyalog" class="md-nav__link">
+    Download and Install Dyalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-your-apl-keyboard_1" class="md-nav__link">
+    Choose your APL keyboard.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#linux" class="md-nav__link">
     Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-and-install-dyalog_1" class="md-nav__link">
+    Download and Install Dyalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choose-your-apl-keyboard_2" class="md-nav__link">
+    Choose your APL keyboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-ride" class="md-nav__link">
+    Install the RIDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-apl-session-startup-script" class="md-nav__link">
+    Create an APL session startup script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dyalog-installation-directory" class="md-nav__link">
+    Dyalog installation directory
   </a>
   
 </li>
@@ -745,82 +835,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <!--
-  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Table of contents -->
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-
-  <!--
-    Hack: check whether the content contains a h1 headline. If it does, the
-    top-level anchor must be skipped, since it would be redundant to the link
-    to the current page that is located just above the anchor. Therefore we
-    directly continue with the children of the anchor.
-  -->
-  
-    
-  
-
-  <!-- Render item list -->
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      <!-- Table of contents -->
-      <h4>Table of Contents</h4>
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#microsoft-windows" class="md-nav__link">
-    Microsoft Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -828,9 +842,10 @@
                 
                 
                 <h1 id="installation">Installation</h1>
-<p>Dyalog provides installation packages for popular operating systems which can be <a href="https://www.dyalog.com/download-zone.htm">downloaded for free from their website</a>.</p>
+<p>Dyalog provides installation packages for popular operating systems which can be <a href="https://www.dyalog.com/download-zone.htm">downloaded for free</a>.</p>
 <h2 id="microsoft-windows">Microsoft Windows</h2>
-<p>This is a quick overview of the installation process. For more information, see the <a href="">Dyalog for Microsoft Windows Installation and Configuration Guide</a>.</p>
+<p>This is a quick overview of the installation process. For more information about installed components, registry entries and configuration etc., see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for Microsoft Windows Installation and Configuration Guide</a>.</p>
+<h3 id="download-dyalog-and-begin-installation">Download Dyalog and Begin Installation</h3>
 <ol>
 <li>
 <p>Go to the <a href="https://www.dyalog.com/download-zone.htm">download page</a> and <strong>download</strong> the installation package <strong>windows_64_&lt;version&gt;_unicode.zip</strong>.</p>
@@ -842,8 +857,8 @@
 <p>Restart the installer with <strong>administrator privileges</strong>.</p>
 <p><img alt="Restart the installer with administrator privileges" src="/img/admin_restart.png" /></p>
 </li>
-<li>
-<p>Choose your APL keyboard.</p>
+</ol>
+<h3 id="choose-your-apl-keyboard">Choose your APL keyboard.</h3>
 <p><strong>Untick</strong> the <strong>Dyalog APL IME for 64 bit Windows</strong> checkbox unless you want the default Dyalog keyboard layout.</p>
 <p>By default, Dyalog's Input Method Editor (IME) uses <kbd>Ctrl</kbd> to enter APL symbols. It does not prevent copy and paste shortcuts, but some prefer to use a different method. </p>
 <p>If you would like an alternative input method (such as using the <kbd>AltGr</kbd> key, backtick <kbd>`</kbd> prefix or composition input (<kbd>=</kbd> <kbd>/</kbd> <kbd>Tab</kbd> gives <code>≠</code> on <a href="https://tryapl.org">tryapl</a>), see <a href="https://mastering.dyalog.com/Getting-Started.html#typing-apl-glyphs">section 2.2.5 of Mastering Dyalog APL</a>.</p>
@@ -852,7 +867,8 @@
 <p>Once Dyalog is installed, you use <kbd>⊞ Win</kbd> + <kbd>Spacebar</kbd> to cycle between available keyboard layouts.</p>
 <p><img alt="Choose keyboard layouts on Windows" src="/img/win_languages_dyalog_ime.png" /></p>
 </div>
-</li>
+<h3 id="finish-installation">Finish Installation</h3>
+<ol>
 <li>
 <p>Click on <strong>Default Install</strong>.</p>
 </li>
@@ -862,9 +878,10 @@
 </ol>
 <h2 id="macos">macOS</h2>
 <p>This is a quick overview of the installation process. For more information, see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20macOS%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for macOS Installation and Configuration Guide</a>.</p>
+<h3 id="download-and-install-dyalog">Download and Install Dyalog</h3>
 <ol>
 <li>
-<p>Go to the <a href="">download page</a> and download the installation package for macOS.</p>
+<p>Go to the <a href="https://www.dyalog.com/download-zone.htm">download page</a> and download the installation package for macOS.</p>
 </li>
 <li>
 <p>Double click on the <strong>mac_64_&lt;version&gt;_unicode.pkg</strong> file.</p>
@@ -876,48 +893,40 @@
 <p>Close the Dyalog Installer window.</p>
 <p>Dyalog should now be installed in your <strong>Applications</strong> folder.</p>
 </li>
-<li>
-<p>Choose your APL keyboard.</p>
-<p>Keyboard layouts and fonts for macOS are described <a href="https://dfns.dyalog.com/n_kbmac.htm">on the dfns website</a>.</p>
-</li>
 </ol>
+<h3 id="choose-your-apl-keyboard_1">Choose your APL keyboard.</h3>
+<p>Keyboard layouts and fonts for macOS are described <a href="https://dfns.dyalog.com/n_kbmac.htm">on the dfns website</a>.</p>
 <h2 id="linux">Linux</h2>
 <p>This is a quick overview of the installation process. For more information, see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for UNIX Installation and Configuration Guide</a>.</p>
-<ol>
-<li>
-<p>Download Dyalog</p>
+<h3 id="download-and-install-dyalog_1">Download and Install Dyalog</h3>
 <p>Installation <strong>.rpm</strong> and <strong>.deb</strong> files are provided <a href="https://www.dyalog.com/download-zone.htm">from the Dyalog website</a>.</p>
-</li>
-<li>
-<p>Install Dyalog</p>
 <p>Use your distribution's package manager to install Dyalog.</p>
 <p>Usually, you can install from the terminal:</p>
-<p><code>sudo rpm -i linux_64_&lt;version&gt;_unicode.x86_64.rpm</code></p>
-<p><code>sudo dpkg -i linux_64_&lt;version&gt;_unicode.x86_64.deb</code></p>
-</li>
-<li>
-<p>Choose your APL keyboard</p>
+<div class="highlight"><pre><span></span><code>sudo rpm -i linux_64_&lt;version&gt;_unicode.x86_64.rpm
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo dpkg -i linux_64_&lt;version&gt;_unicode.x86_64.deb
+</code></pre></div>
+<h3 id="choose-your-apl-keyboard_2">Choose your APL keyboard</h3>
 <p>By default, Dyalog uses the Meta ("Windows" <kbd>⊞ Win</kbd>) key for entering APL symbols on Linux.</p>
 <p>Dyalog will override <a href="https://www.x.org/wiki/XKB/">XKB</a> configuration at startup by default. You can prevent this with a startup option.</p>
-<pre><code>dyalog -nokbd
-</code></pre>
+<div class="highlight"><pre><span></span><code>dyalog -nokbd
+</code></pre></div>
 <p>APL keyboard layouts come with most Linux distributions by default, but must be enabled. Follow the <a href="https://aplwiki.com/wiki/Typing_glyphs_on_Linux">instructions on the APL Wiki</a> for your desktop environment.</p>
-</li>
-<li>
-<p>Install the RIDE</p>
+<h3 id="install-the-ride">Install the RIDE</h3>
 <p>While Dyalog does come with a bare-bones terminal interface, it is recommended to use the <a href="https://github.com/Dyalog/ride">Remote IDE</a>. Download the <a href="https://github.com/Dyalog/ride/releases/latest">latest release</a> from GitHub and install it as above.</p>
-</li>
-<li>
-<p>Create an APL session startup script</p>
+<h3 id="create-an-apl-session-startup-script">Create an APL session startup script</h3>
 <p>By default, users must "start" an APL session from the main RIDE configuration window as described in <a href="https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment">section 2.1.1 of Mastering Dyalog APL</a>.</p>
 <p>The following script can be used to launch RIDE and immediately connect to a new Dyalog instance.</p>
-<pre><code>#!/usr/bin/env sh
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env sh
 env RIDE_CONNECT=localhost:4502 ride &amp;
 dyalog +s -q RIDE_INIT=SERVE:*:4502
-</code></pre>
+</code></pre></div>
 <p>To prevent Dyalog taking over the keyboard layout at startup, add <code>-nokbd</code> to the 3rd line in the script.</p>
-</li>
-</ol>
+<h2 id="dyalog-installation-directory">Dyalog installation directory</h2>
+<p>The main Dyalog installation directory is returned by the expression:</p>
+<div class="highlight"><pre><span></span><code>      <span class="vg">⎕</span><span class="kd">←</span><span class="m">2</span> <span class="nf">⎕NQ</span> <span class="c1"># &#39;GetEnvironment&#39; &#39;DYALOG&#39;</span>
+<span class="nv">C</span><span class="bp">:</span><span class="na">\</span><span class="nv">Program</span> <span class="nv">Files</span><span class="na">\</span><span class="nv">Dyalog</span><span class="na">\</span><span class="nv">Dyalog</span> <span class="nv">APL</span><span class="o">-</span><span class="m">64</span> <span class="m">18.2</span> <span class="nv">Unicode</span>
+</code></pre></div>
                 
               
               
@@ -992,10 +1001,12 @@ dyalog +s -q RIDE_INIT=SERVE:*:4502
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="../../javascripts/darkmode.js"></script>
       
     
   </body>
