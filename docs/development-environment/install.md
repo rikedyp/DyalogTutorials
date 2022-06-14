@@ -2,7 +2,7 @@
 Dyalog provides installation packages for popular operating systems which can be [downloaded for free](https://www.dyalog.com/download-zone.htm).
 
 ## Microsoft Windows
-This is a quick overview of the installation process. For more information, see the [Dyalog for Microsoft Windows Installation and Configuration Guide]().
+This is a quick overview of the installation process. For more information about installed components, registry entries and configuration etc., see the [Dyalog for Microsoft Windows Installation and Configuration Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf).
 
 ### Download Dyalog and Begin Installation
 1. Go to the [download page](https://www.dyalog.com/download-zone.htm) and **download** the installation package **windows_64_&lt;version&gt;_unicode.zip**.
@@ -92,3 +92,11 @@ The following script can be used to launch RIDE and immediately connect to a new
     dyalog +s -q RIDE_INIT=SERVE:*:4502
 
 To prevent Dyalog taking over the keyboard layout at startup, add `-nokbd` to the 3rd line in the script.
+
+## Dyalog installation directory
+The main Dyalog installation directory is returned by the expression:
+
+```APL
+      ⎕←2 ⎕NQ # 'GetEnvironment' 'DYALOG'
+C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode
+```
