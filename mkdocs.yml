@@ -40,3 +40,8 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
   - meta
+  - md_in_html
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
