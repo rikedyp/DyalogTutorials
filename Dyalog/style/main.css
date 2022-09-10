@@ -74,6 +74,12 @@ code {
 	font-weight: 700;
 }
 
+.landing-content a { color: white; }
+.landing-container a:hover { 
+	color: white;
+	text-decoration: underline;
+}
+
 a.landing-button {
 	margin-top: .5rem;
 	margin-right: .5rem;
@@ -124,4 +130,4 @@ a.landing-button:hover {
 	--md-accent-fg-color: #5A6D8F;
 	--md-typeset-a-color: #928ABD;
 	--md-hero-svg-color:   #2e303e;
-  }
+}

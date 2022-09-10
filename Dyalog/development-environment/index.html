@@ -641,11 +641,6 @@
 
       <!-- Render table of contents, if not empty -->
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Development Environment
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a
         href="./"
         class="md-nav__link md-nav__link--active"
@@ -654,109 +649,6 @@
       </a>
 
       <!-- Show table of contents -->
-      
-        <!--
-  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-
-
-<!-- Table of contents -->
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-
-  <!--
-    Hack: check whether the content contains a h1 headline. If it does, the
-    top-level anchor must be skipped, since it would be redundant to the link
-    to the current page that is located just above the anchor. Therefore we
-    directly continue with the children of the anchor.
-  -->
-  
-    
-  
-
-  <!-- Render item list -->
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      <!-- Table of contents -->
-      <h4>Table of Contents</h4>
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-layout" class="md-nav__link">
-    Basic layout
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-active-workspace" class="md-nav__link">
-    The active workspace
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-session" class="md-nav__link">
-    The session
-  </a>
-  
-    <nav class="md-nav" aria-label="The session">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-session-log" class="md-nav__link">
-    The session log
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-session-object" class="md-nav__link">
-    The session object
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-session-file" class="md-nav__link">
-    The session file
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-workspace-explorer" class="md-nav__link">
-    The workspace explorer
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
 
@@ -915,6 +807,22 @@
   
 
           
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../language/paradigms/" class="md-nav__link">
+        Programming Pardigms
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -937,53 +845,53 @@
                 
                 
                 <h1 id="development-environment">Development Environment</h1>
-<p>This is a guide to getting started with the Dyalog Integrated Development Environments on supported platforms. For help with the APL language, see <a href="../language/">our language guide</a>.</p>
-<p>Dyalog provides two <a href="https://www.codecademy.com/article/what-is-an-ide">integrated development environments</a> (IDEs). There is the Dyalog IDE for Microsoft Windows, and the Remote IDE or <a href="https://github.com/dyalog/ride">(RIDE)</a> for use on Linux and macOS. As the name suggests, the RIDE also provides remote interaction and debugging capabilities over a network.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The RIDE must be installed separately on Linux. For more information, see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for UNIX Installation and Configuration Guide</a>.</p>
+<p>Dyalog provides two <a href="https://www.codecademy.com/article/what-is-an-ide">integrated development environments</a> (IDEs). There is the Dyalog IDE for Microsoft Windows, and the Remote IDE (<a href="https://github.com/dyalog/ride">RIDE</a>). The RIDE can be used on all platforms, but is the only GUI available for Linux and macOS. As the name suggests, the RIDE also provides remote interaction and debugging capabilities over a network.</p>
+<div class="flex">
+<div class="flex-item">
+<p><a href="install/#microsoft-windows"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span>      <br> <strong>Microsoft Windows</strong></a></p>
 </div>
-<p>This page talks about parts of the development environment common to both IDEs. While you do not need to know all of this to get started using APL to solve problems, it is useful to understand the terminology when you want to develop applications, ask for help or report issues.</p>
-<h2 id="basic-layout">Basic layout</h2>
-<p>The basic layouts for both standard development environments are described in <a href="https://mastering.dyalog.com/Getting-Started.html#first-contact">section 2.2 of Mastering Dyalog APL</a>.</p>
-<h2 id="the-active-workspace">The active workspace</h2>
-<p>This is the currently running collection of names. That is, functions, operators, objects and variables which are accessible to the currently running application.</p>
-<p>List names in the active workspace:</p>
-<div class="highlight"><pre><span></span><code>      <span class="nv">var</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
-      <span class="nv">Sum</span> <span class="kd">←</span> <span class="kt">{</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="kt">}</span>
-      <span class="sr">]</span><span class="nv">names</span>
-<span class="nv">Sum</span> <span class="nv">var</span> 
-</code></pre></div>
-<p>Use <a href="#the-workspace-explorer">the workspace explorer</a> to view names in the active workspace (including the <a href="#the-session-object">session object</a>).</p>
-<h2 id="the-session">The session</h2>
-<p>This can refer to <a href="#the-session-log">the session log</a>, <a href="#the-session-object">the session object</a> and <a href="#the-session-file">the session file</a>. Sometimes, the term is used to mean executing code directly in the <abbr title="Read Evaluate Print Loop">REPL</abbr>, in contrast to the phrase "<em>under program control</em>". Something <em>under program control</em> is a line in a function which is run when that function is run. For example, you can use <a href="https://docs.dyalog.com/latest/User%20Commands%20User%20Guide.pdf">user commands</a> in the session, but not under program control.</p>
-<h3 id="the-session-log">The session log</h3>
-<p>This is a record of everything you have typed into the session and output from those expressions.</p>
-<p>You can save this log as a <strong>.dlf</strong> file using <strong>Log</strong> → <strong>Save As</strong> on Windows.</p>
-<p>Log files with the extension <strong>.dlf</strong> can only be opened in Dyalog. To save the log as plain text, on any platform, use the following expression <a href="https://aplcart.info/?q=save%20session%20file#">obtained from APLcart</a>:</p>
-<div class="highlight"><pre><span></span><code>      <span class="kt">{</span><span class="bp">⍵</span> <span class="nf">⎕NPUT</span><span class="na">⍨</span><span class="o">⊂</span><span class="nf">⎕SE⎕WG</span><span class="s1">&#39;Log&#39;</span><span class="kt">}</span> <span class="s1">&#39;/path/to/file.dlf&#39;</span>
-</code></pre></div>
-<p>The log file is updated when Dyalog closes. Delete the log file before opening Dyalog to start with a clean log file.</p>
-<p>TODO: can .dlf be saved from APL? in RIDE?</p>
-<h3 id="the-session-object">The session object</h3>
-<p>The <strong>session object</strong> (<a href="http://help.dyalog.com/latest/#UserGuide/The%20APL%20Environment/Session%20Object.htm">documentation</a>), or <strong>session namespace</strong>, is a special system object called <code>⎕SE</code> which is accessible from APL. It contains all of your settings for things like <code>]boxing</code> and <a href="http://help.dyalog.com/latest/#Language/System%20Functions/pw.htm">print width (<code>⎕PW</code>)</a>, as well as window and toolbar settings in the Windows IDE.</p>
-<h3 id="the-session-file">The session file</h3>
-<p>This is a file with the extension <strong>.dse</strong>. It contains the value of a <a href="#the-session-object">session object</a>. You can use multiple session files to save separate configurations of your development environment.</p>
-<p>The current session file location is the value of the <code>Session_File</code> <a href="http://help.dyalog.com/latest/#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters/session_file.htm">configuration parameter</a>.</p>
-<div class="highlight"><pre><span></span><code>      <span class="sr">]</span><span class="nv">config</span> <span class="nv">Session_File</span>
- <span class="nv">Session_File</span>  <span class="nv">C</span><span class="bp">:</span><span class="na">\</span><span class="nv">Users</span><span class="na">\</span><span class="nv">Dyalog</span><span class="na">\</span><span class="nv">Documents</span><span class="na">\</span><span class="nv">Dyalog</span> <span class="nv">APL</span><span class="o">-</span><span class="m">64</span> <span class="m">18.2</span> <span class="nv">Unicode</span> <span class="nv">Files</span><span class="na">\</span><span class="nv">def_uk</span><span class="na">.</span><span class="nv">dse</span> 
-</code></pre></div>
-<p>On Windows, you can overwrite the current session file with <strong>Session → Save</strong> in the menu.</p>
-<p>On any platform, the following expression can be used to save the current session configuration to a new file:</p>
-<div class="highlight"><pre><span></span><code>      <span class="kt">{</span><span class="m">2</span><span class="nf">⎕NQ⎕SE</span><span class="s1">&#39;FileWrite&#39;</span><span class="o">⊣</span><span class="nf">⎕SE⎕WS</span><span class="s1">&#39;File&#39;</span><span class="bp">⍵</span><span class="kt">}</span><span class="s1">&#39;/path/to/file.dse&#39;</span>
-</code></pre></div>
-<p>On Windows, go to <strong>Options → Configure</strong> to set the session file in the <strong>Session</strong> tab. On Linux and macOS, set the <code>Session_File</code> configuration parameter. See the documentation for <a href="http://help.dyalog.com/latest/#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters.htm">how to use configuration parameters</a>.</p>
-<p>TODO: are ALLCAPS config params safer cross platform than otherwise?</p>
-<h2 id="the-workspace-explorer">The workspace explorer</h2>
-<p>This tool provides an overview of all of the names in your active workspace.</p>
-<p><img alt="The Workspace Explorer in the RIDE" src="../img/workspace-explorer-wide.png" /></p>
-<p>In the Windows IDE, go to <strong>Tools → Explorer</strong>.</p>
-<p>In the RIDE, go to <strong>View → Show Workspace Explorer</strong>.</p>
+<div class="flex-item">
+<p><a href="install/#macos"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>        <br> <strong>macOS</strong></a></p>
+</div>
+<div class="flex-item">
+<p><a href="../application-development/docker/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg></span>       <br> <strong>Dyalog for Docker</strong></a></p>
+</div>
+</div>
+<div class="flex">
+<div class="flex-item">
+<p><a href="install/#linux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm52.7 93c8.8-15.2 28.3-20.5 43.5-11.7 15.3 8.8 20.5 28.3 11.7 43.6-8.8 15.2-28.3 20.5-43.5 11.7-15.3-8.9-20.5-28.4-11.7-43.6zM87.4 287.9c-17.6 0-31.9-14.3-31.9-31.9 0-17.6 14.3-31.9 31.9-31.9 17.6 0 31.9 14.3 31.9 31.9 0 17.6-14.3 31.9-31.9 31.9zm28.1 3.1c22.3-17.9 22.4-51.9 0-69.9 8.6-32.8 29.1-60.7 56.5-79.1l23.7 39.6c-51.5 36.3-51.5 112.5 0 148.8L172 370c-27.4-18.3-47.8-46.3-56.5-79zm228.7 131.7c-15.3 8.8-34.7 3.6-43.5-11.7-8.8-15.3-3.6-34.8 11.7-43.6 15.2-8.8 34.7-3.6 43.5 11.7 8.8 15.3 3.6 34.8-11.7 43.6zm.3-69.5c-26.7-10.3-56.1 6.6-60.5 35-5.2 1.4-48.9 14.3-96.7-9.4l22.5-40.3c57 26.5 123.4-11.7 128.9-74.4l46.1.7c-2.3 34.5-17.3 65.5-40.3 88.4zm-5.9-105.3c-5.4-62-71.3-101.2-128.9-74.4l-22.5-40.3c47.9-23.7 91.5-10.8 96.7-9.4 4.4 28.3 33.8 45.3 60.5 35 23.1 22.9 38 53.9 40.2 88.5l-46 .6z"/></svg></span>       <br> <strong>Linux .deb <br> (Debian/Ubuntu)</strong></a></p>
+</div>
+<div class="flex-item">
+<p><a href="install/#linux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M225 32C101.3 31.7.8 131.7.4 255.4L0 425.7a53.6 53.6 0 0 0 53.6 53.9l170.2.4c123.7.3 224.3-99.7 224.6-223.4S348.7 32.3 225 32zm169.8 157.2L333 126.6c2.3-4.7 3.8-9.2 3.8-14.3v-1.6l55.2 56.1a101 101 0 0 1 2.8 22.4zM331 94.3a106.06 106.06 0 0 1 58.5 63.8l-54.3-54.6a26.48 26.48 0 0 0-4.2-9.2zM118.1 247.2a49.66 49.66 0 0 0-7.7 11.4l-8.5-8.5a85.78 85.78 0 0 1 16.2-2.9zM97 251.4l11.8 11.9-.9 8a34.74 34.74 0 0 0 2.4 12.5l-27-27.2a80.6 80.6 0 0 1 13.7-5.2zm-18.2 7.4 38.2 38.4a53.17 53.17 0 0 0-14.1 4.7L67.6 266a107 107 0 0 1 11.2-7.2zm-15.2 9.8 35.3 35.5a67.25 67.25 0 0 0-10.5 8.5L53.5 278a64.33 64.33 0 0 1 10.1-9.4zm-13.3 12.3 34.9 35a56.84 56.84 0 0 0-7.7 11.4l-35.8-35.9c2.8-3.8 5.7-7.2 8.6-10.5zm-11 14.3 36.4 36.6a48.29 48.29 0 0 0-3.6 15.2l-39.5-39.8a99.81 99.81 0 0 1 6.7-12zm-8.8 16.3 41.3 41.8a63.47 63.47 0 0 0 6.7 26.2L25.8 326c1.4-4.9 2.9-9.6 4.7-14.5zm-7.9 43 61.9 62.2a31.24 31.24 0 0 0-3.6 14.3v1.1l-55.4-55.7a88.27 88.27 0 0 1-2.9-21.9zm5.3 30.7 54.3 54.6a28.44 28.44 0 0 0 4.2 9.2 106.32 106.32 0 0 1-58.5-63.8zm-5.3-37a80.69 80.69 0 0 1 2.1-17l72.2 72.5a37.59 37.59 0 0 0-9.9 8.7zm253.3-51.8-42.6-.1-.1 56c-.2 69.3-64.4 115.8-125.7 102.9-5.7 0-19.9-8.7-19.9-24.2a24.89 24.89 0 0 1 24.5-24.6c6.3 0 6.3 1.6 15.7 1.6a55.91 55.91 0 0 0 56.1-55.9l.1-47c0-4.5-4.5-9-8.9-9l-33.6-.1c-32.6-.1-32.5-49.4.1-49.3l42.6.1.1-56a105.18 105.18 0 0 1 105.6-105 86.35 86.35 0 0 1 20.2 2.3c11.2 1.8 19.9 11.9 19.9 24 0 15.5-14.9 27.8-30.3 23.9-27.4-5.9-65.9 14.4-66 54.9l-.1 47a8.94 8.94 0 0 0 8.9 9l33.6.1c32.5.2 32.4 49.5-.2 49.4zm23.5-.3a35.58 35.58 0 0 0 7.6-11.4l8.5 8.5a102 102 0 0 1-16.1 2.9zm21-4.2L308.6 280l.9-8.1a34.74 34.74 0 0 0-2.4-12.5l27 27.2a74.89 74.89 0 0 1-13.7 5.3zm18-7.4-38-38.4c4.9-1.1 9.6-2.4 13.7-4.7l36.2 35.9c-3.8 2.5-7.9 5-11.9 7.2zm15.5-9.8-35.3-35.5a61.06 61.06 0 0 0 10.5-8.5l34.9 35a124.56 124.56 0 0 1-10.1 9zm13.2-12.3-34.9-35a63.18 63.18 0 0 0 7.7-11.4l35.8 35.9a130.28 130.28 0 0 1-8.6 10.5zm11-14.3-36.4-36.6a48.29 48.29 0 0 0 3.6-15.2l39.5 39.8a87.72 87.72 0 0 1-6.7 12zm13.5-30.9a140.63 140.63 0 0 1-4.7 14.3L345.6 190a58.19 58.19 0 0 0-7.1-26.2zm1-5.6-71.9-72.1a32 32 0 0 0 9.9-9.2l64.3 64.7a90.93 90.93 0 0 1-2.3 16.6z"/></svg></span>       <br><strong>Linux .rpm <br> (Fedora/openSUSE)</strong></a></p>
+</div>
+<div class="flex-item">
+<p><a href="install/#linux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407 512"><path d="m372 232.5-3.7-6.5c.1-46.4-21.4-65.3-46.5-79.7 7.6-2 15.4-3.6 17.6-13.2 13.1-3.3 15.8-9.4 17.1-15.8 3.4-2.3 14.8-8.7 13.6-19.7 6.4-4.4 10-10.1 8.1-18.1 6.9-7.5 8.7-13.7 5.8-19.4 8.3-10.3 4.6-15.6 1.1-20.9 6.2-11.2.7-23.2-16.6-21.2-6.9-10.1-21.9-7.8-24.2-7.8-2.6-3.2-6-6-16.5-4.7-6.8-6.1-14.4-5-22.3-2.1-9.3-7.3-15.5-1.4-22.6.8C271.6.6 269 5.5 263.5 7.6c-12.3-2.6-16.1 3-22 8.9l-6.9-.1c-18.6 10.8-27.8 32.8-31.1 44.1-3.3-11.3-12.5-33.3-31.1-44.1l-6.9.1c-5.9-5.9-9.7-11.5-22-8.9-5.6-2-8.1-7-19.4-3.4-4.6-1.4-8.9-4.4-13.9-4.3-2.6.1-5.5 1-8.7 3.5-7.9-3-15.5-4-22.3 2.1-10.5-1.3-14 1.4-16.5 4.7-2.3 0-17.3-2.3-24.2 7.8C21.2 16 15.8 28 22 39.2c-3.5 5.4-7.2 10.7 1.1 20.9-2.9 5.7-1.1 11.9 5.8 19.4-1.8 8 1.8 13.7 8.1 18.1-1.2 11 10.2 17.4 13.6 19.7 1.3 6.4 4 12.4 17.1 15.8 2.2 9.5 10 11.2 17.6 13.2-25.1 14.4-46.6 33.3-46.5 79.7l-3.7 6.5c-28.8 17.2-54.7 72.7-14.2 117.7 2.6 14.1 7.1 24.2 11 35.4 5.9 45.2 44.5 66.3 54.6 68.8 14.9 11.2 30.8 21.8 52.2 29.2C159 504.2 181 512 203 512h1c22.1 0 44-7.8 64.2-28.4 21.5-7.4 37.3-18 52.2-29.2 10.2-2.5 48.7-23.6 54.6-68.8 3.9-11.2 8.4-21.3 11-35.4 40.6-45.1 14.7-100.5-14-117.7zm-22.2-8c-1.5 18.7-98.9-65.1-82.1-67.9 45.7-7.5 83.6 19.2 82.1 67.9zm-43 93.1c-24.5 15.8-59.8 5.6-78.8-22.8s-14.6-64.2 9.9-80c24.5-15.8 59.8-5.6 78.8 22.8s14.6 64.2-9.9 80zM238.9 29.3c.8 4.2 1.8 6.8 2.9 7.6 5.4-5.8 9.8-11.7 16.8-17.3 0 3.3-1.7 6.8 2.5 9.4 3.7-5 8.8-9.5 15.5-13.3-3.2 5.6-.6 7.3 1.2 9.6 5.1-4.4 10-8.8 19.4-12.3-2.6 3.1-6.2 6.2-2.4 9.8 5.3-3.3 10.6-6.6 23.1-8.9-2.8 3.1-8.7 6.3-5.1 9.4 6.6-2.5 14-4.4 22.1-5.4-3.9 3.2-7.1 6.3-3.9 8.8 7.1-2.2 16.9-5.1 26.4-2.6l-6 6.1c-.7.8 14.1.6 23.9.8-3.6 5-7.2 9.7-9.3 18.2 1 1 5.8.4 10.4 0-4.7 9.9-12.8 12.3-14.7 16.6 2.9 2.2 6.8 1.6 11.2.1-3.4 6.9-10.4 11.7-16 17.3 1.4 1 3.9 1.6 9.7.9-5.2 5.5-11.4 10.5-18.8 15 1.3 1.5 5.8 1.5 10 1.6-6.7 6.5-15.3 9.9-23.4 14.2 4 2.7 6.9 2.1 10 2.1-5.7 4.7-15.4 7.1-24.4 10 1.7 2.7 3.4 3.4 7.1 4.1-9.5 5.3-23.2 2.9-27 5.6.9 2.7 3.6 4.4 6.7 5.8-15.4.9-57.3-.6-65.4-32.3 15.7-17.3 44.4-37.5 93.7-62.6-38.4 12.8-73 30-102 53.5-34.3-15.9-10.8-55.9 5.8-71.8zm-34.4 114.6c24.2-.3 54.1 17.8 54 34.7-.1 15-21 27.1-53.8 26.9-32.1-.4-53.7-15.2-53.6-29.8 0-11.9 26.2-32.5 53.4-31.8zm-123-12.8c3.7-.7 5.4-1.5 7.1-4.1-9-2.8-18.7-5.3-24.4-10 3.1 0 6 .7 10-2.1-8.1-4.3-16.7-7.7-23.4-14.2 4.2-.1 8.7 0 10-1.6-7.4-4.5-13.6-9.5-18.8-15 5.8.7 8.3.1 9.7-.9-5.6-5.6-12.7-10.4-16-17.3 4.3 1.5 8.3 2 11.2-.1-1.9-4.2-10-6.7-14.7-16.6 4.6.4 9.4 1 10.4 0-2.1-8.5-5.8-13.3-9.3-18.2 9.8-.1 24.6 0 23.9-.8l-6-6.1c9.5-2.5 19.3.4 26.4 2.6 3.2-2.5-.1-5.6-3.9-8.8 8.1 1.1 15.4 2.9 22.1 5.4 3.5-3.1-2.3-6.3-5.1-9.4 12.5 2.3 17.8 5.6 23.1 8.9 3.8-3.6.2-6.7-2.4-9.8 9.4 3.4 14.3 7.9 19.4 12.3 1.7-2.3 4.4-4 1.2-9.6 6.7 3.8 11.8 8.3 15.5 13.3 4.1-2.6 2.5-6.2 2.5-9.4 7 5.6 11.4 11.5 16.8 17.3 1.1-.8 2-3.4 2.9-7.6 16.6 15.9 40.1 55.9 6 71.8-29-23.5-63.6-40.7-102-53.5 49.3 25 78 45.3 93.7 62.6-8 31.8-50 33.2-65.4 32.3 3.1-1.4 5.8-3.2 6.7-5.8-4-2.8-17.6-.4-27.2-5.6zm60.1 24.1c16.8 2.8-80.6 86.5-82.1 67.9-1.5-48.7 36.5-75.5 82.1-67.9zM38.2 342c-23.7-18.8-31.3-73.7 12.6-98.3 26.5-7 9 107.8-12.6 98.3zm91 98.2c-13.3 7.9-45.8 4.7-68.8-27.9-15.5-27.4-13.5-55.2-2.6-63.4 16.3-9.8 41.5 3.4 60.9 25.6 16.9 20 24.6 55.3 10.5 65.7zm-26.4-119.7c-24.5-15.8-28.9-51.6-9.9-80s54.3-38.6 78.8-22.8 28.9 51.6 9.9 80c-19.1 28.4-54.4 38.6-78.8 22.8zM205 496c-29.4 1.2-58.2-23.7-57.8-32.3-.4-12.7 35.8-22.6 59.3-22 23.7-1 55.6 7.5 55.7 18.9.5 11-28.8 35.9-57.2 35.4zm58.9-124.9c.2 29.7-26.2 53.8-58.8 54-32.6.2-59.2-23.8-59.4-53.4v-.6c-.2-29.7 26.2-53.8 58.8-54 32.6-.2 59.2 23.8 59.4 53.4v.6zm82.2 42.7c-25.3 34.6-59.6 35.9-72.3 26.3-13.3-12.4-3.2-50.9 15.1-72 20.9-23.3 43.3-38.5 58.9-26.6 10.5 10.3 16.7 49.1-1.7 72.3zm22.9-73.2c-21.5 9.4-39-105.3-12.6-98.3 43.9 24.7 36.3 79.6 12.6 98.3z"/></svg></span> <br> <strong>Raspberry Pi <br> (32-bit Debian/Raspbian)</strong></a></p>
+</div>
+<div class="flex-item">
+<p><a href="./install#chromebook"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M131.5 217.5 55.1 100.1c47.6-59.2 119-91.8 192-92.1 42.3-.3 85.5 10.5 124.8 33.2 43.4 25.2 76.4 61.4 97.4 103L264 133.4c-58.1-3.4-113.4 29.3-132.5 84.1zm32.9 38.5c0 46.2 37.4 83.6 83.6 83.6s83.6-37.4 83.6-83.6-37.4-83.6-83.6-83.6-83.6 37.3-83.6 83.6zm314.9-89.2L339.6 174c37.9 44.3 38.5 108.2 6.6 157.2L234.1 503.6c46.5 2.5 94.4-7.7 137.8-32.9 107.4-62 150.9-192 107.4-303.9zM133.7 303.6 40.4 120.1C14.9 159.1 0 205.9 0 256c0 124 90.8 226.7 209.5 244.9l63.7-124.8c-57.6 10.8-113.2-20.8-139.5-72.5z"/></svg></span> <br> <strong>ChromeOS <br> (64-bit Intel)</strong></a></p>
+</div>
+</div>
+<!--
+<style>
+    .grid { 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grid-item { justify-self: center; text-align: center; }
+    .grid-item img { width: 100%; }
+</style>
+-->
+<style>
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 1rem 0 1rem;
+    }
+    .flex-item {
+        text-align: center;
+    }
+</style>
                 
               
               

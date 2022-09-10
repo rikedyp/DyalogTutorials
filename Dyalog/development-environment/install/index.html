@@ -720,33 +720,6 @@
     Microsoft Windows
   </a>
   
-    <nav class="md-nav" aria-label="Microsoft Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download-dyalog-and-begin-installation" class="md-nav__link">
-    Download Dyalog and Begin Installation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#choose-your-apl-keyboard" class="md-nav__link">
-    Choose your APL keyboard.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finish-installation" class="md-nav__link">
-    Finish Installation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -765,7 +738,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#choose-your-apl-keyboard_1" class="md-nav__link">
+  <a href="#choose-your-apl-keyboard" class="md-nav__link">
     Choose your APL keyboard.
   </a>
   
@@ -792,7 +765,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#choose-your-apl-keyboard_2" class="md-nav__link">
+  <a href="#choose-your-apl-keyboard_1" class="md-nav__link">
     Choose your APL keyboard
   </a>
   
@@ -820,6 +793,20 @@
         <li class="md-nav__item">
   <a href="#dyalog-installation-directory" class="md-nav__link">
     Dyalog installation directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chromebook" class="md-nav__link">
+    Chromebook
   </a>
   
 </li>
@@ -969,6 +956,22 @@
   
 
           
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../language/paradigms/" class="md-nav__link">
+        Programming Pardigms
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -993,8 +996,8 @@
                 <h1 id="installation">Installation</h1>
 <p>Dyalog provides installation packages for popular operating systems which can be <a href="https://www.dyalog.com/download-zone.htm">downloaded for free</a>.</p>
 <h2 id="microsoft-windows">Microsoft Windows</h2>
-<p>This is a quick overview of the installation process. For more information about installed components, registry entries and configuration etc., see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for Microsoft Windows Installation and Configuration Guide</a>.</p>
-<h3 id="download-dyalog-and-begin-installation">Download Dyalog and Begin Installation</h3>
+<p>This is a quick overview of the installation process. Full installation instructions are in the file <code>setup_readme.htm</code> included in the install package <code>windows_64_&lt;version&gt;_unicode.zip</code> which can be downloaded <a href="https://www.dyalog.com/download-zone.htm">from the Dyalog website</a>.</p>
+<p>For more information about installed components, registry entries and configuration etc. see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for Microsoft Windows Installation and Configuration Guide</a>.</p>
 <ol>
 <li>
 <p>Go to the <a href="https://www.dyalog.com/download-zone.htm">download page</a> and <strong>download</strong> the installation package <strong>windows_64_&lt;version&gt;_unicode.zip</strong>.</p>
@@ -1006,23 +1009,22 @@
 <p>Restart the installer with <strong>administrator privileges</strong>.</p>
 <p><img alt="Restart the installer with administrator privileges" src="/img/admin_restart.png" /></p>
 </li>
-</ol>
-<h3 id="choose-your-apl-keyboard">Choose your APL keyboard.</h3>
-<p><strong>Untick</strong> the <strong>Dyalog APL IME for 64 bit Windows</strong> checkbox unless you want the default Dyalog keyboard layout.</p>
-<p>By default, Dyalog's Input Method Editor (IME) uses <kbd>Ctrl</kbd> to enter APL symbols. It does not prevent copy and paste shortcuts, but some prefer to use a different method. </p>
-<p>If you would like an alternative input method (such as using the <kbd>AltGr</kbd> key, backtick <kbd>`</kbd> prefix or composition input (<kbd>=</kbd> <kbd>/</kbd> <kbd>Tab</kbd> gives <code>≠</code> on <a href="https://tryapl.org">tryapl</a>), see <a href="https://mastering.dyalog.com/Getting-Started.html#typing-apl-glyphs">section 2.2.5 of Mastering Dyalog APL</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Once Dyalog is installed, you use <kbd>⊞ Win</kbd> + <kbd>Spacebar</kbd> to cycle between available keyboard layouts.</p>
+<li>
+<p>Choose your APL keyboard.</p>
+<p>The default APL keyboard uses <kbd>Ctrl</kbd> as the APL shifting key. It does not prevent copy and paste shortcuts, but some prefer to use a different method.</p>
+<p>If you do not want to use the <kbd>Ctrl</kbd> key as your APL shifting key, untick <strong>☑ Install the Dyalog APL IME for 64 bit Windows</strong> and head over to the section on <a href="#typing-apl-symbols">typing APL</a> for alternatives.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Once Dyalog is installed, you can use <kbd>⊞ Win</kbd> + <kbd>Spacebar</kbd> to cycle between available keyboard layouts.</p>
 <p><img alt="Choose keyboard layouts on Windows" src="/img/win_languages_dyalog_ime.png" /></p>
 </div>
-<h3 id="finish-installation">Finish Installation</h3>
-<ol>
+</li>
 <li>
 <p>Click on <strong>Default Install</strong>.</p>
 </li>
 <li>
 <p><strong>Reboot</strong> your PC.</p>
+<p>Dyalog should now be available in your <strong>Start</strong> menu.</p>
 </li>
 </ol>
 <h2 id="macos">macOS</h2>
@@ -1043,19 +1045,50 @@
 <p>Dyalog should now be installed in your <strong>Applications</strong> folder.</p>
 </li>
 </ol>
-<h3 id="choose-your-apl-keyboard_1">Choose your APL keyboard.</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Dyalog for macOS comes with the <a href="https://github.com/Dyalog/ride">Remote Integrated Development Environment</a>. The [Dyalog for macOS Installation and Configuration Guide] contains some of the same information as the <a href="https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf">RIDE User Guide</a> but with some parts specific to macOS.</p>
+</div>
+<h3 id="choose-your-apl-keyboard">Choose your APL keyboard.</h3>
 <p>Keyboard layouts and fonts for macOS are described <a href="https://dfns.dyalog.com/n_kbmac.htm">on the dfns website</a>.</p>
+<blockquote>
+<p>TODO grab from existing fonts and keyboards page?
+Or maybe this is only relevant for Windows? But a link from here?</p>
+</blockquote>
 <h2 id="linux">Linux</h2>
 <p>This is a quick overview of the installation process. For more information, see the <a href="https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20Installation%20and%20Configuration%20Guide.pdf">Dyalog for UNIX Installation and Configuration Guide</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dyalog for Linux comes with a text-based TTY interface. We recommend <a href="#install-the-ride">installing the RIDE</a> graphical interface as well.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Installation package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian/Ubuntu</td>
+<td>64-bit .deb</td>
+</tr>
+<tr>
+<td>Fedora/openSUSE</td>
+<td>64-bit .rpm</td>
+</tr>
+</tbody>
+</table>
 <h3 id="download-and-install-dyalog_1">Download and Install Dyalog</h3>
-<p>Installation <strong>.rpm</strong> and <strong>.deb</strong> files are provided <a href="https://www.dyalog.com/download-zone.htm">from the Dyalog website</a>.</p>
+<p>Installation <strong>.rpm</strong> (Fedora/openSUSE) and <strong>.deb</strong> (Debian/Ubuntu) files are provided <a href="https://www.dyalog.com/download-zone.htm">from the Dyalog website</a>.</p>
 <p>Use your distribution's package manager to install Dyalog.</p>
 <p>Usually, you can install from the terminal:</p>
 <div class="highlight"><pre><span></span><code>sudo rpm -i linux_64_&lt;version&gt;_unicode.x86_64.rpm
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo dpkg -i linux_64_&lt;version&gt;_unicode.x86_64.deb
 </code></pre></div>
-<h3 id="choose-your-apl-keyboard_2">Choose your APL keyboard</h3>
+<h3 id="choose-your-apl-keyboard_1">Choose your APL keyboard</h3>
+<p>With the increasing prevalence of Wayland, there are some known issues with typing on recent versions of Fedora and Ubuntu.</p>
 <p>By default, Dyalog uses the Meta ("Windows" <kbd>⊞ Win</kbd>) key for entering APL symbols on Linux.</p>
 <p>Dyalog will override <a href="https://www.x.org/wiki/XKB/">XKB</a> configuration at startup by default. You can prevent this with a startup option.</p>
 <div class="highlight"><pre><span></span><code>dyalog -nokbd
@@ -1076,6 +1109,32 @@ dyalog +s -q RIDE_INIT=SERVE:*:4502
 <div class="highlight"><pre><span></span><code>      <span class="vg">⎕</span><span class="kd">←</span><span class="m">2</span> <span class="nf">⎕NQ</span> <span class="c1"># &#39;GetEnvironment&#39; &#39;DYALOG&#39;</span>
 <span class="nv">C</span><span class="bp">:</span><span class="na">\</span><span class="nv">Program</span> <span class="nv">Files</span><span class="na">\</span><span class="nv">Dyalog</span><span class="na">\</span><span class="nv">Dyalog</span> <span class="nv">APL</span><span class="o">-</span><span class="m">64</span> <span class="m">18.2</span> <span class="nv">Unicode</span>
 </code></pre></div>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<p>First you will need to set your Raspberry Pi up to connect to our public repository, This will allow you to keep your APL installation up to date with new releases.</p>
+<p>The following are the supported Operating System codenames for 32-bit Dyalog APL:</p>
+<ul>
+<li>Raspbian (Debian)<ul>
+<li>buster or later (ARMHF) - Hardware Float: this is required for Dyalog 18.0 and later</li>
+<li>jessie or later (ARMHF) - Hardware Float: this is required for Dyalog 17.1</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do not support ARMEL (Software Float) as we consider the performance of software float to be unacceptable on the Raspberry Pi.</p>
+<p>Dyalog APL will not run on 64-bit Raspbian O/S.</p>
+</div>
+<div class="highlight"><pre><span></span><code>wget -O - http://packages.dyalog.com/dyalog-apt-key.gpg.key <span class="p">|</span> sudo apt-key add -
+<span class="nv">CODENAME</span><span class="o">=</span><span class="k">$(</span>lsb_release -sc<span class="k">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;deb http://packages.dyalog.com </span><span class="si">${</span><span class="nv">CODENAME</span><span class="si">}</span><span class="s2"> main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/dyalog.list
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you update the operating system on your Pi, then you should re-run these last two commands so that <code>/etc/apt/sources.list.d/dyalog.list</code> accurately reflects the codename of the version of the distribution that you are running. </p>
+</div>
+<p>See <a href="https://packages.dyalog.com/">packages.dyalog.com</a> for more information and about previous versions of Dyalog and RIDE.</p>
+<h2 id="chromebook">Chromebook</h2>
+<p>ChromeOS is not officially supported by Dyalog, but some users have reported success installing the <strong>.deb</strong> installation package on Intel Chromebooks. There is <a href="https://forums.dyalog.com/viewtopic.php?f=20&amp;p=7352">a forum post</a> with more information.</p>
                 
               
               
