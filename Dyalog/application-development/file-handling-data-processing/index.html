@@ -1,0 +1,1384 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How-to guides and tutorials for Dyalog APL">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.7">
+    
+    
+  
+    
+      <title>Application development: File handling and data processing - </title>
+    
+  
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../style/main.css">
+    
+      <link rel="stylesheet" href="../../style/quickstart.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-handling-and-data-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tutorials" class="md-header__button md-logo" aria-label="Tutorials" data-md-component="logo">
+      
+  <img src="../../img/dyalog-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File handling and data processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      
+      Home
+    
+    </a>
+  </li>
+
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+    
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  
+
+  <!-- Recurse, if the first item has further nested items -->
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        
+        Tools and Interfaces
+      
+      </a>
+    </li>
+  
+
+<!-- Main navigation item -->
+
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  
+
+  <!-- Recurse, if the first item has further nested items -->
+  
+    <li class="md-tabs__item">
+      <a href="../../development-environment/" class="md-tabs__link">
+        
+        Development Environment
+      
+      </a>
+    </li>
+  
+
+<!-- Main navigation item -->
+
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  
+
+  <!-- Recurse, if the first item has further nested items -->
+  
+    <li class="md-tabs__item">
+      <a href="../../language/" class="md-tabs__link">
+        
+        Getting started with APL
+      
+      </a>
+    </li>
+  
+
+<!-- Main navigation item -->
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
+      
+  <img src="../../img/dyalog-white.svg" alt="logo">
+
+    </a>
+    Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
+  
+  
+    
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    
+
+    <!-- Determine whether to render item as a section -->
+    
+
+    <!-- Render item with nested items -->
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
+      
+      
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_2"
+          type="checkbox"
+          id="__nav_2"
+          checked
+        />
+      
+
+      <!-- Expand active pages -->
+      <label class="md-nav__link" for="__nav_2">
+        Application development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav
+        class="md-nav"
+        aria-label="Application development"
+        data-md-level="1"
+      >
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          <!--
+              Pulls from index.md in the case of directories
+          -->
+          
+            Application development
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Tools and Interfaces
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../application-development/" class="md-nav__link">
+        Application Development
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        Deploy with Docker containers
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../external-language-interfaces-standard-libraries/" class="md-nav__link">
+        External Language Interfaces and Standard Libraries
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+    
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+
+      <!-- Active checkbox expands items contained within nested section -->
+      <input
+        class="md-nav__toggle md-toggle"
+        data-md-toggle="toc"
+        type="checkbox"
+        id="__toc"
+      />
+
+      <!-- Hack: see partials/toc.html for more information -->
+      
+        
+      
+
+      <!-- Render table of contents, if not empty -->
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          File handling and data processing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a
+        href="./"
+        class="md-nav__link md-nav__link--active"
+      >
+        File handling and data processing
+      </a>
+
+      <!-- Show table of contents -->
+      
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+    
+  
+
+  <!-- Render item list -->
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <!-- Table of contents -->
+      <h4>Table of Contents</h4>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#binary-files-or-arbitrary-file-types" class="md-nav__link">
+    Binary files or arbitrary file types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-files" class="md-nav__link">
+    Text Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabular-data" class="md-nav__link">
+    Tabular data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    ⎕CSV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    ⎕JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    ⎕XML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rs" class="md-nav__link">
+    ⎕R/⎕S
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    ⎕MAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json_1" class="md-nav__link">
+    ⎕JSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-files" class="md-nav__link">
+    Component files
+  </a>
+  
+    <nav class="md-nav" aria-label="Component files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tie-and-untie" class="md-nav__link">
+    Tie and untie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-user-access" class="md-nav__link">
+    Multi-user access
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-data-from-the-internet" class="md-nav__link">
+    Downloading data from the internet
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+
+  <!-- Main navigation item -->
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        SQL Interface
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../web-communications/" class="md-nav__link">
+        Web communications
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+
+  <!-- Currently active page -->
+  
+
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    
+
+    <!-- Determine whether to render item as a section -->
+    
+
+    <!-- Render item with nested items -->
+    <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
+      
+      
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_3"
+          type="checkbox"
+          id="__nav_3"
+          
+        />
+      
+
+      <!-- Expand active pages -->
+      <label class="md-nav__link" for="__nav_3">
+        Development environment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav
+        class="md-nav"
+        aria-label="Development environment"
+        data-md-level="1"
+      >
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          <!--
+              Pulls from index.md in the case of directories
+          -->
+          
+            Development environment
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../development-environment/" class="md-nav__link">
+        Development Environment
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../development-environment/install/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../development-environment/typing/" class="md-nav__link">
+        Typing APL Symbols
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+
+  <!-- Currently active page -->
+  
+
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    
+
+    <!-- Determine whether to render item as a section -->
+    
+
+    <!-- Render item with nested items -->
+    <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
+      
+      
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_4"
+          type="checkbox"
+          id="__nav_4"
+          
+        />
+      
+
+      <!-- Expand active pages -->
+      <label class="md-nav__link" for="__nav_4">
+        Language
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav
+        class="md-nav"
+        aria-label="Language"
+        data-md-level="1"
+      >
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          <!--
+              Pulls from index.md in the case of directories
+          -->
+          
+            Language
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../language/" class="md-nav__link">
+        Getting started with APL
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../language/examples/" class="md-nav__link">
+        Quick and dirty examples
+      </a>
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../language/paradigms/" class="md-nav__link">
+        Programming Pardigms
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+
+  <!-- Currently active page -->
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="file-handling-and-data-processing">File handling and data processing</h1>
+<p>Reading data into and getting data out of the workspace.</p>
+<p>There are some in-built tools for importing data from files and the internet. If you are already familiar with <a href="">python</a>, <a href="">R language</a> or <a href="">.NET</a> then you can use one of the <a href="">external language bridges</a> to bring data into APL from files via one of these languages. However, it will usually be simpler and faster in the long term to become familiar with the following tools.</p>
+<h2 id="binary-files-or-arbitrary-file-types">Binary files or arbitrary file types</h2>
+<p>The term "Native Files" refers to any type of file on a hard disk. These can be text or media files, or even executable files. Usually we are interested in various kinds of text files; the rest of this page lists <a href="https://help.dyalog.com/latest/#Language/System%20Functions/Summary%20Tables/System%20Functions%20Categorised.htm">system functions</a> for handling these, including <a href="#nget"><code>⎕NGET</code></a>.</p>
+<p>For files of arbitrary type and format, some system functions beginning <code>⎕N</code>.</p>
+<p>First, we must <strong>tie</strong> the file, locking it from use by other applications. <code>⎕NTIE</code> returns a tie number.</p>
+<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span> <span class="kd">←</span> <span class="s1">&#39;/path/to/file&#39;</span><span class="nf">⎕NTIE</span> <span class="m">0</span>
+</code></pre></div>
+<p>This is a quick summary. For more details see <a href="https://docs.dyalog.com/latest/CheatSheet%20-%20Native%20Files.pdf">the Native Files cheat sheet</a> and <a href="https://help.dyalog.com/latest/index.htm#Language/System%20Functions/Summary%20Tables/System%20Functions%20and%20Variables%20ColWise.htm">system functions and variables A-Z</a> in the online documentation.</p>
+<p>In the chapter on selecting from arrays there was <a href="../Selecting-from-arrays/#word-problems">an example of reading a text file</a> using <code>⎕NGET</code>. Before Dyalog version 15.0, reading text files required a couple of extra steps. Some <code>⎕N...</code> native file functions are general and can be used to read and write any type of file. As a simple example, here we tie the file <strong>words.txt</strong>, read the data and store it in a variable, and finally untie the file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For multi-user systems, take care to set appropriate file access permissions when using <code>⎕NCREATE</code>, <code>⎕NTIE</code> and <code>⎕NLOCK</code>.</p>
+</div>
+<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;assets/words.txt&#39;</span><span class="nf">⎕NTIE</span> <span class="m">0</span>
+      <span class="vg">⎕</span><span class="kd">←</span><span class="m">10</span><span class="o">↑</span><span class="nv">words</span><span class="kd">←</span><span class="p">(</span><span class="nf">⎕UCS</span> <span class="m">10</span><span class="p">)(</span><span class="o">≠⊆⊢</span><span class="p">)</span><span class="nf">⎕NREAD</span> <span class="nv">tn</span> <span class="m">82</span><span class="p">(</span><span class="nf">⎕NSIZE</span> <span class="nv">tn</span><span class="p">)</span><span class="m">0</span>
+<span class="err">┌─┬───┬────┬────┬─────┬────┬──────┬────┬──────┬────┐</span>
+<span class="err">│</span><span class="nv">A</span><span class="err">│</span><span class="nv">A</span><span class="s1">&#39;s│AA&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AB</span><span class="s1">&#39;s│ABM&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AC</span><span class="s1">&#39;s│ACTH&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AI</span><span class="s1">&#39;s│AIDS&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AM</span><span class="err">&#39;</span><span class="nv">s</span><span class="err">│</span>
+<span class="err">└─┴───┴────┴────┴─────┴────┴──────┴────┴──────┴────┘</span>
+      <span class="nf">⎕NUNTIE⎕NNUMS</span>
+</code></pre></div>
+<h2 id="text-files">Text Files</h2>
+<p>Generally the <code>⎕N...</code> family of system functions are for reading and writing <em>native files</em> as described in the documentation. <code>⎕NGET</code> and <code>⎕NPUT</code> are useful for reading and writing text files without having to tie and untie them.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="o">⊂</span><span class="nv">words</span><span class="p">)</span><span class="nf">⎕NPUT</span><span class="s1">&#39;data/words.txt&#39;</span>                      <span class="c1">⍝ Write words to a unicode text file</span>
+<span class="p">(</span><span class="nv">content</span> <span class="nv">encoding</span> <span class="nv">newline</span><span class="p">)</span><span class="kd">←</span><span class="nf">⎕NGET</span><span class="s1">&#39;data/words.txt&#39;</span>   <span class="c1">⍝ Read words from a unicode text file</span>
+<span class="nv">words</span><span class="kd">←</span><span class="p">(</span><span class="nf">⎕UCS</span> <span class="nv">newline</span><span class="p">)((</span><span class="o">~∊</span><span class="na">⍨</span><span class="p">)</span><span class="o">⊆⊢</span><span class="p">)</span><span class="nv">content</span>               <span class="c1">⍝ Split words on each new line </span>
+</code></pre></div>
+<h2 id="tabular-data">Tabular data</h2>
+<p>For small amounts of data, it is usually quickest and easiest to use raw APL with arrays. Nested matrices offer a convenient format comparable to a spreadsheet (in fact, they can be directly imported from Excel or <abbr title="Comma Separated Values">CSV</abbr> files). Inverted tables take the idea of column store and implement them in APL for great search and retrieval performance.</p>
+<h2 id="csv">⎕<abbr title="Comma Separated Values">CSV</abbr></h2>
+<p>Comma separated values are a very common and convenient . While we encourage you to <a href="https://help.dyalog.com/latest/#Language/System Functions/csv.htm">read the documentation</a> for a full description, here is an overview of features of <code>⎕CSV</code>:</p>
+<ul>
+<li>Read data from and write data to files directly<br />
+    <div class="highlight"><pre><span></span><code><span class="nv">data</span> <span class="kd">←</span> <span class="nf">⎕CSV</span> <span class="s1">&#39;/path/to/file.csv&#39;</span>
+</code></pre></div></li>
+<li>Separate the header (first row) from the rest of the data<br />
+    <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">data</span> <span class="nv">header</span><span class="p">)</span> <span class="kd">←</span> <span class="nf">⎕CSV</span> <span class="s1">&#39;/path/to/file.csv&#39;</span> <span class="no">⍬</span> <span class="no">⍬</span> <span class="m">1</span>
+</code></pre></div></li>
+<li>Treat specific columns of input as numeric or text, depending on the options provided.<br />
+    The <code>4</code> here indicates to convert numeric values if possible, else keep the value as text.
+    <div class="highlight"><pre><span></span><code><span class="nv">numeric_if_possible</span> <span class="kd">←</span> <span class="nf">⎕CSV</span> <span class="s1">&#39;/path/to/file.csv&#39;</span> <span class="no">⍬</span> <span class="m">4</span>
+</code></pre></div></li>
+<li>Use a separator other than commas, using the "Separator" variant option, for example using tabs (<code>⎕UCS 9</code>) for Tab Separated Values (.tsv).<br />
+    <div class="highlight"><pre><span></span><code><span class="nv">tsv</span> <span class="kd">←</span> <span class="nf">⎕CSV</span><span class="na">⍠</span><span class="s1">&#39;Separator&#39;</span> <span class="p">(</span><span class="nf">⎕UCS</span> <span class="m">9</span><span class="p">)</span><span class="o">⊢</span><span class="s1">&#39;/path/to/file.csv&#39;</span>
+</code></pre></div></li>
+<li>
+<p>Read data chunks at a time so as to not fill the workspace, using the "Records" variant option.  </p>
+<details class="example"><summary>Example</summary><div class="highlight"><pre><span></span><code>    <span class="nv">path</span> <span class="kd">←</span> <span class="s1">&#39;/path/to/file.csv&#39;</span>    <span class="c1">⍝ The file path as simple character vector</span>
+    <span class="nv">ReadCSV10</span><span class="kd">←</span><span class="nf">⎕CSV</span><span class="na">⍠</span><span class="s1">&#39;Records&#39;</span> <span class="m">10</span>   <span class="c1">⍝ A function to read CSV 10 records at a time</span>
+    <span class="nv">tn</span><span class="kd">←</span><span class="nv">path</span> <span class="nf">⎕NTIE</span> <span class="m">0</span>               <span class="c1">⍝ Tie the file - this locks it from use by other applications</span>
+    <span class="nv">first10</span> <span class="kd">←</span> <span class="nv">ReadCSV10</span> <span class="nv">tn</span>        <span class="c1">⍝ Read the first 10 records (rows)</span>
+    <span class="nv">second10</span> <span class="kd">←</span> <span class="nv">ReadCSV10</span> <span class="nv">tn</span>       <span class="c1">⍝ Read the next 10</span>
+    <span class="o">≢</span><span class="na">¨</span><span class="nv">first10</span> <span class="nv">second10</span>
+<span class="m">10</span> <span class="m">10</span>
+    <span class="nv">first10</span> <span class="nv">second10</span>
+<span class="err">┌──────────┬──────────┐</span>
+<span class="err">│┌──┬─────┐│┌──┬─────┐│</span>
+<span class="err">││</span><span class="m">1</span> <span class="err">│</span><span class="nv">JQZUK</span><span class="err">│││</span><span class="m">11</span><span class="err">│</span><span class="nv">DECJM</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">2</span> <span class="err">│</span><span class="nv">ANPYW</span><span class="err">│││</span><span class="m">12</span><span class="err">│</span><span class="nv">PXPGL</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">3</span> <span class="err">│</span><span class="nv">WYVSR</span><span class="err">│││</span><span class="m">13</span><span class="err">│</span><span class="nv">SYSCN</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">4</span> <span class="err">│</span><span class="nv">ZOGOX</span><span class="err">│││</span><span class="m">14</span><span class="err">│</span><span class="nv">EKDPS</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">5</span> <span class="err">│</span><span class="nv">CXKRS</span><span class="err">│││</span><span class="m">15</span><span class="err">│</span><span class="nv">XCOHA</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">6</span> <span class="err">│</span><span class="nv">BFTYO</span><span class="err">│││</span><span class="m">16</span><span class="err">│</span><span class="nv">RDAHR</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">7</span> <span class="err">│</span><span class="nv">VFLAS</span><span class="err">│││</span><span class="m">17</span><span class="err">│</span><span class="nv">KPUTW</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">8</span> <span class="err">│</span><span class="nv">BAFYD</span><span class="err">│││</span><span class="m">18</span><span class="err">│</span><span class="nv">TPDOD</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">9</span> <span class="err">│</span><span class="nv">XPEBP</span><span class="err">│││</span><span class="m">19</span><span class="err">│</span><span class="nv">BGIVA</span><span class="err">││</span>
+<span class="err">│├──┼─────┤│├──┼─────┤│</span>
+<span class="err">││</span><span class="m">10</span><span class="err">│</span><span class="nv">UVBFG</span><span class="err">│││</span><span class="m">20</span><span class="err">│</span><span class="nv">IITSO</span><span class="err">││</span>
+<span class="err">│└──┴─────┘│└──┴─────┘│</span>
+<span class="err">└──────────┴──────────┘</span>
+    <span class="nf">⎕NUNTIE</span> <span class="nv">tn</span>                    <span class="c1">⍝ Don&#39;t forget to untie the file after use!</span>
+</code></pre></div>
+</details>
+<p>If you are reading large tabular data, you can use <a href="#map"><code>⎕MAP</code></a> to access the data without bringing it all into your workspace, potentially preventing a <code>WS FULL</code> error.</p>
+</li>
+</ul>
+<figure>
+    <a href="https://dyalog.tv/Dyalog20/?v=AHoiROI15BA"><img src="https://img.youtube.com/vi/AHoiROI15BA/hqdefault.jpg">
+    <figcaption>
+        Parsing content from text files using Dyalog APL's ⎕CSV by Adám's APL
+    </figcaption>
+    </a>
+</figure>
+
+<h2 id="json"><code>⎕JSON</code></h2>
+<h2 id="xml"><code>⎕XML</code></h2>
+<p><abbr title="Extensible Markup Language">XML</abbr> is a format that has fallen out of favour in recent years, but is still useful to be able to import and export it easily when you need to.</p>
+<h2 id="rs"><code>⎕R/⎕S</code></h2>
+<p>Search and replace using regular expressions.</p>
+<p><code>⎕R</code> and <code>⎕S</code> are dyadic operators which allow searching text using Pearl Compatible Regular Expressions (PCRE).</p>
+<p>Dyalog's search and replace accept multiple search and replace strings and/or functions in a single call.</p>
+<h2 id="map"><code>⎕MAP</code></h2>
+<p><a href="http://help.dyalog.com/latest/#Language/System%20Functions/map.htm">Full documentation for <code>⎕MAP</code></a>.</p>
+<p>The memory mapping function <code>⎕MAP</code> associates a file on disk with an APL array in the workspace. This is useful if you are working with data that cannot fit inside the available workspace memory. One approach might be to read the data in chunks and process one chunk at a time (for example, see the "Records" variant option for <code>⎕CSV</code>). Another approach is to use <code>⎕MAP</code>.</p>
+<p>If you are working with data which is very large, you might not want or be able to bring all of the data into the workspace in order to process it. If you are reading large tabular data, <a href="#csv"><code>⎕CSV</code>'s <code>Records</code> variant <code>⍠</code> option</a> might be a convenient tool when used in combination with <code>⎕MAP</code>.</p>
+<p><code>⎕MAP</code> allows you to treat a file on disk as if it were a variable in the workspace.</p>
+<div class="highlight"><pre><span></span><code>      <span class="nv">text</span> <span class="kd">←</span> <span class="m">80</span> <span class="m">¯1</span> <span class="nf">⎕MAP</span> <span class="s1">&#39;/path/to/file.txt&#39;</span>
+</code></pre></div>
+<p>You must specify the type according to the <a href="http://help.dyalog.com/latest/#Language/System%20Functions/Data%20Representation%20Monadic.htm">Data Representation <code>⎕DR</code></a> of the data to be read.</p>
+<h2 id="json_1">⎕<abbr title="JavaScript Object Notation">JSON</abbr></h2>
+<p><abbr title="JavaScript Object Notation">JSON</abbr> is not only a convenient way to represent nested data structures, but also a convenient data representation for the modern web since it is natively handled by JavaScript. <code>⎕JSON</code> converts between APL arrays, including namespaces and text vector representations of <abbr title="JavaScript Object Notation">JSON</abbr>.</p>
+<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;ns&#39;</span><span class="nf">⎕NS</span><span class="no">⍬</span>
+      <span class="nv">ns</span><span class="na">.</span><span class="nv">var</span><span class="kd">←</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+      <span class="nv">ns</span><span class="na">.</span><span class="nv">char</span><span class="kd">←</span><span class="s1">&#39;abc&#39;</span>
+      <span class="nf">⎕JSON</span> <span class="nv">ns</span>
+<span class="kt">{</span><span class="s2">&quot;char&quot;</span><span class="bp">:</span><span class="s2">&quot;abc&quot;</span><span class="o">,</span><span class="s2">&quot;var&quot;</span><span class="bp">:</span><span class="sr">[</span><span class="m">1</span><span class="o">,</span><span class="m">2</span><span class="o">,</span><span class="m">3</span><span class="sr">]</span><span class="kt">}</span>
+</code></pre></div>
+<p>A <abbr title="JavaScript Object Notation">JSON</abbr> object in Dyalog uses dot-syntax to access members. Some <abbr title="JavaScript Object Notation">JSON</abbr> object keys are invalid APL names, so Dyalog works around this using special characters:
+<div class="highlight"><pre><span></span><code>      <span class="p">(</span><span class="nf">⎕JSON</span><span class="s1">&#39;{&quot;$name&quot;: &quot;steve&quot;, &quot;3var&quot;: &quot;what&quot;}&#39;</span><span class="p">)</span><span class="na">.</span><span class="nf">⎕nl</span><span class="o">-⍳</span><span class="m">9</span>
+<span class="err">┌─────┬─────────┐</span>
+<span class="err">│</span><span class="nv">⍙3var</span><span class="err">│</span><span class="nv">⍙⍙36⍙name</span><span class="err">│</span>
+<span class="err">└─────┴─────────┘</span>
+</code></pre></div></p>
+<p>Be aware of incompatible namespaces, although most of the time you will be converting data rather than namespaces.</p>
+<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;ns&#39;</span><span class="nf">⎕NS</span><span class="no">⍬</span>
+      <span class="nv">ns</span><span class="na">.</span><span class="nv">fn</span><span class="kd">←</span><span class="kt">{</span><span class="bp">⍵</span><span class="kt">}</span>
+      <span class="nf">⎕JSON</span> <span class="nv">ns</span>
+<span class="nv">DOMAIN</span> <span class="nv">ERROR</span><span class="bp">:</span> <span class="nv">JSON</span> <span class="nv">export</span><span class="bp">:</span> <span class="nv">item</span> <span class="s2">&quot;fn&quot;</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">right</span> <span class="nv">argument</span> <span class="nv">cannot</span> <span class="nv">be</span> 
+<span class="nv">converted</span> <span class="p">(</span><span class="nf">⎕IO</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+      <span class="nf">⎕JSON</span> <span class="nv">ns</span>
+      <span class="o">∧</span>
+</code></pre></div>
+<p>Recall <a href="../Shape Reshape/#the-shape-of-a-scalar">the expression for an empty <abbr title="JavaScript Object Notation">JSON</abbr> object</a>.</p>
+<p>Using <code>⎕JSON</code>, we can also <a href="../Errors/#pass-it-on">display error information in a human-readable format</a>.</p>
+<h2 id="component-files">Component files</h2>
+<p>If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL <strong>component files</strong>.</p>
+<p>Here we will briefly look at the basic usage of component files. A full treatment of component files is provided in <a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557">Chapter N of Mastering Dyalog APL</a> and more information can be found in the <a href="http://help.dyalog.com/latest/#Language/APL Component Files/Component Files.htm">component file documentation</a>.</p>
+<p>System functions that deal with component files begin <code>⎕F...</code>.</p>
+<h3 id="tie-and-untie">Tie and untie</h3>
+<p>In Dyalog, component files have the extension <strong>.dcf</strong> (Dyalog Component File) and must be <strong>tied</strong> and <strong>untied</strong>.</p>
+<p>A component file may be exclusively tied (<code>⎕FTIE</code>) or have a shared tie (<code>⎕FSTIE</code>). With an exclusive tie, no other process may access the file.</p>
+<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;cfile&#39;</span><span class="nf">⎕FCREATE</span> <span class="m">0</span>   <span class="c1">⍝ The file is exclusively tied</span>
+      <span class="nf">⎕FUNTIE</span> <span class="nv">tn</span>             <span class="c1">⍝ The file is untied, it can now be used by other applications and processes</span>
+</code></pre></div>
+<p>The next time we want to use this file, we can use <code>⎕FTIE</code> instead of <code>⎕FCREATE</code>. The right argument to these functions specifies a tie number (which can be different each time the file is tied), but with a right argument of <code>0</code> the next available tie number is used (component file tie numbers start at 1).</p>
+<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;cfile&#39;</span><span class="nf">⎕FTIE</span> <span class="m">0</span>   <span class="c1">⍝ The file on disk is cfile.dcf, but this extension is assumed if not specified </span>
+</code></pre></div>
+<p>The structure of a component file is analogous to a nested vector of arrays. We add new values by appending them to the end of a file.</p>
+<div class="highlight"><pre><span></span><code>      <span class="p">(</span><span class="m">3</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">9</span><span class="p">)</span><span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
+      <span class="p">(</span><span class="o">↑</span><span class="s1">&#39;Dave&#39;</span> <span class="s1">&#39;Sam&#39;</span> <span class="s1">&#39;Ellie&#39;</span> <span class="s1">&#39;Saif&#39;</span><span class="p">)</span><span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
+      <span class="nv">nested</span><span class="kd">←</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="s1">&#39;this&#39;</span> <span class="m">0</span> <span class="s1">&#39;that&#39;</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="p">)</span>
+      <span class="nv">nested</span> <span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
+</code></pre></div>
+<p>Each array stored in a component file (a <em>component</em>) is referred to by its index in the file (its <em>component number</em>), starting from 1 (not affected by <code>⎕IO</code>).</p>
+<div class="highlight"><pre><span></span><code>      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+<span class="err">┌─────┬─────┬────────────┐</span>
+<span class="err">│</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="err">│</span><span class="nv">Dave</span> <span class="err">│┌────┬─────┐│</span>
+<span class="err">│</span><span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="err">│</span><span class="nv">Sam</span>  <span class="err">││</span><span class="nv">this</span><span class="err">│</span><span class="m">0</span>    <span class="err">││</span>
+<span class="err">│</span><span class="m">7</span> <span class="m">8</span> <span class="m">9</span><span class="err">│</span><span class="nv">Ellie</span><span class="err">│├────┼─────┤│</span>
+<span class="err">│</span>     <span class="err">│</span><span class="nv">Saif</span> <span class="err">││</span><span class="nv">that</span><span class="err">│</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="err">││</span>
+<span class="err">│</span>     <span class="err">│</span>     <span class="err">│└────┴─────┘│</span>
+<span class="err">└─────┴─────┴────────────┘</span>
+</code></pre></div>
+<p>A component can be replaced by any other array.
+<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;Hello&#39;</span><span class="nf">⎕FREPLACE</span> <span class="nv">tn</span> <span class="m">2</span>
+      <span class="nf">⎕FREAD</span> <span class="nv">tn</span> <span class="m">2</span>
+<span class="nv">Hello</span>
+</code></pre></div></p>
+<p>Use <code>⎕FSIZE</code> to find the range of components and file size:
+<div class="highlight"><pre><span></span><code>      ⎕FSIZE tn
+1 4 1744 1.8446744073709552E19
+</code></pre></div></p>
+<p>The elements of <code>⎕FSIZE</code> are:</p>
+<ul>
+<li><code>[1]</code> The number of the first component</li>
+<li><code>[2]</code> 1 + the number of the last component (that is, where a new component will be if <code>⎕FAPPEND</code> is used)</li>
+<li><code>[3]</code> The current size of the file in bytes</li>
+<li><code>[4]</code> The file size limit in bytes</li>
+</ul>
+<p>Components can be removed from the beginning or end of a component file, with the <code>⎕FDROP</code> function analogous to <code>⍺↓⍵</code>.</p>
+<div class="highlight"><pre><span></span><code>      <span class="nf">⎕FDROP</span> <span class="nv">tn</span>  <span class="m">1</span>
+      <span class="nf">⎕FDROP</span> <span class="nv">tn</span> <span class="m">¯1</span>
+      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+<span class="nv">FILE</span> <span class="nv">INDEX</span> <span class="nv">ERROR</span><span class="bp">:</span> <span class="nv">cfile</span><span class="na">.</span><span class="nv">dcf</span><span class="bp">:</span> <span class="nv">No</span> <span class="nv">such</span> <span class="nv">component</span>
+      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+      <span class="o">∧</span>
+      <span class="nf">⎕FREAD</span> <span class="nv">tn</span> <span class="m">2</span>   <span class="c1">⍝ Only component number 2 remains</span>
+<span class="nv">Dave</span> 
+<span class="nv">Sam</span>  
+<span class="nv">Ellie</span>
+<span class="nv">Saif</span> 
+</code></pre></div>
+<p>After use, don't forget to untie all tied component files using <code>⎕FUNTIE ⎕FNUMS</code>.</p>
+<h3 id="multi-user-access">Multi-user access</h3>
+<p>If you are working on a system through which multiple users need to access the same component files, it is important to become familiar with multi-user access techniques and potential pitfalls. In particular, you will need to use <code>⎕FSTIE</code>, <code>⎕FHOLD</code>, <code>⎕FSTACK</code> and probably <code>⎕AN</code>.</p>
+<ul>
+<li><a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557">Chapter N of Mastering Dyalog APL</a></li>
+<li><a href="https://help.dyalog.com/latest/index.htm#Language/APL%20Component%20Files/Programming%20Techniques.htm">Online documentation: Controlling multi-user access</a></li>
+</ul>
+<p>Multi-user access can mean manual access by actual human users, or automated access by separate computers or processes.</p>
+<h2 id="downloading-data-from-the-internet">Downloading data from the internet</h2>
+<p>The <strong>HttpCommand</strong> class is built on top of the <a href="https://docs.dyalog.com/latest/Conga%20User%20Guide.pdf"><strong>Conga</strong></a> framework for TCP/IP communications. At the most basic level, it can be used to perform HTTP requests to retrieve data from servers. </p>
+<div class="highlight"><pre><span></span><code>      <span class="sr">]</span><span class="nv">load</span> <span class="nv">HttpCommand</span>
+<span class="c1">#.HttpCommand</span>
+      <span class="o">⍴</span><span class="p">(</span><span class="c1">#.HttpCommand.Get &#39;https://google.com&#39;).Data</span>
+<span class="m">14107</span>
+</code></pre></div>
+<p>For more information, see <a href="https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md">the HttpCommand document</a>. Alternatively, there is documentation within the comments of the code for the HttpCommand class; simply use <code>)ed HttpCommand</code> or press <kbd>Shift+Enter</kbd> with the text cursor on the name in the session.</p>
+<p>Previous versions of HttpCommand were documented in <a href="https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md">HttpCommand.md in the library-conga GitHub repository</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../external-language-interfaces-standard-libraries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: External Language Interfaces and Standard Libraries" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              External Language Interfaces and Standard Libraries
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../sql/" class="md-footer__link md-footer__link--next" aria-label="Next: SQL Interface" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              SQL Interface
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="../../javascripts/darkmode.js"></script>
+      
+    
+  </body>
+</html>
