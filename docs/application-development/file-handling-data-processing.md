@@ -43,6 +43,7 @@ words←(⎕UCS newline)((~∊⍨)⊆⊢)content               ⍝ Split words o
 For small amounts of data, it is usually quickest and easiest to use raw APL with arrays. Nested matrices offer a convenient format comparable to a spreadsheet (in fact, they can be directly imported from Excel or CSV files). Inverted tables take the idea of column store and implement them in APL for great search and retrieval performance.
 
 ## ⎕CSV
+The Comma Separator Values system function `⎕CSV` can read tabular data from `.csv` files as APL matrices,
 Comma separated values are a very common and convenient . While we encourage you to [read the documentation](https://help.dyalog.com/latest/#Language/System Functions/csv.htm) for a full description, here is an overview of features of `⎕CSV`:
 
 - Read data from and write data to files directly  
@@ -178,106 +179,59 @@ Using `⎕JSON`, we can also [display error information in a human-readable form
 *[JSON]: JavaScript Object Notation
 
 ## Component files
-If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL **component files**.
+If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.
 
-Here we will briefly look at the basic usage of component files. A full treatment of component files is provided in [Chapter N of Mastering Dyalog APL](https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557) and more information can be found in the [component file documentation](http://help.dyalog.com/latest/#Language/APL Component Files/Component Files.htm).
+System functions that deal with component files begin `⎕F`.
 
-System functions that deal with component files begin `⎕F...`.
-
-### Tie and untie
-In Dyalog, component files have the extension **.dcf** (Dyalog Component File) and must be **tied** and **untied**.
-
-A component file may be exclusively tied (`⎕FTIE`) or have a shared tie (`⎕FSTIE`). With an exclusive tie, no other process may access the file.
-
-```APL
-      tn←'cfile'⎕FCREATE 0   ⍝ The file is exclusively tied
-      ⎕FUNTIE tn             ⍝ The file is untied, it can now be used by other applications and processes
-```
-
-The next time we want to use this file, we can use `⎕FTIE` instead of `⎕FCREATE`. The right argument to these functions specifies a tie number (which can be different each time the file is tied), but with a right argument of `0` the next available tie number is used (component file tie numbers start at 1).
-
-```APL
-      tn←'cfile'⎕FTIE 0   ⍝ The file on disk is cfile.dcf, but this extension is assumed if not specified 
-```
-
-The structure of a component file is analogous to a nested vector of arrays. We add new values by appending them to the end of a file.
-
-```APL
-      (3 3⍴⍳9)⎕FAPPEND tn
-      (↑'Dave' 'Sam' 'Ellie' 'Saif')⎕FAPPEND tn
-      nested←2 2⍴'this' 0 'that' (1 2 3)
-      nested ⎕FAPPEND tn
-```
-
-Each array stored in a component file (a *component*) is referred to by its index in the file (its *component number*), starting from 1 (not affected by `⎕IO`).
-
-```APL
-      ⎕FREAD¨tn,¨1 2 3
-┌─────┬─────┬────────────┐
-│1 2 3│Dave │┌────┬─────┐│
-│4 5 6│Sam  ││this│0    ││
-│7 8 9│Ellie│├────┼─────┤│
-│     │Saif ││that│1 2 3││
-│     │     │└────┴─────┘│
-└─────┴─────┴────────────┘
-```
-
-A component can be replaced by any other array.
-```APL
-      'Hello'⎕FREPLACE tn 2
-      ⎕FREAD tn 2
-Hello
-```
-
-Use `⎕FSIZE` to find the range of components and file size:
-```
-      ⎕FSIZE tn
-1 4 1744 1.8446744073709552E19
-```
-
-The elements of `⎕FSIZE` are:
-
-- `[1]` The number of the first component
-- `[2]` 1 + the number of the last component (that is, where a new component will be if `⎕FAPPEND` is used)
-- `[3]` The current size of the file in bytes
-- `[4]` The file size limit in bytes
-
-Components can be removed from the beginning or end of a component file, with the `⎕FDROP` function analogous to `⍺↓⍵`.
-
-```APL
-      ⎕FDROP tn  1
-      ⎕FDROP tn ¯1
-      ⎕FREAD¨tn,¨1 2 3
-FILE INDEX ERROR: cfile.dcf: No such component
-      ⎕FREAD¨tn,¨1 2 3
-      ∧
-      ⎕FREAD tn 2   ⍝ Only component number 2 remains
-Dave 
-Sam  
-Ellie
-Saif 
-```
-
-After use, don't forget to untie all tied component files using `⎕FUNTIE ⎕FNUMS`.
-
-### Multi-user access
-If you are working on a system through which multiple users need to access the same component files, it is important to become familiar with multi-user access techniques and potential pitfalls. In particular, you will need to use `⎕FSTIE`, `⎕FHOLD`, `⎕FSTACK` and probably `⎕AN`.
-
-- [Chapter N of Mastering Dyalog APL](https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557)
-- [Online documentation: Controlling multi-user access](https://help.dyalog.com/latest/index.htm#Language/APL%20Component%20Files/Programming%20Techniques.htm)
-
-Multi-user access can mean manual access by actual human users, or automated access by separate computers or processes.
+[:fontawesome-brands-dyalog: Chapter N of Mastering Dyalog APL](https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557)  
+[:material-web: Component Files Online Documentation](https://help.dyalog.com/latest/#Language/APL%20Component%20Files/Component%20Files.htm)  
+[:fontawesome-solid-file-pdf: Chapter 5 of Dyalog Programming Reference Guide](https://docs.dyalog.com/latest/Dyalog%20Programming%20Reference%20Guide.pdf)
 
 ## Downloading data from the internet
-The **HttpCommand** class is built on top of the [**Conga**](https://docs.dyalog.com/latest/Conga%20User%20Guide.pdf) framework for TCP/IP communications. At the most basic level, it can be used to perform HTTP requests to retrieve data from servers. 
+See [HttpCommand](./web-communications.md#httpcommand).
+
+## SQL Interface
+SQAPL provides an interface to ODBC-compliant SQL databases including Oracle, Microsoft Access, MySQL, MariaDB and DB2. It contains functions to read, write and manage SQL databases. It is supported on all platforms, although some platforms could incur an additional licence fee for the server component of SQAPL.
+
+For more information about using SQAPL, see the [SQL Interface Guide](https://docs.dyalog.com/latest/SQL%20Interface%20Guide.pdf).
+
+For quick access to simply read data from or write data to a table, the functions `LoadSQL` and `SaveSQL` from the utility workspace [`LOADDATA`]() may be all that you need.
 
 ```APL
-      ]load HttpCommand
-#.HttpCommand
-      ⍴(#.HttpCommand.Get 'https://google.com').Data
-14107
+      'LoadSQL' 'SaveSQL'⎕CY'LOADDATA'
+      LoadSQL'NorthWind' 'products'
 ```
 
-For more information, see [the HttpCommand document](https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md). Alternatively, there is documentation within the comments of the code for the HttpCommand class; simply use `)ed HttpCommand` or press <kbd>Shift+Enter</kbd> with the text cursor on the name in the session.
+### Features
+Using SQAPL, you can:
 
-Previous versions of HttpCommand were documented in [HttpCommand.md in the library-conga GitHub repository](https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md).
+- Retrieve a list of available data sources, and connect to one or more of them.
+- Query the database catalogue, to determine which tables, views and columns
+exist in a data source.
+- Retrieve data from a result set. Retrieve a description of the contents of a
+result set.
+- Execute SQL statements multiple times using a matrix containing a row of
+data for each execution (known as Bulk Input).
+- Commit or roll back transactions.
+- If connected with sufficient privileges, execute any SQL statement supported
+by the database management system, including the creation of tables or views
+(Data Definition Language – or DDL), indexes, stored procedures, or GRANT
+statements (etc).
+- Retrieve a list of data types supported by a data source.
+
+### Getting Started
+SQAPL ships with Dyalog APL. Simply copy it into the active workspace and call `SQA.Init` with an empty argument to start using it:
+
+```APL
+'SQA'⎕CY'SQAPL
+SQA.Init⍬
+```
+
+Commonly used functions include:
+
+|Function|Purpose|
+|---|---|
+|`SQA.Connect`|Connect to a data source|
+|`SQA.Tables`|Show available tables|
+|`SQA.Columns`|See information about tables including column data types and widths|
+|`SQA.Do`|Execute SQL statements supported by your database and driver|
