@@ -252,7 +252,7 @@
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
         
-        Tools and Interfaces
+        Tools and Interface Catalogue
       
       </a>
     </li>
@@ -520,7 +520,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Tools and Interfaces
+        Tools and Interface Catalogue
       </a>
     </li>
   
@@ -536,7 +536,7 @@
   
     <li class="md-nav__item">
       <a href="../application-development/" class="md-nav__link">
-        Application Development
+        Application Development and Deployment
       </a>
     </li>
   
@@ -551,8 +551,8 @@
   <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
-        Deploy with Docker containers
+      <a href="../catalogue/" class="md-nav__link">
+        Tools and Interface Catalogue
       </a>
     </li>
   
@@ -728,32 +728,39 @@
     Component files
   </a>
   
-    <nav class="md-nav" aria-label="Component files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tie-and-untie" class="md-nav__link">
-    Tie and untie
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-user-access" class="md-nav__link">
-    Multi-user access
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#downloading-data-from-the-internet" class="md-nav__link">
     Downloading data from the internet
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-interface" class="md-nav__link">
+    SQL Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -764,22 +771,6 @@
     </li>
 
   <!-- Main navigation item -->
-  
-
-          
-            
-
-  <!-- Determine class according to state -->
-  
-  
-
-  <!-- Main navigation item with nested items -->
-  
-    <li class="md-nav__item">
-      <a href="../sql/" class="md-nav__link">
-        SQL Interface
-      </a>
-    </li>
   
 
           
@@ -1121,7 +1112,8 @@
 <h2 id="tabular-data">Tabular data</h2>
 <p>For small amounts of data, it is usually quickest and easiest to use raw APL with arrays. Nested matrices offer a convenient format comparable to a spreadsheet (in fact, they can be directly imported from Excel or <abbr title="Comma Separated Values">CSV</abbr> files). Inverted tables take the idea of column store and implement them in APL for great search and retrieval performance.</p>
 <h2 id="csv">⎕<abbr title="Comma Separated Values">CSV</abbr></h2>
-<p>Comma separated values are a very common and convenient . While we encourage you to <a href="https://help.dyalog.com/latest/#Language/System Functions/csv.htm">read the documentation</a> for a full description, here is an overview of features of <code>⎕CSV</code>:</p>
+<p>The Comma Separator Values system function <code>⎕CSV</code> can read tabular data from <code>.csv</code> files as APL matrices,
+Comma separated values are a very common and convenient . While we encourage you to <a href="https://help.dyalog.com/latest/#Language/System Functions/csv.htm">read the documentation</a> for a full description, here is an overview of features of <code>⎕CSV</code>:</p>
 <ul>
 <li>Read data from and write data to files directly<br />
     <div class="highlight"><pre><span></span><code><span class="nv">data</span> <span class="kd">←</span> <span class="nf">⎕CSV</span> <span class="s1">&#39;/path/to/file.csv&#39;</span>
@@ -1224,80 +1216,69 @@
 <p>Recall <a href="../Shape Reshape/#the-shape-of-a-scalar">the expression for an empty <abbr title="JavaScript Object Notation">JSON</abbr> object</a>.</p>
 <p>Using <code>⎕JSON</code>, we can also <a href="../Errors/#pass-it-on">display error information in a human-readable format</a>.</p>
 <h2 id="component-files">Component files</h2>
-<p>If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL <strong>component files</strong>.</p>
-<p>Here we will briefly look at the basic usage of component files. A full treatment of component files is provided in <a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557">Chapter N of Mastering Dyalog APL</a> and more information can be found in the <a href="http://help.dyalog.com/latest/#Language/APL Component Files/Component Files.htm">component file documentation</a>.</p>
-<p>System functions that deal with component files begin <code>⎕F...</code>.</p>
-<h3 id="tie-and-untie">Tie and untie</h3>
-<p>In Dyalog, component files have the extension <strong>.dcf</strong> (Dyalog Component File) and must be <strong>tied</strong> and <strong>untied</strong>.</p>
-<p>A component file may be exclusively tied (<code>⎕FTIE</code>) or have a shared tie (<code>⎕FSTIE</code>). With an exclusive tie, no other process may access the file.</p>
-<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;cfile&#39;</span><span class="nf">⎕FCREATE</span> <span class="m">0</span>   <span class="c1">⍝ The file is exclusively tied</span>
-      <span class="nf">⎕FUNTIE</span> <span class="nv">tn</span>             <span class="c1">⍝ The file is untied, it can now be used by other applications and processes</span>
-</code></pre></div>
-<p>The next time we want to use this file, we can use <code>⎕FTIE</code> instead of <code>⎕FCREATE</code>. The right argument to these functions specifies a tie number (which can be different each time the file is tied), but with a right argument of <code>0</code> the next available tie number is used (component file tie numbers start at 1).</p>
-<div class="highlight"><pre><span></span><code>      <span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;cfile&#39;</span><span class="nf">⎕FTIE</span> <span class="m">0</span>   <span class="c1">⍝ The file on disk is cfile.dcf, but this extension is assumed if not specified </span>
-</code></pre></div>
-<p>The structure of a component file is analogous to a nested vector of arrays. We add new values by appending them to the end of a file.</p>
-<div class="highlight"><pre><span></span><code>      <span class="p">(</span><span class="m">3</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">9</span><span class="p">)</span><span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
-      <span class="p">(</span><span class="o">↑</span><span class="s1">&#39;Dave&#39;</span> <span class="s1">&#39;Sam&#39;</span> <span class="s1">&#39;Ellie&#39;</span> <span class="s1">&#39;Saif&#39;</span><span class="p">)</span><span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
-      <span class="nv">nested</span><span class="kd">←</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="s1">&#39;this&#39;</span> <span class="m">0</span> <span class="s1">&#39;that&#39;</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="p">)</span>
-      <span class="nv">nested</span> <span class="nf">⎕FAPPEND</span> <span class="nv">tn</span>
-</code></pre></div>
-<p>Each array stored in a component file (a <em>component</em>) is referred to by its index in the file (its <em>component number</em>), starting from 1 (not affected by <code>⎕IO</code>).</p>
-<div class="highlight"><pre><span></span><code>      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
-<span class="err">┌─────┬─────┬────────────┐</span>
-<span class="err">│</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="err">│</span><span class="nv">Dave</span> <span class="err">│┌────┬─────┐│</span>
-<span class="err">│</span><span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="err">│</span><span class="nv">Sam</span>  <span class="err">││</span><span class="nv">this</span><span class="err">│</span><span class="m">0</span>    <span class="err">││</span>
-<span class="err">│</span><span class="m">7</span> <span class="m">8</span> <span class="m">9</span><span class="err">│</span><span class="nv">Ellie</span><span class="err">│├────┼─────┤│</span>
-<span class="err">│</span>     <span class="err">│</span><span class="nv">Saif</span> <span class="err">││</span><span class="nv">that</span><span class="err">│</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="err">││</span>
-<span class="err">│</span>     <span class="err">│</span>     <span class="err">│└────┴─────┘│</span>
-<span class="err">└─────┴─────┴────────────┘</span>
-</code></pre></div>
-<p>A component can be replaced by any other array.
-<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;Hello&#39;</span><span class="nf">⎕FREPLACE</span> <span class="nv">tn</span> <span class="m">2</span>
-      <span class="nf">⎕FREAD</span> <span class="nv">tn</span> <span class="m">2</span>
-<span class="nv">Hello</span>
-</code></pre></div></p>
-<p>Use <code>⎕FSIZE</code> to find the range of components and file size:
-<div class="highlight"><pre><span></span><code>      ⎕FSIZE tn
-1 4 1744 1.8446744073709552E19
-</code></pre></div></p>
-<p>The elements of <code>⎕FSIZE</code> are:</p>
-<ul>
-<li><code>[1]</code> The number of the first component</li>
-<li><code>[2]</code> 1 + the number of the last component (that is, where a new component will be if <code>⎕FAPPEND</code> is used)</li>
-<li><code>[3]</code> The current size of the file in bytes</li>
-<li><code>[4]</code> The file size limit in bytes</li>
-</ul>
-<p>Components can be removed from the beginning or end of a component file, with the <code>⎕FDROP</code> function analogous to <code>⍺↓⍵</code>.</p>
-<div class="highlight"><pre><span></span><code>      <span class="nf">⎕FDROP</span> <span class="nv">tn</span>  <span class="m">1</span>
-      <span class="nf">⎕FDROP</span> <span class="nv">tn</span> <span class="m">¯1</span>
-      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
-<span class="nv">FILE</span> <span class="nv">INDEX</span> <span class="nv">ERROR</span><span class="bp">:</span> <span class="nv">cfile</span><span class="na">.</span><span class="nv">dcf</span><span class="bp">:</span> <span class="nv">No</span> <span class="nv">such</span> <span class="nv">component</span>
-      <span class="nf">⎕FREAD</span><span class="na">¨</span><span class="nv">tn</span><span class="o">,</span><span class="na">¨</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
-      <span class="o">∧</span>
-      <span class="nf">⎕FREAD</span> <span class="nv">tn</span> <span class="m">2</span>   <span class="c1">⍝ Only component number 2 remains</span>
-<span class="nv">Dave</span> 
-<span class="nv">Sam</span>  
-<span class="nv">Ellie</span>
-<span class="nv">Saif</span> 
-</code></pre></div>
-<p>After use, don't forget to untie all tied component files using <code>⎕FUNTIE ⎕FNUMS</code>.</p>
-<h3 id="multi-user-access">Multi-user access</h3>
-<p>If you are working on a system through which multiple users need to access the same component files, it is important to become familiar with multi-user access techniques and potential pitfalls. In particular, you will need to use <code>⎕FSTIE</code>, <code>⎕FHOLD</code>, <code>⎕FSTACK</code> and probably <code>⎕AN</code>.</p>
-<ul>
-<li><a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557">Chapter N of Mastering Dyalog APL</a></li>
-<li><a href="https://help.dyalog.com/latest/index.htm#Language/APL%20Component%20Files/Programming%20Techniques.htm">Online documentation: Controlling multi-user access</a></li>
-</ul>
-<p>Multi-user access can mean manual access by actual human users, or automated access by separate computers or processes.</p>
+<p>If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.</p>
+<p>System functions that deal with component files begin <code>⎕F</code>.</p>
+<p><a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 512"><path d="M0 32v119.2h64V96h107.2C284.6 96 352 176.2 352 255.9 352 332 293.4 416 171.2 416H0v64h171.2C331.9 480 416 367.3 416 255.9c0-58.7-22.1-113.4-62.3-154.3C308.9 56 245.7 32 171.2 32H0z"/></svg></span> Chapter N of Mastering Dyalog APL</a><br />
+<a href="https://help.dyalog.com/latest/#Language/APL%20Component%20Files/Component%20Files.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg></span> Component Files Online Documentation</a><br />
+<a href="https://docs.dyalog.com/latest/Dyalog%20Programming%20Reference%20Guide.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105 279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"/></svg></span> Chapter 5 of Dyalog Programming Reference Guide</a></p>
 <h2 id="downloading-data-from-the-internet">Downloading data from the internet</h2>
-<p>The <strong>HttpCommand</strong> class is built on top of the <a href="https://docs.dyalog.com/latest/Conga%20User%20Guide.pdf"><strong>Conga</strong></a> framework for TCP/IP communications. At the most basic level, it can be used to perform HTTP requests to retrieve data from servers. </p>
-<div class="highlight"><pre><span></span><code>      <span class="sr">]</span><span class="nv">load</span> <span class="nv">HttpCommand</span>
-<span class="c1">#.HttpCommand</span>
-      <span class="o">⍴</span><span class="p">(</span><span class="c1">#.HttpCommand.Get &#39;https://google.com&#39;).Data</span>
-<span class="m">14107</span>
+<p>See <a href="../web-communications/#httpcommand">HttpCommand</a>.</p>
+<h2 id="sql-interface">SQL Interface</h2>
+<p>SQAPL provides an interface to ODBC-compliant SQL databases including Oracle, Microsoft Access, MySQL, MariaDB and DB2. It contains functions to read, write and manage SQL databases. It is supported on all platforms, although some platforms could incur an additional licence fee for the server component of SQAPL.</p>
+<p>For more information about using SQAPL, see the <a href="https://docs.dyalog.com/latest/SQL%20Interface%20Guide.pdf">SQL Interface Guide</a>.</p>
+<p>For quick access to simply read data from or write data to a table, the functions <code>LoadSQL</code> and <code>SaveSQL</code> from the utility workspace <a href=""><code>LOADDATA</code></a> may be all that you need.</p>
+<div class="highlight"><pre><span></span><code>      <span class="s1">&#39;LoadSQL&#39;</span> <span class="s1">&#39;SaveSQL&#39;</span><span class="nf">⎕CY</span><span class="s1">&#39;LOADDATA&#39;</span>
+      <span class="nv">LoadSQL</span><span class="s1">&#39;NorthWind&#39;</span> <span class="s1">&#39;products&#39;</span>
 </code></pre></div>
-<p>For more information, see <a href="https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md">the HttpCommand document</a>. Alternatively, there is documentation within the comments of the code for the HttpCommand class; simply use <code>)ed HttpCommand</code> or press <kbd>Shift+Enter</kbd> with the text cursor on the name in the session.</p>
-<p>Previous versions of HttpCommand were documented in <a href="https://github.com/Dyalog/library-conga/blob/master/Documentation/HttpCommand.md">HttpCommand.md in the library-conga GitHub repository</a>.</p>
+<h3 id="features">Features</h3>
+<p>Using SQAPL, you can:</p>
+<ul>
+<li>Retrieve a list of available data sources, and connect to one or more of them.</li>
+<li>Query the database catalogue, to determine which tables, views and columns
+exist in a data source.</li>
+<li>Retrieve data from a result set. Retrieve a description of the contents of a
+result set.</li>
+<li>Execute SQL statements multiple times using a matrix containing a row of
+data for each execution (known as Bulk Input).</li>
+<li>Commit or roll back transactions.</li>
+<li>If connected with sufficient privileges, execute any SQL statement supported
+by the database management system, including the creation of tables or views
+(Data Definition Language – or DDL), indexes, stored procedures, or GRANT
+statements (etc).</li>
+<li>Retrieve a list of data types supported by a data source.</li>
+</ul>
+<h3 id="getting-started">Getting Started</h3>
+<p>SQAPL ships with Dyalog APL. Simply copy it into the active workspace and call <code>SQA.Init</code> with an empty argument to start using it:</p>
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;SQA&#39;</span><span class="nf">⎕CY</span><span class="err">&#39;</span><span class="nv">SQAPL</span>
+<span class="nv">SQA</span><span class="na">.</span><span class="nv">Init</span><span class="no">⍬</span>
+</code></pre></div>
+<p>Commonly used functions include:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SQA.Connect</code></td>
+<td>Connect to a data source</td>
+</tr>
+<tr>
+<td><code>SQA.Tables</code></td>
+<td>Show available tables</td>
+</tr>
+<tr>
+<td><code>SQA.Columns</code></td>
+<td>See information about tables including column data types and widths</td>
+</tr>
+<tr>
+<td><code>SQA.Do</code></td>
+<td>Execute SQL statements supported by your database and driver</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -1337,13 +1318,13 @@
       
       
         
-        <a href="../sql/" class="md-footer__link md-footer__link--next" aria-label="Next: SQL Interface" rel="next">
+        <a href="../web-communications/" class="md-footer__link md-footer__link--next" aria-label="Next: Web communications" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              SQL Interface
+              Web communications
             </div>
           </div>
           <div class="md-footer__button md-icon">
