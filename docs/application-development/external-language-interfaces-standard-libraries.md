@@ -1,6 +1,6 @@
 # External Language Interfaces and Standard Libraries
 
-## Compiled libraries interface
+## Compiled libraries interface (`⎕NA`)
 The **Name Association** function ⎕NA provides access from APL to compiled functions within a library. 
 
 [:material-web: Online documentation for Name Association ⎕NA](http://help.dyalog.com/latest/#Language/System%20Functions/na.htm)
@@ -25,9 +25,9 @@ To use .NET functions and namespaces, set `⎕USING` and create an instance of a
 GMT Standard Time
 ```
 
-## Py'n'APL python ⟷ APL bridge
-## RSConnect
-## Microsoft Office ⟷ Dyalog bridge
+## Python (Py'n'APL)
+## R language (RSConnect)
+## Microsoft Office (OLE Client)
 OLE is a Microsoft technology which can be used to interface with Microsoft Office products, including Excel, PowerPoint and Word. The Dyalog OLE bridge is only on Microsoft Windows.
 
 Here is a quick example to open a connection to Excel, create a workbook and add data to it.
