@@ -43,7 +43,7 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 |---|---|---|
 |[⎕NA](./external-language-interfaces-standard-libraries.md#compiled-libraries-interface)|Interface to compiled libraries (.dll, .so, .dylib, .a)|
 |RSConnect|R language interface with Rserve|[:fontawesome-brands-github: kimmolinna/rsconnect](https://github.com/kimmolinna/rsconnect)|
-|Math|Interface to LAPACK and FFTW to compute eigenvalues, eigenvectors and Fast Fourier Transforms|[:fontawesome-solid-file-pdf: Code Libraries Reference Guide - Development tools](http://docs.dyalog.com/latest/Code%20Libraries%20Reference%20Guide.pdf#page=18)|
+|Math|Interface to LAPACK and FFTW to compute eigenvalues, eigenvectors and Fast Fourier Transforms|[:fontawesome-brands-github: Dyalog/Math](https://github.com/Dyalog/Math)|
 |Py'n'APL|Access python code from APL and vice versa|[:fontawesome-brands-github: Dyalog/pynapl](https://github.com/Dyalog/pynapl)|
 |.NET|
 |.NET|Previously .NET Core|
