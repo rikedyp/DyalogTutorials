@@ -20,8 +20,6 @@ theme:
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
-    - navigation.tabs
-    - navigation.top
     - toc.integrate
   plugins:
     - search:
