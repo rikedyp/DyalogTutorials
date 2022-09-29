@@ -547,22 +547,6 @@
   <!-- Determine class according to state -->
   
   
-
-  <!-- Main navigation item with nested items -->
-  
-    <li class="md-nav__item">
-      <a href="../catalogue/" class="md-nav__link">
-        Tools and Interface Catalogue
-      </a>
-    </li>
-  
-
-          
-            
-
-  <!-- Determine class according to state -->
-  
-  
     
   
 
@@ -645,8 +629,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compiled-libraries-interface" class="md-nav__link">
-    Compiled libraries interface
+  <a href="#compiled-libraries-interface-na" class="md-nav__link">
+    Compiled libraries interface (⎕NA)
   </a>
   
 </li>
@@ -659,22 +643,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pynapl-python-apl-bridge" class="md-nav__link">
-    Py'n'APL python ⟷ APL bridge
+  <a href="#python-pynapl" class="md-nav__link">
+    Python (Py'n'APL)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rsconnect" class="md-nav__link">
-    RSConnect
+  <a href="#r-language-rsconnect" class="md-nav__link">
+    R language (RSConnect)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsoft-office-dyalog-bridge" class="md-nav__link">
-    Microsoft Office ⟷ Dyalog bridge
+  <a href="#microsoft-office-ole-client" class="md-nav__link">
+    Microsoft Office (OLE Client)
   </a>
   
 </li>
@@ -1013,7 +997,7 @@
                 
                 
                 <h1 id="external-language-interfaces-and-standard-libraries">External Language Interfaces and Standard Libraries</h1>
-<h2 id="compiled-libraries-interface">Compiled libraries interface</h2>
+<h2 id="compiled-libraries-interface-na">Compiled libraries interface (<code>⎕NA</code>)</h2>
 <p>The <strong>Name Association</strong> function ⎕NA provides access from APL to compiled functions within a library. </p>
 <p><a href="http://help.dyalog.com/latest/#Language/System%20Functions/na.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg></span> Online documentation for Name Association ⎕NA</a></p>
 <p>A library is implemented according to the operating system as follows:</p>
@@ -1032,9 +1016,9 @@ To use .NET functions and namespaces, set <code>⎕USING</code> and create an in
       <span class="nv">TimeZone</span><span class="na">.</span><span class="nv">CurrentTimeZone</span><span class="na">.</span><span class="nv">StandardName</span>
 <span class="nv">GMT</span> <span class="nv">Standard</span> <span class="nv">Time</span>
 </code></pre></div></p>
-<h2 id="pynapl-python-apl-bridge">Py'n'APL python ⟷ APL bridge</h2>
-<h2 id="rsconnect">RSConnect</h2>
-<h2 id="microsoft-office-dyalog-bridge">Microsoft Office ⟷ Dyalog bridge</h2>
+<h2 id="python-pynapl">Python (Py'n'APL)</h2>
+<h2 id="r-language-rsconnect">R language (RSConnect)</h2>
+<h2 id="microsoft-office-ole-client">Microsoft Office (OLE Client)</h2>
 <p>OLE is a Microsoft technology which can be used to interface with Microsoft Office products, including Excel, PowerPoint and Word. The Dyalog OLE bridge is only on Microsoft Windows.</p>
 <p>Here is a quick example to open a connection to Excel, create a workbook and add data to it.</p>
 <div class="highlight"><pre><span></span><code>      <span class="nv">XL</span><span class="kd">←</span><span class="nf">⎕NEW</span><span class="s1">&#39;OLEClient&#39;</span><span class="p">(</span><span class="o">⊂</span><span class="s1">&#39;ClassName&#39;</span> <span class="s1">&#39;Excel.Application&#39;</span><span class="p">)</span>
@@ -1073,7 +1057,7 @@ To use .NET functions and namespaces, set <code>⎕USING</code> and create an in
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../catalogue/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tools and Interface Catalogue" rel="prev">
+        <a href="../application-development/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Application Development and Deployment" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1082,7 +1066,7 @@ To use .NET functions and namespaces, set <code>⎕USING</code> and create an in
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tools and Interface Catalogue
+              Application Development and Deployment
             </div>
           </div>
         </a>
