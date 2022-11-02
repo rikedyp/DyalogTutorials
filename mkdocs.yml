@@ -26,7 +26,6 @@ theme:
   plugins:
     - search:
         lang: en
-  custom_dir: overrides
 extra_css:
   - style/main.css
   - style/quickstart.css

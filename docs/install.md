@@ -1,5 +1,5 @@
 # Installation
-Dyalog provides installation packages for popular operating systems which can be [downloaded for free](https://www.dyalog.com/download-zone.htm).
+Dyalog provides installation packages for supported operating systems which can be [downloaded for free](https://www.dyalog.com/download-zone.htm).
 
 ## Microsoft Windows
 This is a quick overview of the installation process. Full installation instructions are in the file `setup_readme.htm` included in the install package `windows_64_<version>_unicode.zip` which can be downloaded [from the Dyalog website](https://www.dyalog.com/download-zone.htm).
