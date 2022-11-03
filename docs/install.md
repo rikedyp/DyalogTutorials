@@ -18,6 +18,9 @@ For more information about installed components, registry entries and configurat
 
 	The default APL keyboard uses <kbd>Ctrl</kbd> as the APL shifting key. It does not prevent copy and paste shortcuts, but some prefer to use a different method.
 
+	!!!Note "Note (May 2022)"
+		If you are using Microsoft Windows 11, then you might find that the standard Dyalog IME does not work with UWP (Universal Windows Platform) applications such as Notepad. We are working on both immediate and long-term solutions to meet our customers' wide range of needs. Some user-created alternatives are listed on [the APL Wiki page about Typing APL glyphs](https://aplwiki.com/wiki/Typing_glyphs#Windows).
+
 	If you do not want to use the <kbd>Ctrl</kbd> key as your APL shifting key, untick **☑ Install the Dyalog APL IME for 64 bit Windows** and head over to the section on [typing APL](#typing-apl-symbols) for alternatives.
 
 	!!!Info
@@ -34,7 +37,6 @@ For more information about installed components, registry entries and configurat
 ## macOS
 This is a quick overview of the installation process. For more information, see the [Dyalog for macOS Installation and Configuration Guide](https://docs.dyalog.com/latest/Dyalog%20for%20macOS%20Installation%20and%20Configuration%20Guide.pdf).
 
-### Download and Install Dyalog
 1. Go to the [download page](https://www.dyalog.com/download-zone.htm) and download the installation package for macOS.
 
 2. Double click on the **mac_64_&lt;version&gt;_unicode.pkg** file.
@@ -45,67 +47,52 @@ This is a quick overview of the installation process. For more information, see 
 
 	Dyalog should now be installed in your **Applications** folder.
 
+5. Follow the instructions to [install the APL font and keyboard for macOS](https://www.dyalog.com/apl-font-keyboard.htm).
+
 !!!Info
-	Dyalog for macOS comes with the [Remote Integrated Development Environment](https://github.com/Dyalog/ride). The [Dyalog for macOS Installation and Configuration Guide] contains some of the same information as the [RIDE User Guide](https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf) but with some parts specific to macOS.
-
-### Choose your APL keyboard.
-Keyboard layouts and fonts for macOS are described [on the dfns website](https://dfns.dyalog.com/n_kbmac.htm).
-
-> TODO grab from existing fonts and keyboards page?
-> Or maybe this is only relevant for Windows? But a link from here?
+	Dyalog for macOS comes with the [Remote Integrated Development Environment](https://github.com/Dyalog/ride). The [Dyalog for macOS Installation and Configuration Guide](https://docs.dyalog.com/latest/Dyalog%20for%20macOS%20Installation%20and%20Configuration%20Guide.pdf) contains some of the same information as the [RIDE User Guide](https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf) but with some parts specific to macOS.
 
 ## Linux
 This is a quick overview of the installation process. For more information, see the [Dyalog for UNIX Installation and Configuration Guide](https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20Installation%20and%20Configuration%20Guide.pdf).
 
 !!! Note
-	Dyalog for Linux comes with a text-based TTY interface. We recommend [installing the RIDE](#install-the-ride) graphical interface as well.
+	Dyalog for Linux comes with a text-based TTY interface, which is started when you type `dyalog` into the terminal. We recommend installing the RIDE graphical interface as well, as mentioned below.
 
-|Distribution|Installation package|
-|---|---|
-|Debian/Ubuntu|64-bit .deb|
-|Fedora/openSUSE|64-bit .rpm|
+1. Download and Install Dyalog
+	Installation **.rpm** (Fedora/openSUSE) and **.deb** (Debian/Ubuntu) files are provided [from the Dyalog website](https://www.dyalog.com/download-zone.htm).
 
-### Download and Install Dyalog
-Installation **.rpm** (Fedora/openSUSE) and **.deb** (Debian/Ubuntu) files are provided [from the Dyalog website](https://www.dyalog.com/download-zone.htm).
+	Use your distribution's package manager to install Dyalog.
 
-Use your distribution's package manager to install Dyalog.
+	Usually, you can install from the terminal:
 
-Usually, you can install from the terminal:
+	```sh
+	sudo rpm -i linux_64_<version>_unicode.x86_64.rpm
+	```
 
-```sh
-sudo rpm -i linux_64_<version>_unicode.x86_64.rpm
-```
+	```sh
+	sudo dpkg -i linux_64_<version>_unicode.x86_64.deb
+	```
 
-```sh
-sudo dpkg -i linux_64_<version>_unicode.x86_64.deb
-```
+1. Choose your APL keyboard
 
-### Choose your APL keyboard
-With the increasing prevalence of Wayland, there are some known issues with typing on recent versions of Fedora and Ubuntu.
+	APL keyboard layouts come with most Linux distributions by default, but must be enabled. Follow the [instructions on the APL Wiki](https://aplwiki.com/wiki/Typing_glyphs_on_Linux) for your  desktop environment.
 
-By default, Dyalog uses the Meta ("Windows" <kbd>⊞ Win</kbd>) key for entering APL symbols on Linux.
+	If you are using the latest versions of Ubuntu or Fedora, it is likely that you have the GNOME Wayland desktop environment.
 
-Dyalog will override [XKB](https://www.x.org/wiki/XKB/) configuration at startup by default. You can prevent this with a startup option.
+	!!!Note "Note (June 2022)"
+		There is a known issue with using the standard Linux input method with RIDE on Wayland. Click [this link to see the issue status :fontawesome-brands-github:](https://github.com/Dyalog/ride/issues/879).
 
-    dyalog -nokbd
+1. Install the RIDE
 
-APL keyboard layouts come with most Linux distributions by default, but must be enabled. Follow the [instructions on the APL Wiki](https://aplwiki.com/wiki/Typing_glyphs_on_Linux) for your desktop environment.
+	While Dyalog does come with a text-based terminal interface, it is recommended to use the [Remote IDE](https://github.com/Dyalog/ride). Download the [latest release](https://github.com/Dyalog/ride/releases/latest) from GitHub and install it in the same way as above.
 
-### Install the RIDE
+1. Start Dyalog
 
-While Dyalog does come with a bare-bones terminal interface, it is recommended to use the [Remote IDE](https://github.com/Dyalog/ride). Download the [latest release](https://github.com/Dyalog/ride/releases/latest) from GitHub and install it as above.
+	See [section 2.1.1 of Mastering Dyalog APL](https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment) for advice about using Dyalog with the RIDE.
 
-### Create an APL session startup script
+	To use the text-based TTY interface, simply type `dyalog` into a terminal session and press <kbd>Enter</kbd>.
 
-By default, users must "start" an APL session from the main RIDE configuration window as described in [section 2.1.1 of Mastering Dyalog APL](https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment).
-
-The following script can be used to launch RIDE and immediately connect to a new Dyalog instance.
-
-    #!/usr/bin/env sh
-    env RIDE_CONNECT=localhost:4502 ride &
-    dyalog +s -q RIDE_INIT=SERVE:*:4502
-
-To prevent Dyalog taking over the keyboard layout at startup, add `-nokbd` to the 3rd line in the script.
+	To quit Dyalog in either case, type `)OFF` and press <kbd>Enter</kbd>.
 
 ## Dyalog installation directory
 The main Dyalog installation directory is returned by the expression:
