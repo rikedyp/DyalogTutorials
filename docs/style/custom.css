@@ -22,7 +22,6 @@ code {
 
 /* Custom colors */
 [data-md-color-scheme="default"] {
-	--md-default-fg-color: #EA7224;
 	--md-primary-fg-color: #EA7224;
 	--md-accent-fg-color: #FFA336;
 	--md-primary-fg-color--light: #ECB7B7;
@@ -33,7 +32,6 @@ code {
 	--md-announce-icon-color: #EA7224;
 	--md-hero-svg-color:   #ffffff;
 }
-
 [data-md-color-scheme="slate"] {
 	--md-primary-fg-color: #3B475E;
 	--md-accent-fg-color: #5A6D8F;

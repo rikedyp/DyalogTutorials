@@ -1,7 +1,0 @@
-version: Dyalog
-dyalog tutorials by RikedyP
-Dyalog version is for a wide range of Dyalog users
-- Brand new to programming
-- New to APL, but has learned some programming before
-- New to Dyalog, but has used another APL system before
-It therefore covers not only the latest constructs, development workflows and best practices, but also provides information for those who might be maintaining more established APL systems and making use of Dyalog's backwards compatibility.
