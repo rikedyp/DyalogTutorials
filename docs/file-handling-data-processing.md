@@ -3,33 +3,6 @@ Reading data into and getting data out of the workspace.
 
 There are some in-built tools for importing data from files and the internet. If you are already familiar with [python](), [R language]() or [.NET]() then you can use one of the [external language bridges]() to bring data into APL from files via one of these languages. However, it will usually be simpler and faster in the long term to become familiar with the following tools.
 
-## Binary files or arbitrary file types
-The term "Native Files" refers to any type of file on a hard disk. These can be text or media files, or even executable files. Usually we are interested in various kinds of text files; the rest of this page lists [system functions](https://help.dyalog.com/latest/#Language/System%20Functions/Summary%20Tables/System%20Functions%20Categorised.htm) for handling these, including [`⎕NGET`](#nget).
-
-For files of arbitrary type and format, some system functions beginning `⎕N`.
-
-First, we must **tie** the file, locking it from use by other applications. `⎕NTIE` returns a tie number.
-
-```APL
-      tn ← '/path/to/file'⎕NTIE 0
-```
-
-This is a quick summary. For more details see [the Native Files cheat sheet](https://docs.dyalog.com/latest/CheatSheet%20-%20Native%20Files.pdf) and [system functions and variables A-Z](https://help.dyalog.com/latest/index.htm#Language/System%20Functions/Summary%20Tables/System%20Functions%20and%20Variables%20ColWise.htm) in the online documentation.
-
-In the chapter on selecting from arrays there was [an example of reading a text file](../Selecting-from-arrays/#word-problems) using `⎕NGET`. Before Dyalog version 15.0, reading text files required a couple of extra steps. Some `⎕N...` native file functions are general and can be used to read and write any type of file. As a simple example, here we tie the file **words.txt**, read the data and store it in a variable, and finally untie the file.
-
-!!! Note
-	For multi-user systems, take care to set appropriate file access permissions when using `⎕NCREATE`, `⎕NTIE` and `⎕NLOCK`.
-
-```APL
-      tn←'assets/words.txt'⎕NTIE 0
-      ⎕←10↑words←(⎕UCS 10)(≠⊆⊢)⎕NREAD tn 82(⎕NSIZE tn)0
-┌─┬───┬────┬────┬─────┬────┬──────┬────┬──────┬────┐
-│A│A's│AA's│AB's│ABM's│AC's│ACTH's│AI's│AIDS's│AM's│
-└─┴───┴────┴────┴─────┴────┴──────┴────┴──────┴────┘
-      ⎕NUNTIE⎕NNUMS
-```
-
 ## Text Files
 Generally the `⎕N...` family of system functions are for reading and writing *native files* as described in the documentation. `⎕NGET` and `⎕NPUT` are useful for reading and writing text files without having to tie and untie them.
 
@@ -178,7 +151,34 @@ Using `⎕JSON`, we can also [display error information in a human-readable form
 
 *[JSON]: JavaScript Object Notation
 
-## Component files
+## Binary files or arbitrary file types
+The term "Native Files" refers to any type of file on a hard disk. These can be text or media files, or even executable files. Usually we are interested in various kinds of text files; the rest of this page lists [system functions](https://help.dyalog.com/latest/#Language/System%20Functions/Summary%20Tables/System%20Functions%20Categorised.htm) for handling these, including [`⎕NGET`](#nget).
+
+For files of arbitrary type and format, some system functions beginning `⎕N`.
+
+First, we must **tie** the file, locking it from use by other applications. `⎕NTIE` returns a tie number.
+
+```APL
+      tn ← '/path/to/file'⎕NTIE 0
+```
+
+This is a quick summary. For more details see [the Native Files cheat sheet](https://docs.dyalog.com/latest/CheatSheet%20-%20Native%20Files.pdf) and [system functions and variables A-Z](https://help.dyalog.com/latest/index.htm#Language/System%20Functions/Summary%20Tables/System%20Functions%20and%20Variables%20ColWise.htm) in the online documentation.
+
+In the chapter on selecting from arrays there was [an example of reading a text file](../Selecting-from-arrays/#word-problems) using `⎕NGET`. Before Dyalog version 15.0, reading text files required a couple of extra steps. Some `⎕N...` native file functions are general and can be used to read and write any type of file. As a simple example, here we tie the file **words.txt**, read the data and store it in a variable, and finally untie the file.
+
+!!! Note
+	For multi-user systems, take care to set appropriate file access permissions when using `⎕NCREATE`, `⎕NTIE` and `⎕NLOCK`.
+
+```APL
+      tn←'assets/words.txt'⎕NTIE 0
+      ⎕←10↑words←(⎕UCS 10)(≠⊆⊢)⎕NREAD tn 82(⎕NSIZE tn)0
+┌─┬───┬────┬────┬─────┬────┬──────┬────┬──────┬────┐
+│A│A's│AA's│AB's│ABM's│AC's│ACTH's│AI's│AIDS's│AM's│
+└─┴───┴────┴────┴─────┴────┴──────┴────┴──────┴────┘
+      ⎕NUNTIE⎕NNUMS
+```
+
+## APL Component files
 If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.
 
 System functions that deal with component files begin `⎕F`.

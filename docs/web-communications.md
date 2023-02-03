@@ -21,7 +21,7 @@ Below is a simple example of making a GET request to a web API:
 ```
 
 ## Jarvis Web Service Framework
-[:material-web: Jarvis online documentation](https://github.com/Dyalog/Jarvis/wiki)
+[:material-web: Jarvis online documentation](https://dyalog.github.io/Jarvis/)
 
 Jarvis allows you to serve up a single APL function or an entire application, as a an HTTP/JSON or RESTful web service. Jarvis automatically converts payloads between JSON and APL arrays, can serve static HTTP resources and integrates WebSocket support with publish/subscribe capability. Jarvis can maintain application session state, with user validation based on HTTP Basic authentication, custom authentication, and/or client-side certificates.
 
