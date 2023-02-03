@@ -23,9 +23,10 @@ An isolate is a [namespace](https://course.dyalog.com/Namespaces/) within which 
 The [.NET Task Class](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-6.0) can be used directly from Dyalog APL using the [[External Language Interfaces#.NET|.NET interface]].
 
 ## Experimental Features
-The 2022 Conference Edition of the Dyalog interpreter includes an experimental functionality and a unifying interface for managing the asynchronous running of functions using any of the available mechanisms.
+The 2022 Conference Edition of the Dyalog interpreter includes an experimental functionality, including a unifying interface for managing the asynchronous running of functions using any of the available mechanisms.
 
-Video: [2022 Conference Edition Part 3a - Future(s) // John Daintree // Dyalog '22](https://dyalog.tv/Dyalog22/?v=P18Z3ilH378)
-Video: [2022 Conference Edition Part 3b - Future(s) // John Daintree // Dyalog '22'](https://dyalog.tv/Dyalog22/?v=nkqds8YavmQ)
+Video: [:fontawesome-brands-youtube: 2022 Conference Edition Part 3a - Future(s) // John Daintree // Dyalog '22](https://dyalog.tv/Dyalog22/?v=P18Z3ilH378)  
+Video: [:fontawesome-brands-youtube: 2022 Conference Edition Part 3b - Future(s) // John Daintree // Dyalog '22'](https://dyalog.tv/Dyalog22/?v=nkqds8YavmQ)  
 
-Download the experimental 2022 conference edition of Dyalog [from our website](https://www.dyalog.com/download-zone.htm).
+Download the experimental 2022 conference edition of Dyalog [from our website](https://www.dyalog.com/download-zone.htm).  
+View the [:material-web: 2022 Conference Edition README](https://www.dyalog.com/uploads/dyalog_readme_120.22.htm).  
