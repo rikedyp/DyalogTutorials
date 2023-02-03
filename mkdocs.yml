@@ -20,7 +20,8 @@ theme:
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
-    - toc.integrate
+    - navigation.tabs
+    - navigation.tabs.sticky
   plugins:
     - search:
         lang: en
@@ -43,3 +44,5 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+nav:
+  - index.md
