@@ -12,19 +12,21 @@
       
       
       
-      <link rel="icon" href="/img/favicon.png">
+      <link rel="icon" href="../img/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
     
     
   
-    <title></title>
+    
+      <title>Asynchronous Programming - </title>
+    
   
 
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,11 +42,11 @@
       
     
     
-      <link rel="stylesheet" href="/style/main.css">
+      <link rel="stylesheet" href="../style/main.css">
     
-      <link rel="stylesheet" href="/style/quickstart.css">
+      <link rel="stylesheet" href="../style/quickstart.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#asynchronous-programming" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,9 +91,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Tutorials" class="md-header__button md-logo" aria-label="Tutorials" data-md-component="logo">
+    <a href=".." title="Tutorials" class="md-header__button md-logo" aria-label="Tutorials" data-md-component="logo">
       
-  <img src="/img/dyalog-white.svg" alt="logo">
+  <img src="../img/dyalog-white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Asynchronous Programming
             
           </span>
         </div>
@@ -204,7 +211,7 @@
 <!-- Main navigation item with nested items -->
 
   <li class="md-tabs__item">
-    <a href="/." class="md-tabs__link">
+    <a href=".." class="md-tabs__link">
       
       Tools and Interface Catalogue
     
@@ -239,9 +246,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
+    <a href=".." title="Tutorials" class="md-nav__button md-logo" aria-label="Tutorials" data-md-component="logo">
       
-  <img src="/img/dyalog-white.svg" alt="logo">
+  <img src="../img/dyalog-white.svg" alt="logo">
 
     </a>
     Tutorials
@@ -286,7 +293,7 @@
   <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Tools and Interface Catalogue
       </a>
     </li>
@@ -336,8 +343,47 @@
     directly continue with the children of the anchor.
   -->
   
+    
+  
 
   <!-- Render item list -->
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      <!--  -->
+      <h4>Table of Contents</h4>
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-spawn-operator" class="md-nav__link">
+    The Spawn Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#futures-and-isolates" class="md-nav__link">
+    Futures and Isolates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net-tasks" class="md-nav__link">
+    .NET Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-features" class="md-nav__link">
+    Experimental Features
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -349,8 +395,36 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="asynchronous-programming">Asynchronous Programming</h1>
+<p>This page shows constructs which can be used to explicitly manage asynchronous, concurrent execution of code.</p>
+<p>More detailed discussion about the potential for automatic parallelisation and the use of explicit parallelisation is given in the document on <a href="https://docs.dyalog.com/latest/Parallel%20Language%20Features.pdf">parallel language features</a>.</p>
+<h2 id="the-spawn-operator">The Spawn Operator</h2>
+<p>Tutorial: <a href="https://mastering.dyalog.com/Operators.html?highlight=spawn%20operator#spawn">Mastering Dyalog APL section 11.12</a><br />
+Online documentation: <a href="http://help.dyalog.com/latest/#Language/Primitive%20Operators/Spawn.htm">Spawn</a>  </p>
+<p>The Spawn operator <code>&amp;</code> is a lightweight method for doing multiple time-consuming (but not compute-heavy) tasks in parallel. Examples of tasks which may benefit from this type of parallel execution include web scraping and database operations.</p>
+<h2 id="futures-and-isolates">Futures and Isolates</h2>
+<p>Example: <a href="https://www.dyalog.com/blog/2014/08/isolated-mandelbrot-set-explorer/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 32v119.2h64V96h107.2C284.6 96 352 176.2 352 255.9 352 332 293.4 416 171.2 416H0v64h171.2C331.9 480 416 367.3 416 255.9c0-58.7-22.1-113.4-62.3-154.3C308.9 56 245.7 32 171.2 32H0z"/></svg></span> Isolated Mandelbrot Set Explorer</a><br />
+Documentation: <a href="https://docs.dyalog.com/latest/Parallel%20Language%20Features.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> Parallel Language Features</a>  </p>
+<p>Futures and isolates are a mechanism for executing functions in parallel, allowing a program to take advantage of multiple cores or processors. This simple mechanism makes it easy for the developer to declare which parts of an application should be run in separate CPU threads.</p>
+<p>Examples of tasks which may benefit from this type of multi-core parallel execution include data processing, financial calculations and scientific simulations. Tasks will benefit when the compute time for running sub-tasks is greater than the time to set up new isolates and transfer data between them.</p>
+<p>An isolate is a <a href="https://course.dyalog.com/Namespaces/">namespace</a> within which all execution is asynchronous relative to the main programme. Any reference to a function or variable within an isolate immediately returns a future, a special type of value which can be passed around as an argument or an element of an array while the calculation is ongoing. Execution of the main programme will automatically block until the asynchronous call completes if an expressions is encountered which requires the actual value, if the asynchronous computation has not completed.</p>
+<h2 id="net-tasks">.NET Tasks</h2>
+<p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-6.0">.NET Task Class</a> can be used directly from Dyalog APL using the [[External Language Interfaces#.NET|.NET interface]].</p>
+<h2 id="experimental-features">Experimental Features</h2>
+<p>The 2022 Conference Edition of the Dyalog interpreter includes an experimental functionality and a unifying interface for managing the asynchronous running of functions using any of the available mechanisms.</p>
+<p>Video: <a href="https://dyalog.tv/Dyalog22/?v=P18Z3ilH378">2022 Conference Edition Part 3a - Future(s) // John Daintree // Dyalog '22</a>
+Video: <a href="https://dyalog.tv/Dyalog22/?v=nkqds8YavmQ">2022 Conference Edition Part 3b - Future(s) // John Daintree // Dyalog '22'</a></p>
+<p>Download the experimental 2022 conference edition of Dyalog <a href="https://www.dyalog.com/download-zone.htm">from our website</a>.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -382,12 +456,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky"], "search": "/assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
-        <script src="/javascripts/darkmode.js"></script>
+        <script src="../javascripts/darkmode.js"></script>
       
     
   </body>
