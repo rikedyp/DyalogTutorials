@@ -3,7 +3,6 @@ hide: navigation
 ---
 
 # Tools and Interface Catalogue
-Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) are maintained and supported by Dyalog. Other repositories are maintained by their respective owners.
 
 ## [Application Development and Deployment](./application-development.md)
 |Tool|Description|Documentation|
