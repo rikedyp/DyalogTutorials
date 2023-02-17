@@ -26,14 +26,16 @@ The [RIDE](#remote-ide-ride) is now the recommended IDE for macOS, AIX and Linux
 The original interface to Dyalog is a UNIX (or VT-100) style terminal session. Despite only having a fixed-size screen full of characters, this interface does provide all of the interactive functionality mentioned in the introduction. We continue to provide this interface for use in situations where no GUI is available or where developers prefer the retro look!
 
 ## VSCode extensions
-[OptimaSystems](https://optima-systems.co.uk/) maintain VSCode extensions which provide support for Dyalog and the APL language.
-
 <img style="width:5%; float:right;" src="https://code.visualstudio.com/assets/images/code-stable.png" />
 
 [:material-microsoft-visual-studio-code: APL Language extension](https://marketplace.visualstudio.com/items?itemName=OptimaSystems.vscode-apl-language)  
 [:material-microsoft-visual-studio-code: APL Language Server Client extension](https://marketplace.visualstudio.com/items?itemName=OptimaSystems.vscode-apl-language-client)
 
+[OptimaSystems](https://optima-systems.co.uk/) maintain VSCode extensions which provide support for Dyalog and the APL language.
+
 ## Deploy with Docker containers
+[:fontawesome-brands-youtube: Video: Dyalog's Docker Containers // Morten Kromberg // Dyalog '20](https://dyalog.tv/Dyalog20/?v=DeNkIYRehSs)  
+
 Containers provide a consistent environment across different machines and operating systems. The effect is similar to that of virtual machines, but more lightweight and efficient.
 
 <img style="width:15%; float:right;" src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" />
@@ -54,7 +56,7 @@ Dyalog provides pre-made containers for:
 - [The Jarvis web service framework](https://hub.docker.com/r/dyalog/jarvis)
 - [Dyalog Jupyter Notebooks](https://hub.docker.com/r/dyalog/jupyter)
 
-Including support for interactive debugging using the [Remote IDE](https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf).
+Including support for interactive debugging using the [Remote IDE](https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf):
 
 ```shell
 docker run -e RIDE_INIT=serve:*:4502 -p 4502:4502 dyalog/dyalog
@@ -65,30 +67,3 @@ Access from RIDE in a web browser:
 ```APL
 docker run -e RIDE_INIT=http:*:8888 -p 8888:8888 dyalog/dyalog
 ```
-
-<div id="videos">
-<style>
-	#videos {
-		display: flex;
-		text-align: center;
-	}
-</style>
-
-<figure>
-	<a href="https://dyalog.tv/Dyalog20/?v=DeNkIYRehSs"><img src="https://img.youtube.com/vi/DeNkIYRehSs/0.jpg">
-	<figcaption>
-		Dyalog 20: Dyalog's Docker Containers <a target="_blank" rel="noopener noreferrer" href="https://www.dyalog.com/uploads/conference/dyalog20/presentations/D08_Dyalog_Docker_Containers.pdf">(slides PDF)</a>
-	</figcaption>
-	</a>
-</figure>
-
-<figure>
-	<a href="https://dyalog.tv/Dyalog20/?v=DeNkIYRehSs"><img src="https://img.youtube.com/vi/KKJMeGAWGaE/0.jpg">
-	<figcaption>
-		Dyalog Webinars: Microservices in Dyalog APL
-	</figcaption>
-	</a>
-</figure>
-
-</div>
-

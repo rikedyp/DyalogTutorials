@@ -13,13 +13,6 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 |Link|Save APL source in text files to integrate with external code editors and source code management software|[:material-web: Link User Guide](https://dyalog.github.io/link)|
 |[Docker](./application-development.md#deploy-with-docker-containers)|Run Dyalog and deploy applications using Docker containers|[:octicons-link-external-16: Dyalog on Docker](https://hub.docker.com/r/dyalog/dyalog)|
 
-## [Asynchronous programming](./asynchronous-programming.md)
-|Tool|Description|Documentation|
-|---|---|---|
-|[Spawn](./asynchronous-programming.md#the-spawn-operator)|The Spawn operator `&` is a lightweight method for doing multiple time-consuming (but not compute-heavy) tasks in parallel.|[:material-web: Spawn](help.dyalog.com/latest/#Language/Primitive Operators/Spawn.htm)|
-|[Futures and Isolates](./asynchronous-programming.md#futures-and-isolates)|Execute code in parallel CPU threads|[:fontawesome-solid-file-pdf: Parallel Language Features Guide](http://docs.dyalog.com/latest/Parallel%20Language%20Features.pdf)|
-|.NET Tasks|The [.NET Task Class](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-6.0) can be used directly from Dyalog APL using the [.NET interface](./external-language-interfaces-standard-libraries.md#net).||
-
 ## [Web communications](./web-communications.md)
 |Tool|Description|Documentation|
 |---|---|---|
@@ -27,7 +20,6 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 |[HttpCommand](./web-communications.md#httpcommand)|Make HTTP requests to access web data and services|[:material-web: HttpCommand User Guide](https://dyalog.github.io/HttpCommand/)|
 |HttpUtils|Compose and manipulate HTTP messages|[:fontawesome-solid-file-pdf: Code Libraries Reference Guide](http://docs.dyalog.com/latest/Code%20Libraries%20Reference%20Guide.pdf)|
 |[Conga](./web-communications.md#conga-tcp-wrapper)|TCP/IP communications library|[:fontawesome-solid-file-pdf: Conga User Guide](http://docs.dyalog.com/latest/Conga%20User%20Guide.pdf)|
-|FtpClient|A passive-mode FTP client|[:fontawesome-brands-github: Dyalog/library-conga](https://github.com/Dyalog/library-conga/blob/master/Documentation/FtpClient.md)
 |aplssh|Start and manage SSH sessions from APL using libssh2|[:fontawesome-brands-github: Dyalog/aplssh](https://github.com/Dyalog/aplssh)|
 |SAWS|SOAP-based Web Service framework|[:fontawesome-solid-file-pdf: SAWS User Guide](http://docs.dyalog.com/latest/SAWS%20User%20Guide.pdf)|
 
@@ -39,7 +31,7 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 |[⎕CSV](./file-handling-data-processing.md#csv)|Read data from CSV files and text as APL arrays; write APL arrays to CSV format and files|[:material-web: Comma Separated Values](http://help.dyalog.com/latest/#Language/System%20Functions/csv.htm)|
 |[⎕JSON](./file-handling-data-processing.md#json)|Convert between APL namespaces and JSON text|[:material-web: JSON Convert](http://help.dyalog.com/latest/#Language/System%20Functions/json.htm)|
 |[⎕XML](./file-handling-data-processing.md#xml)|Convert between a special APL array format and XML text|[:material-web: XML Convert](http://help.dyalog.com/latest/#Language/System%20Functions/xml.htm)|
-|[⎕MAP](./file-handling-data-processing.md#map)|Treat files on disk as APL arrays to avoid importing data into the workspace|[:material-web: Map File](http://help.dyalog.com/latest/#Language/System%20Functions/map.htm)|
+|[⎕MAP](./file-handling-data-processing.md#map)|Treat files on disk as APL arrays|[:material-web: Map File](http://help.dyalog.com/latest/#Language/System%20Functions/map.htm)|
 |loaddata.dws|Example workspace with functions to load and save data from SQL, CSV, Excel and XML data sources|`)LOAD loaddata`|
 
 ## [External language interfaces and standard libraries](./external-language-interfaces-standard-libraries.md)
@@ -58,10 +50,16 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 |---|---|---|
 |EasyGUI|Lightweight utility library for creating simple cross-platform graphical user interfaces|[:fontawesome-brands-github: JoshDavid/EasyGUI](https://github.com/JoshDavid/EasyGUI/)
 |Dyalog User Interface (DUI)|Successor of the MiServer web server framework. Write GUI applications in APL and deploy them either as stand-alone applications using HTMLRenderer or serve them as websites and web applications accessible via a web browser.|[:fontawesome-brands-github: Dyalog/DUI](https://github.com/Dyalog/DUI/)<br>[:material-web: MiServer Website (samples and documentation)](https://miserver.dyalog.com/)|
-|SharpPlot|||
-|Chart Wizard|An interactive graphical interface to help create SharpPlot charts|`]Chart`|
-|Selenium|
+|sharpplot.dws|Graphing library for data visualisation|[:material-web: sharpplot.com](https://www.sharpplot.com/)|
+|[:fontawesome-brands-github: Selenium](https://github.com/Dyalog/Selenium)|Automate the use of web browsers using using Selenium WebDriver under Microsoft Windows|[:fontawesome-solid-file-pdf: Driving Selenium from Dyalog APL](https://github.com/Dyalog/Selenium/raw/master/Selenium%20from%20Dyalog.pdf)
 |HTMLRenderer|GUI object for rendering HTML, CSS and JavaScript using the . Create cross-platform graphical user interfaces.|[:fontawesome-solid-file-pdf: HTMLRenderer User Guide](https://docs.dyalog.com/latest/HTMLRenderer%20User%20Guide.pdf)<br>[:material-web: HTMLRenderer User Guide](https://docs.dyalog.com/latest/HTMLRenderer%20User%20Guide.htm)|
+
+## [Asynchronous programming](./asynchronous-programming.md)
+|Tool|Description|Documentation|
+|---|---|---|
+|[Spawn](./asynchronous-programming.md#the-spawn-operator)|The Spawn operator `&` is a lightweight method for doing multiple time-consuming (but not compute-heavy) tasks in parallel.|[:material-web: Spawn](help.dyalog.com/latest/#Language/Primitive Operators/Spawn.htm)|
+|[Futures and Isolates](./asynchronous-programming.md#futures-and-isolates)|Execute code in parallel CPU threads|[:fontawesome-solid-file-pdf: Parallel Language Features Guide](http://docs.dyalog.com/latest/Parallel%20Language%20Features.pdf)|
+|.NET Tasks|The [.NET Task Class](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-6.0) can be used directly from Dyalog APL using the [.NET interface](./external-language-interfaces-standard-libraries.md#net).|[:fontawesome-solid-file-pdf: .NET Core Interface Guide](https://docs.dyalog.com/latest/dotNET%20Core%20Interface%20Guide.pdf)<br>[:fontawesome-solid-file-pdf: Dyalog for Microsoft Windows .NET Framework Interface Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20.NET%20Framework%20Interface%20Guide.pdf)<br>[:fontawesome-solid-file-pdf: Comparison of .NET Core/Framework Interfaces](https://docs.dyalog.com/latest/dotNET%20Differences.pdf)|
 
 ## Process management
 |Tool|Description|Documentation|
@@ -72,5 +70,5 @@ Repositories in [:fontawesome-brands-github: Dyalog](https://github.com/dyalog) 
 ## APL system migration
 |Tool|Description|Documentation|
 |---|---|---|
-|Workspace Transfer|
-|APLX|
+|Workspace Transfer|Exchange code between APL systems|[:fontawesome-solid-file-pdf: APL Workspace Transfer Guide](http://docs.dyalog.com/latest/APL%20Workspace%20Transfer%20Guide.pdf)|
+|[:fontawesome-brands-github: APLX](https://github.com/Dyalog/aplx)|Tools to help migrate from APLX to Dyalog|[:fontawesome-solid-file-pdf: APL Workspace Transfer Guide](http://docs.dyalog.com/latest/APL%20Workspace%20Transfer%20Guide.pdf)|
