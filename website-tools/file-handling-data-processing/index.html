@@ -363,13 +363,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tabular-data" class="md-nav__link">
-    Tabular data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#csv" class="md-nav__link">
     ⎕CSV
   </a>
@@ -405,13 +398,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#json_1" class="md-nav__link">
-    ⎕JSON
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#binary-files-or-arbitrary-file-types" class="md-nav__link">
     Binary files or arbitrary file types
   </a>
@@ -437,26 +423,6 @@
     SQL Interface
   </a>
   
-    <nav class="md-nav" aria-label="SQL Interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -477,36 +443,46 @@
 
 <h1 id="file-handling-and-data-processing">File handling and data processing</h1>
 <p>Reading data into and getting data out of the workspace.</p>
-<p>There are some in-built tools for importing data from files and the internet. If you are already familiar with <a href="">python</a>, <a href="">R language</a> or <a href="">.NET</a> then you can use one of the <a href="">external language bridges</a> to bring data into APL from files via one of these languages. However, it will usually be simpler and faster in the long term to become familiar with the following tools.</p>
+<p>There are some in-built tools for importing data from files and the internet. If you are already familiar with <a href="../external-language-interfaces-standard-libraries/#python-pynapl">python</a>, <a href="../external-language-interfaces-standard-libraries/#r-language-rsconnect">R</a> or <a href="../external-language-interfaces-standard-libraries/#net">.NET</a> then you can use one of the <a href="../external-language-interfaces-standard-libraries/">external language bridges</a> to bring data into APL from files via one of these languages. However, it can be simpler and faster in many cases to use one of the following tools.</p>
 <h2 id="text-files">Text Files</h2>
-<p>Generally the <code>⎕N...</code> family of system functions are for reading and writing <em>native files</em> as described in the documentation. <code>⎕NGET</code> and <code>⎕NPUT</code> are useful for reading and writing text files without having to tie and untie them.</p>
+<p><a href="https://help.dyalog.com/latest/#Language/System%20Functions/nget.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Read Text File documentation</a><br />
+<a href="https://help.dyalog.com/latest/#Language/System%20Functions/nput.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Write Text File documentation</a></p>
+<p><code>⎕NGET</code> and <code>⎕NPUT</code> can be used to read and write text files.</p>
+<blockquote>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="o">⊂</span><span class="nv">words</span><span class="p">)</span><span class="nf">⎕NPUT</span><span class="s1">&#39;data/words.txt&#39;</span><span class="w">                      </span><span class="c1">⍝ Write words to a unicode text file</span>
 <span class="p">(</span><span class="nv">content</span><span class="w"> </span><span class="nv">encoding</span><span class="w"> </span><span class="nv">newline</span><span class="p">)</span><span class="kd">←</span><span class="nf">⎕NGET</span><span class="s1">&#39;data/words.txt&#39;</span><span class="w">   </span><span class="c1">⍝ Read words from a unicode text file</span>
 <span class="nv">words</span><span class="kd">←</span><span class="p">(</span><span class="nf">⎕UCS</span><span class="w"> </span><span class="nv">newline</span><span class="p">)((</span><span class="o">~∊</span><span class="na">⍨</span><span class="p">)</span><span class="o">⊆⊢</span><span class="p">)</span><span class="nv">content</span><span class="w">               </span><span class="c1">⍝ Split words on each new line </span>
 </code></pre></div>
-<h2 id="tabular-data">Tabular data</h2>
-<p>For small amounts of data, it is usually quickest and easiest to use raw APL with arrays. Nested matrices offer a convenient format comparable to a spreadsheet (in fact, they can be directly imported from Excel or <abbr title="Comma Separated Values">CSV</abbr> files). Inverted tables take the idea of column store and implement them in APL for great search and retrieval performance.</p>
+</blockquote>
 <h2 id="csv">⎕<abbr title="Comma Separated Values">CSV</abbr></h2>
-<p>The Comma Separator Values system function <code>⎕CSV</code> can read tabular data from <code>.csv</code> files as APL matrices,
-Comma separated values are a very common and convenient . While we encourage you to <a href="https://help.dyalog.com/latest/#Language/System Functions/csv.htm">read the documentation</a> for a full description, here is an overview of features of <code>⎕CSV</code>:</p>
-<ul>
-<li>Read data from and write data to files directly<br />
-    <div class="highlight"><pre><span></span><code><span class="nv">data</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span>
-</code></pre></div></li>
-<li>Separate the header (first row) from the rest of the data<br />
-    <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">data</span><span class="w"> </span><span class="nv">header</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="m">1</span>
-</code></pre></div></li>
-<li>Treat specific columns of input as numeric or text, depending on the options provided.<br />
-    The <code>4</code> here indicates to convert numeric values if possible, else keep the value as text.
-    <div class="highlight"><pre><span></span><code><span class="nv">numeric_if_possible</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="m">4</span>
-</code></pre></div></li>
-<li>Use a separator other than commas, using the "Separator" variant option, for example using tabs (<code>⎕UCS 9</code>) for Tab Separated Values (.tsv).<br />
-    <div class="highlight"><pre><span></span><code><span class="nv">tsv</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="na">⍠</span><span class="s1">&#39;Separator&#39;</span><span class="w"> </span><span class="p">(</span><span class="nf">⎕UCS</span><span class="w"> </span><span class="m">9</span><span class="p">)</span><span class="o">⊢</span><span class="s1">&#39;/path/to/file.csv&#39;</span>
-</code></pre></div></li>
-<li>
+<p><a href="https://help.dyalog.com/latest/#Language/System Functions/csv.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Comma Separated Values documentation</a><br />
+<a href="https://www.youtube.com/watch?v=AHoiROI15BA"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span> Video: Parsing content from text files using ⎕<abbr title="Comma Separated Values">CSV</abbr></a></p>
+<p>The Comma Separator Values system function <code>⎕CSV</code> can read tabular data from <code>.csv</code> files as APL matrices. Here are some features of <code>⎕CSV</code>:</p>
+<p>Read data from and write data to files directly  </p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="nv">data</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w">   </span><span class="c1">⍝ Read from file.csv</span>
+<span class="nv">data</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w">     </span><span class="c1">⍝ Write to file.csv</span>
+</code></pre></div>
+</blockquote>
+<p>Separate the header (first row) from the rest of the data:</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">data</span><span class="w"> </span><span class="nv">header</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+</blockquote>
+<p>Treat specific columns of input as numeric or text, depending on the options provided.  </p>
+<blockquote>
+<p><div class="highlight"><pre><span></span><code><span class="nv">numeric_if_possible</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w"> </span><span class="no">⍬</span><span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+The <code>4</code> in this example indicates to convert numeric values if possible, and otherwise keep the value as text:</p>
+</blockquote>
+<p>Use a separator other than commas, using the "Separator" variant option, for example using tabs (<code>⎕UCS 9</code>) for Tab Separated Values (.tsv).  </p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="nv">tsv</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nf">⎕CSV</span><span class="na">⍠</span><span class="s1">&#39;Separator&#39;</span><span class="w"> </span><span class="p">(</span><span class="nf">⎕UCS</span><span class="w"> </span><span class="m">9</span><span class="p">)</span><span class="o">⊢</span><span class="s1">&#39;/path/to/file.tsv&#39;</span>
+</code></pre></div>
+</blockquote>
 <p>Read data chunks at a time so as to not fill the workspace, using the "Records" variant option.  </p>
 <details class="example">
-<summary>Example</summary>
+<summary>Example of using the Records variant option</summary>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">path</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;/path/to/file.csv&#39;</span><span class="w">    </span><span class="c1">⍝ The file path as simple character vector</span>
 <span class="w">    </span><span class="nv">ReadCSV10</span><span class="kd">←</span><span class="nf">⎕CSV</span><span class="na">⍠</span><span class="s1">&#39;Records&#39;</span><span class="w"> </span><span class="m">10</span><span class="w">   </span><span class="c1">⍝ A function to read CSV 10 records at a time</span>
 <span class="w">    </span><span class="nv">tn</span><span class="kd">←</span><span class="nv">path</span><span class="w"> </span><span class="nf">⎕NTIE</span><span class="w"> </span><span class="m">0</span><span class="w">               </span><span class="c1">⍝ Tie the file - this locks it from use by other applications</span>
@@ -542,139 +518,101 @@ Comma separated values are a very common and convenient . While we encourage you
 </code></pre></div>
 </details>
 <p>If you are reading large tabular data, you can use <a href="#map"><code>⎕MAP</code></a> to access the data without bringing it all into your workspace, potentially preventing a <code>WS FULL</code> error.</p>
-</li>
-</ul>
-<figure>
-    <a href="https://dyalog.tv/Dyalog20/?v=AHoiROI15BA"><img src="https://img.youtube.com/vi/AHoiROI15BA/hqdefault.jpg">
-    <figcaption>
-        Parsing content from text files using Dyalog APL's ⎕CSV by Adám's APL
-    </figcaption>
-    </a>
-</figure>
-
 <h2 id="json"><code>⎕JSON</code></h2>
+<p><a href="https://help.dyalog.com/latest/#Language/System%20Functions/json.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> JSON Convert</a></p>
+<p>Convert between APL arrays and character vectors (text) in JavaScript Object Notation (JSON) format.</p>
+<p>Lists can be represented as APL vectors.</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="m">1</span><span class="nf">⎕JSON</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="s1">&#39;ABCD&#39;</span>
+<span class="sr">[[</span><span class="m">1</span><span class="o">,</span><span class="m">2</span><span class="o">,</span><span class="m">3</span><span class="sr">]</span><span class="o">,</span><span class="s2">&quot;ABCD&quot;</span><span class="sr">]</span>
+</code></pre></div>
+</blockquote>
+<p>Objects can be represented as APL namespaces.</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="m">0</span><span class="nf">⎕JSON</span><span class="w"> </span><span class="s1">&#39;{&quot;name&quot;:&quot;David&quot;, &quot;age&quot;: 42}&#39;</span>
+<span class="c1">#.[JSON object]</span>
+</code></pre></div>
+</blockquote>
+<p>Both can be represented as a matrix of depth, name, value and type columns somewhat similar to that used by <code>⎕XML</code>.</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="p">(</span><span class="nf">⎕JSON</span><span class="w"> </span><span class="nf">⎕OPT</span><span class="s1">&#39;Format&#39;</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="s1">&#39;[{&quot;name&quot;:&quot;David&quot;, &quot;age&quot;: 42}, {&quot;name&quot;: &quot;Sandra&quot;, &quot;age&quot;: 42}]&#39;</span>
+<span class="err">┌─┬────┬──────┬─┐</span>
+<span class="err">│</span><span class="m">0</span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="m">2</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">1</span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="m">1</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">2</span><span class="err">│</span><span class="nv">name</span><span class="err">│</span><span class="nv">David</span><span class="w"> </span><span class="err">│</span><span class="m">4</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">2</span><span class="err">│</span><span class="nv">age</span><span class="w"> </span><span class="err">│</span><span class="m">42</span><span class="w">    </span><span class="err">│</span><span class="m">3</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">1</span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">      </span><span class="err">│</span><span class="m">1</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">2</span><span class="err">│</span><span class="nv">name</span><span class="err">│</span><span class="nv">Sandra</span><span class="err">│</span><span class="m">4</span><span class="err">│</span>
+<span class="err">├─┼────┼──────┼─┤</span>
+<span class="err">│</span><span class="m">2</span><span class="err">│</span><span class="nv">age</span><span class="w"> </span><span class="err">│</span><span class="m">42</span><span class="w">    </span><span class="err">│</span><span class="m">3</span><span class="err">│</span>
+<span class="err">└─┴────┴──────┴─┘</span>
+</code></pre></div>
+</blockquote>
 <h2 id="xml"><code>⎕XML</code></h2>
-<p><abbr title="Extensible Markup Language">XML</abbr> is a format that has fallen out of favour in recent years, but is still useful to be able to import and export it easily when you need to.</p>
+<p><a href="https://help.dyalog.com/latest/#Language/System%20Functions/xml.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> <abbr title="Extensible Markup Language">XML</abbr> Convert documentation</a></p>
+<p><code>⎕XML</code> converts between <abbr title="Extensible Markup Language">XML</abbr> character vectors and a nested matrices of node depth, tag name, value, attribute key/value pairs and markup description columns.</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nf">⎕XML</span><span class="s1">&#39;&lt;name born=&quot;1920&quot;&gt;Ken&lt;/name&gt;&lt;name born=&quot;1925&quot;&gt;Jean&lt;/name&gt;&#39;</span>
+<span class="err">┌─┬────┬────┬───────────┬─┐</span>
+<span class="err">│</span><span class="m">0</span><span class="err">│</span><span class="nv">name</span><span class="err">│</span><span class="nv">Ken</span><span class="w"> </span><span class="err">│┌────┬────┐│</span><span class="m">5</span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">    </span><span class="err">││</span><span class="nv">born</span><span class="err">│</span><span class="m">1920</span><span class="err">││</span><span class="w"> </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">    </span><span class="err">│└────┴────┘│</span><span class="w"> </span><span class="err">│</span>
+<span class="err">├─┼────┼────┼───────────┼─┤</span>
+<span class="err">│</span><span class="m">0</span><span class="err">│</span><span class="nv">name</span><span class="err">│</span><span class="nv">Jean</span><span class="err">│┌────┬────┐│</span><span class="m">5</span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">    </span><span class="err">││</span><span class="nv">born</span><span class="err">│</span><span class="m">1925</span><span class="err">││</span><span class="w"> </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="err">│</span><span class="w">    </span><span class="err">│</span><span class="w">    </span><span class="err">│└────┴────┘│</span><span class="w"> </span><span class="err">│</span>
+<span class="err">└─┴────┴────┴───────────┴─┘</span>
+</code></pre></div>
+</blockquote>
 <h2 id="rs"><code>⎕R/⎕S</code></h2>
+<p><a href="https://help.dyalog.com/latest/#Language/System%20Functions/r.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Search and Replace documentation</a></p>
 <p>Search and replace using regular expressions.</p>
 <p><code>⎕R</code> and <code>⎕S</code> are dyadic operators which allow searching text using Pearl Compatible Regular Expressions (PCRE).</p>
 <p>Dyalog's search and replace accept multiple search and replace strings and/or functions in a single call.</p>
+<p><strong>Example:</strong> Convert what you say into what your dog Rex hears:</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nv">Rex</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;rex&#39;</span><span class="w"> </span><span class="s1">&#39;food&#39;</span><span class="w"> </span><span class="s1">&#39;\w&#39;</span><span class="nf">⎕R</span><span class="s1">&#39;\0&#39;</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="na">⍠</span><span class="m">1</span>
+<span class="w">      </span><span class="nv">Rex</span><span class="w"> </span><span class="s1">&#39;Rex, I told you not to do that! Now, Rex, go and wait outside&#39;</span>
+<span class="nv">Rex</span><span class="o">,</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">****</span><span class="w"> </span><span class="o">***</span><span class="w"> </span><span class="o">***</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="o">****!</span><span class="w"> </span><span class="o">***,</span><span class="w"> </span><span class="nv">Rex</span><span class="o">,</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="o">***</span><span class="w"> </span><span class="o">****</span><span class="w"> </span><span class="o">*******</span>
+</code></pre></div>
+</blockquote>
 <h2 id="map"><code>⎕MAP</code></h2>
-<p><a href="http://help.dyalog.com/latest/#Language/System%20Functions/map.htm">Full documentation for <code>⎕MAP</code></a>.</p>
-<p>The memory mapping function <code>⎕MAP</code> associates a file on disk with an APL array in the workspace. This is useful if you are working with data that cannot fit inside the available workspace memory. One approach might be to read the data in chunks and process one chunk at a time (for example, see the "Records" variant option for <code>⎕CSV</code>). Another approach is to use <code>⎕MAP</code>.</p>
-<p>If you are working with data which is very large, you might not want or be able to bring all of the data into the workspace in order to process it. If you are reading large tabular data, <a href="#csv"><code>⎕CSV</code>'s <code>Records</code> variant <code>⍠</code> option</a> might be a convenient tool when used in combination with <code>⎕MAP</code>.</p>
-<p><code>⎕MAP</code> allows you to treat a file on disk as if it were a variable in the workspace.</p>
+<p><a href="http://help.dyalog.com/latest/#Language/System%20Functions/map.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> <code>⎕MAP</code> documentation</a>.</p>
+<p><code>⎕MAP</code> allows you to treat a file on disk as if it were a variable in the workspace. This is useful if you are working with data that cannot fit inside the available workspace memory. One approach might be to read the data in chunks and process one chunk at a time (for example, see the "Records" variant option for <code>⎕CSV</code>). Another approach is to use <code>⎕MAP</code>.</p>
+<blockquote>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nv">text</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">¯1</span><span class="w"> </span><span class="nf">⎕MAP</span><span class="w"> </span><span class="s1">&#39;/path/to/file.txt&#39;</span>
 </code></pre></div>
+</blockquote>
 <p>You must specify the type according to the <a href="http://help.dyalog.com/latest/#Language/System%20Functions/Data%20Representation%20Monadic.htm">Data Representation <code>⎕DR</code></a> of the data to be read.</p>
-<h2 id="json_1">⎕<abbr title="JavaScript Object Notation">JSON</abbr></h2>
-<p><abbr title="JavaScript Object Notation">JSON</abbr> is not only a convenient way to represent nested data structures, but also a convenient data representation for the modern web since it is natively handled by JavaScript. <code>⎕JSON</code> converts between APL arrays, including namespaces and text vector representations of <abbr title="JavaScript Object Notation">JSON</abbr>.</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="s1">&#39;ns&#39;</span><span class="nf">⎕NS</span><span class="no">⍬</span>
-<span class="w">      </span><span class="nv">ns</span><span class="na">.</span><span class="nv">var</span><span class="kd">←</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span>
-<span class="w">      </span><span class="nv">ns</span><span class="na">.</span><span class="nv">char</span><span class="kd">←</span><span class="s1">&#39;abc&#39;</span>
-<span class="w">      </span><span class="nf">⎕JSON</span><span class="w"> </span><span class="nv">ns</span>
-<span class="kt">{</span><span class="s2">&quot;char&quot;</span><span class="bp">:</span><span class="s2">&quot;abc&quot;</span><span class="o">,</span><span class="s2">&quot;var&quot;</span><span class="bp">:</span><span class="sr">[</span><span class="m">1</span><span class="o">,</span><span class="m">2</span><span class="o">,</span><span class="m">3</span><span class="sr">]</span><span class="kt">}</span>
-</code></pre></div>
-<p>A <abbr title="JavaScript Object Notation">JSON</abbr> object in Dyalog uses dot-syntax to access members. Some <abbr title="JavaScript Object Notation">JSON</abbr> object keys are invalid APL names, so Dyalog works around this using special characters:
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p">(</span><span class="nf">⎕JSON</span><span class="s1">&#39;{&quot;$name&quot;: &quot;steve&quot;, &quot;3var&quot;: &quot;what&quot;}&#39;</span><span class="p">)</span><span class="na">.</span><span class="nf">⎕nl</span><span class="o">-⍳</span><span class="m">9</span>
-<span class="err">┌─────┬─────────┐</span>
-<span class="err">│</span><span class="nv">⍙3var</span><span class="err">│</span><span class="nv">⍙⍙36⍙name</span><span class="err">│</span>
-<span class="err">└─────┴─────────┘</span>
-</code></pre></div></p>
-<p>Be aware of incompatible namespaces, although most of the time you will be converting data rather than namespaces.</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="s1">&#39;ns&#39;</span><span class="nf">⎕NS</span><span class="no">⍬</span>
-<span class="w">      </span><span class="nv">ns</span><span class="na">.</span><span class="nv">fn</span><span class="kd">←</span><span class="kt">{</span><span class="bp">⍵</span><span class="kt">}</span>
-<span class="w">      </span><span class="nf">⎕JSON</span><span class="w"> </span><span class="nv">ns</span>
-<span class="nv">DOMAIN</span><span class="w"> </span><span class="nv">ERROR</span><span class="bp">:</span><span class="w"> </span><span class="nv">JSON</span><span class="w"> </span><span class="nv">export</span><span class="bp">:</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="s2">&quot;fn&quot;</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">right</span><span class="w"> </span><span class="nv">argument</span><span class="w"> </span><span class="nv">cannot</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span>
-<span class="nv">converted</span><span class="w"> </span><span class="p">(</span><span class="nf">⎕IO</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
-<span class="w">      </span><span class="nf">⎕JSON</span><span class="w"> </span><span class="nv">ns</span>
-<span class="w">      </span><span class="o">∧</span>
-</code></pre></div>
-<p>Recall <a href="../Shape Reshape/#the-shape-of-a-scalar">the expression for an empty <abbr title="JavaScript Object Notation">JSON</abbr> object</a>.</p>
-<p>Using <code>⎕JSON</code>, we can also <a href="../Errors/#pass-it-on">display error information in a human-readable format</a>.</p>
 <h2 id="binary-files-or-arbitrary-file-types">Binary files or arbitrary file types</h2>
-<p>The term "Native Files" refers to any type of file on a hard disk. These can be text or media files, or even executable files. Usually we are interested in various kinds of text files; the rest of this page lists <a href="https://help.dyalog.com/latest/#Language/System%20Functions/Summary%20Tables/System%20Functions%20Categorised.htm">system functions</a> for handling these, including <a href="#nget"><code>⎕NGET</code></a>.</p>
-<p>For files of arbitrary type and format, some system functions beginning <code>⎕N</code>.</p>
-<p>First, we must <strong>tie</strong> the file, locking it from use by other applications. <code>⎕NTIE</code> returns a tie number.</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nv">tn</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;/path/to/file&#39;</span><span class="nf">⎕NTIE</span><span class="w"> </span><span class="m">0</span>
+<p><a href="https://docs.dyalog.com/latest/CheatSheet%20-%20Native%20Files.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> Native Files cheat sheet</a><br />
+<a href="https://help.dyalog.com/latest/#Language/System%20Functions/Summary%20Tables/System%20Functions%20Categorised.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> System Functions Categorised</a></p>
+<p>The term "Native Files" refers to any type of file on a hard disk. Some system functions beginning <code>⎕N</code> can be used to read and write files of arbitrary type and format.</p>
+<blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;words.txt&#39;</span><span class="nf">⎕NTIE</span><span class="w"> </span><span class="m">0</span><span class="w">   </span><span class="c1">⍝ Tie the file, locking it from use by other processes</span>
+<span class="w">      </span><span class="vg">⎕</span><span class="kd">←</span><span class="m">10</span><span class="o">↑</span><span class="nf">⎕NREAD</span><span class="w"> </span><span class="nv">tn</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">¯1</span><span class="w">    </span><span class="c1">⍝ Read the data as Unicode text</span>
+<span class="nv">A</span>
+<span class="nv">A</span><span class="s1">&#39;s</span>
+<span class="s1">AA&#39;</span><span class="nv">s</span>
+<span class="w">      </span><span class="nf">⎕NUNTIE</span><span class="w"> </span><span class="nv">tn</span><span class="w">              </span><span class="c1">⍝ Untie the file</span>
 </code></pre></div>
-<p>This is a quick summary. For more details see <a href="https://docs.dyalog.com/latest/CheatSheet%20-%20Native%20Files.pdf">the Native Files cheat sheet</a> and <a href="https://help.dyalog.com/latest/index.htm#Language/System%20Functions/Summary%20Tables/System%20Functions%20and%20Variables%20ColWise.htm">system functions and variables A-Z</a> in the online documentation.</p>
-<p>In the chapter on selecting from arrays there was <a href="../Selecting-from-arrays/#word-problems">an example of reading a text file</a> using <code>⎕NGET</code>. Before Dyalog version 15.0, reading text files required a couple of extra steps. Some <code>⎕N...</code> native file functions are general and can be used to read and write any type of file. As a simple example, here we tie the file <strong>words.txt</strong>, read the data and store it in a variable, and finally untie the file.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For multi-user systems, take care to set appropriate file access permissions when using <code>⎕NCREATE</code>, <code>⎕NTIE</code> and <code>⎕NLOCK</code>.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="nv">tn</span><span class="kd">←</span><span class="s1">&#39;assets/words.txt&#39;</span><span class="nf">⎕NTIE</span><span class="w"> </span><span class="m">0</span>
-<span class="w">      </span><span class="vg">⎕</span><span class="kd">←</span><span class="m">10</span><span class="o">↑</span><span class="nv">words</span><span class="kd">←</span><span class="p">(</span><span class="nf">⎕UCS</span><span class="w"> </span><span class="m">10</span><span class="p">)(</span><span class="o">≠⊆⊢</span><span class="p">)</span><span class="nf">⎕NREAD</span><span class="w"> </span><span class="nv">tn</span><span class="w"> </span><span class="m">82</span><span class="p">(</span><span class="nf">⎕NSIZE</span><span class="w"> </span><span class="nv">tn</span><span class="p">)</span><span class="m">0</span>
-<span class="err">┌─┬───┬────┬────┬─────┬────┬──────┬────┬──────┬────┐</span>
-<span class="err">│</span><span class="nv">A</span><span class="err">│</span><span class="nv">A</span><span class="s1">&#39;s│AA&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AB</span><span class="s1">&#39;s│ABM&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AC</span><span class="s1">&#39;s│ACTH&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AI</span><span class="s1">&#39;s│AIDS&#39;</span><span class="nv">s</span><span class="err">│</span><span class="nv">AM</span><span class="err">&#39;</span><span class="nv">s</span><span class="err">│</span>
-<span class="err">└─┴───┴────┴────┴─────┴────┴──────┴────┴──────┴────┘</span>
-<span class="w">      </span><span class="nf">⎕NUNTIE⎕NNUMS</span>
-</code></pre></div>
+</blockquote>
 <h2 id="apl-component-files">APL Component files</h2>
-<p>If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.</p>
-<p>System functions that deal with component files begin <code>⎕F</code>.</p>
 <p><a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf#page=557"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 32v119.2h64V96h107.2C284.6 96 352 176.2 352 255.9 352 332 293.4 416 171.2 416H0v64h171.2C331.9 480 416 367.3 416 255.9c0-58.7-22.1-113.4-62.3-154.3C308.9 56 245.7 32 171.2 32H0z"/></svg></span> Chapter N of Mastering Dyalog APL</a><br />
 <a href="https://help.dyalog.com/latest/#Language/APL%20Component%20Files/Component%20Files.htm"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg></span> Component Files Online Documentation</a><br />
 <a href="https://docs.dyalog.com/latest/Dyalog%20Programming%20Reference%20Guide.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> Chapter 5 of Dyalog Programming Reference Guide</a></p>
+<p>If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.</p>
 <h2 id="downloading-data-from-the-internet">Downloading data from the internet</h2>
 <p>See <a href="../web-communications/#httpcommand">HttpCommand</a>.</p>
 <h2 id="sql-interface">SQL Interface</h2>
+<p><a href="https://docs.dyalog.com/latest/SQL%20Interface%20Guide.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> SQL Interface Guide</a></p>
 <p>SQAPL provides an interface to ODBC-compliant SQL databases including Oracle, Microsoft Access, MySQL, MariaDB and DB2. It contains functions to read, write and manage SQL databases. It is supported on all platforms, although some platforms could incur an additional licence fee for the server component of SQAPL.</p>
-<p>For more information about using SQAPL, see the <a href="https://docs.dyalog.com/latest/SQL%20Interface%20Guide.pdf">SQL Interface Guide</a>.</p>
-<p>For quick access to simply read data from or write data to a table, the functions <code>LoadSQL</code> and <code>SaveSQL</code> from the utility workspace <a href=""><code>LOADDATA</code></a> may be all that you need.</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="s1">&#39;LoadSQL&#39;</span><span class="w"> </span><span class="s1">&#39;SaveSQL&#39;</span><span class="nf">⎕CY</span><span class="s1">&#39;LOADDATA&#39;</span>
-<span class="w">      </span><span class="nv">LoadSQL</span><span class="s1">&#39;NorthWind&#39;</span><span class="w"> </span><span class="s1">&#39;products&#39;</span>
-</code></pre></div>
-<h3 id="features">Features</h3>
-<p>Using SQAPL, you can:</p>
-<ul>
-<li>Retrieve a list of available data sources, and connect to one or more of them.</li>
-<li>Query the database catalogue, to determine which tables, views and columns
-exist in a data source.</li>
-<li>Retrieve data from a result set. Retrieve a description of the contents of a
-result set.</li>
-<li>Execute SQL statements multiple times using a matrix containing a row of
-data for each execution (known as Bulk Input).</li>
-<li>Commit or roll back transactions.</li>
-<li>If connected with sufficient privileges, execute any SQL statement supported
-by the database management system, including the creation of tables or views
-(Data Definition Language – or DDL), indexes, stored procedures, or GRANT
-statements (etc).</li>
-<li>Retrieve a list of data types supported by a data source.</li>
-</ul>
-<h3 id="getting-started">Getting Started</h3>
-<p>SQAPL ships with Dyalog APL. Simply copy it into the active workspace and call <code>SQA.Init</code> with an empty argument to start using it:</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;SQA&#39;</span><span class="nf">⎕CY</span><span class="err">&#39;</span><span class="nv">SQAPL</span>
-<span class="nv">SQA</span><span class="na">.</span><span class="nv">Init</span><span class="no">⍬</span>
-</code></pre></div>
-<p>Commonly used functions include:</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SQA.Connect</code></td>
-<td>Connect to a data source</td>
-</tr>
-<tr>
-<td><code>SQA.Tables</code></td>
-<td>Show available tables</td>
-</tr>
-<tr>
-<td><code>SQA.Columns</code></td>
-<td>See information about tables including column data types and widths</td>
-</tr>
-<tr>
-<td><code>SQA.Do</code></td>
-<td>Execute SQL statements supported by your database and driver</td>
-</tr>
-</tbody>
-</table>
+<p>For quick access to simply read data from or write data to a table, the functions <code>LoadSQL</code> and <code>SaveSQL</code> from the utility workspace <code>loaddata</code> may be all that you need.</p>
 
 
 
