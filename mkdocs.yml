@@ -1,4 +1,4 @@
-site_name: Tutorials
+site_name: Dyalog Documentation Centre
 site_description: How-to guides and tutorials for Dyalog APL
 docs_dir: docs/
 theme:
@@ -20,8 +20,8 @@ theme:
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
-    - navigation.tabs
-    - navigation.tabs.sticky
+
+    - toc.integrate
   plugins:
     - search:
         lang: en

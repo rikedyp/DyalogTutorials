@@ -1,7 +1,3 @@
----
-hide: navigation
----
-
 # Documentation Centre 18.2
 
 All our documentation is available as PDFs (a subset of online documentation is also available at help.dyalog.com). In addition, Bernard Legrand's Mastering Dyalog APL is available as a softback book, a PDF and an interactive online document.
@@ -43,6 +39,28 @@ These documents are specific to running Dyalog on the Microsoft Windows operatin
 This document covers the installation procedure and configuration options for Dyalog on the Microsoft Windows operating system. It details the parameters that can be used to customise individual instances, the creation of executables and run-time applications, use of the command line and the Dyalog Dynamic Link Library, as well as describing the recovery process if a system error is encountered.
 
 It is assumed that the reader has a basic knowledge of Microsoft Windows and software terminology; a working knowledge of Dyalog is useful but not essential.
+
+### [Dyalog for Microsoft Windows UI Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20UI%20Guide.pdf)
+This document introduces the Dyalog user interface. It describes the windows, menu options, built-in tools and customisation possibilities that are available when running Dyalog on the Microsoft Windows operating system and explains the programming techniques, file storage mechanisms, integrity checking features and error trapping concepts available with Dyalog.
+
+It is assumed that the reader has a basic understanding of software terminology and a reasonable knowledge of Dyalog.
+
+### [Dyalog for Microsoft Windows Object Reference Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Object%20Reference%20Guide.pdf)
+This document describes the complete set of objects, properties, events and methods through which Dyalog supports the creation of a Graphical User Interface. This document should be read in conjunction with the Dyalog for Microsoft Windows Interfaces Guide.
+
+It is assumed that the reader has a reasonable knowledge of Dyalog.
+
+### [Dyalog for Microsoft Windows Interfaces Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20Interface%20Guide.pdf)
+This document describes various interfaces between Dyalog and Microsoft Windows, including the Multiple Document Interface (MDI) and docking, the Component Object Model (COM) interface and other Microsoft Windows applications. It also describes the underlying concepts, implementation rules and graphical resources available when creating a user interface using Dyalog. This document should be read in conjunction with the Dyalog for Microsoft Windows Object Reference Guide.
+
+It is assumed that the reader has a reasonable knowledge of Dyalog.
+
+### [Dyalog for Microsoft Windows .NET Framework Interface Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20.NET%20Framework%20Interface%20Guide.pdf)
+This document describes the Dyalog interface to the Microsoft .NET Framework. The information provided in this document does not explain the features of the .NET Framework but concentrates on explaining the APL interfaces that sit between the .NET Framework and the APL Session.
+
+It is assumed that the reader has a working knowledge of Dyalog, familiarity with the .NET Framework and a basic understanding of OO methodologies.
+
+#### [Comparison of .NET Core/Framework Interfaces](https://docs.dyalog.com/latest/dotNET%20Differences.pdf)
 
 ## Previous Versions
 -   Documentation for supported versions: [18.0](https://www.dyalog.com/documentation_180.htm), [17.1](https://www.dyalog.com/documentation_171.htm)
