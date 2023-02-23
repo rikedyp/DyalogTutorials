@@ -18,7 +18,7 @@
     
   
     
-      <title>Application Development and Deployment - </title>
+      <title>GitHub basics - </title>
     
   
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#application-development-and-deployment" class="md-skip">
+        <a href="#github-basics" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Application Development and Deployment
+              GitHub basics
             
           </span>
         </div>
@@ -356,36 +356,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remote-ide-ride" class="md-nav__link">
-    Remote IDE (RIDE)
+  <a href="#import-directly-to-the-workspace" class="md-nav__link">
+    Import directly to the workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dyalog-ide-for-microsoft-windows" class="md-nav__link">
-    Dyalog IDE for Microsoft Windows
+  <a href="#using-the-latest-development-version" class="md-nav__link">
+    Using the latest development version
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-based-tty-ide" class="md-nav__link">
-    Text-based (TTY) IDE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vscode-extensions" class="md-nav__link">
-    VSCode extensions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-with-docker-containers" class="md-nav__link">
-    Deploy with Docker containers
+  <a href="#developing-a-tool" class="md-nav__link">
+    Developing a tool
   </a>
   
 </li>
@@ -406,55 +392,40 @@
 
 
 
-<h1 id="application-development-and-deployment">Application Development and Deployment</h1>
-<p>Dyalog's Integrated Development Environments allow you to interactively use APL to develop and debug applications.</p>
-<p>On all platforms, Dyalog includes an Integrated Development Environment (IDE) to enable the interactive use of the APL notation to explore data, discover algorithms and create solutions. Using the IDE, the user can create an application through experimentation and easily diagnose problems, resolve issues and resume work. The IDE provides editors for functions and classes, and a tracer which allows the setting of break points, watch points, and full edit-and-resume capabilities.</p>
-<p>The advanced user can enhance the IDE through User Commands. As part of the standard offering, Dyalog provides user commands that can, for example, interface to external source code management systems and search, replace and refactor code in the active workspace or in external code; you can further extend the IDE by implementing your own user commands.</p>
-<h2 id="remote-ide-ride">Remote IDE (RIDE)</h2>
-<p><a href="https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> RIDE User Guide</a><br />
-<a href="https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 32v119.2h64V96h107.2C284.6 96 352 176.2 352 255.9 352 332 293.4 416 171.2 416H0v64h171.2C331.9 480 416 367.3 416 255.9c0-58.7-22.1-113.4-62.3-154.3C308.9 56 245.7 32 171.2 32H0z"/></svg></span> Introductory tutorial - Mastering Dyalog APL Chapter 2</a><br />
-<a href="http://github.com/Dyalog/ride"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Dyalog/RIDE</a></p>
-<p>The RIDE is a cross-platform, graphical development environment. It can run on macOS, Linux and Microsoft Windows, and can be used from any one of these platforms as a front end for Dyalog versions from 14.1 onwards.</p>
-<p>The RIDE is available as a standalone application, or it can be accessed via a web browser by using the <a href="https://help.dyalog.com/latest/index.htm#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters.htm">configuration parameter</a> <code>RIDE_INIT=HTTP:&lt;IP address&gt;:&lt;port&gt;</code>. This is known as "zero-footprint" RIDE and is available out-of-the-box with installations of Dyalog on non-Windows platforms.</p>
-<p>The standalone RIDE comes together with installations of Dyalog for macOS, but must be installed separately on Linux and Microsoft Windows.</p>
-<p>The RIDE can be used to connect to remote interpreters over a network. The RIDE and connected Dyalog interpreters do not need to be running on the same device or platform.</p>
-<h2 id="dyalog-ide-for-microsoft-windows">Dyalog IDE for Microsoft Windows</h2>
-<p><a href="https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20UI%20Guide.pdf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> Dyalog for Microsoft Windows UI Guide</a><br />
-<a href="https://mastering.dyalog.com/Getting-Started.html#the-standard-microsoft-windows-interpreter-working-environment"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 32v119.2h64V96h107.2C284.6 96 352 176.2 352 255.9 352 332 293.4 416 171.2 416H0v64h171.2C331.9 480 416 367.3 416 255.9c0-58.7-22.1-113.4-62.3-154.3C308.9 56 245.7 32 171.2 32H0z"/></svg></span> Introductory tutorial - Mastering Dyalog APL Chapter 2</a>  </p>
-<p>The <a href="#remote-ide-ride">RIDE</a> is now the recommended IDE for macOS, AIX and Linux users. However, our native Microsoft Windows development environment remains the richest environment for the development of APL applications. Over the years, the Windows IDE has taken advantage of the Windows GUI to provide a Workspace Explorer, integrated search and replace tools, a language bar, tools for debugging GUI applications, an editor for nested arrays and integrated charting of data. Until the RIDE catches up, the classical Windows IDE is expected to remain the tool of choice for pure Windows development.</p>
-<h2 id="text-based-tty-ide">Text-based (TTY) IDE</h2>
-<p><a href="https://docs.dyalog.com/latest/Dyalog%20for%20UNIX%20UI%20Guide.pdf#page=11"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zm192 0v128h128L256 0zM64 224h24c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm24 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8v48h8zm72-64c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm96-128h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16z"/></svg></span> Dyalog for UNIX UI Guide - Driving the Dyalog APL tty version</a></p>
-<p>The original interface to Dyalog is a UNIX (or VT-100) style terminal session. Despite only having a fixed-size screen full of characters, this interface does provide all of the interactive functionality mentioned in the introduction. We continue to provide this interface for use in situations where no GUI is available or where developers prefer the retro look!</p>
-<h2 id="vscode-extensions">VSCode extensions</h2>
-<p><img style="width:5%; float:right;" src="https://code.visualstudio.com/assets/images/code-stable.png" /></p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=OptimaSystems.vscode-apl-language"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.858.858 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> APL Language extension</a><br />
-<a href="https://marketplace.visualstudio.com/items?itemName=OptimaSystems.vscode-apl-language-client"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 16.47V7.39l-6 4.54M2.22 9.19a.858.858 0 0 1-.02-1.15l1.2-1.11c.2-.18.69-.26 1.05 0l3.42 2.61 7.93-7.25c.32-.32.87-.45 1.5-.12l4 1.91c.36.21.7.54.7 1.15v13.5c0 .4-.29.83-.6 1l-4.4 2.1c-.32.13-.92.01-1.13-.2l-8.02-7.3-3.4 2.6c-.38.26-.85.19-1.05 0l-1.2-1.1c-.32-.33-.28-.87.05-1.2l3-2.7"/></svg></span> APL Language Server Client extension</a></p>
-<p><a href="https://optima-systems.co.uk/">OptimaSystems</a> maintain VSCode extensions which provide support for Dyalog and the APL language.</p>
-<h2 id="deploy-with-docker-containers">Deploy with Docker containers</h2>
-<p><a href="https://dyalog.tv/Dyalog20/?v=DeNkIYRehSs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></span> Video: Dyalog's Docker Containers // Morten Kromberg // Dyalog '20</a>  </p>
-<p>Containers provide a consistent environment across different machines and operating systems. The effect is similar to that of virtual machines, but more lightweight and efficient.</p>
-<p><img style="width:15%; float:right;" src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" /></p>
-<p>With Docker containers you can:</p>
-<ul>
-<li>deploy easily to desktop, servers or in the cloud.</li>
-<li>package software and its dependencies in a standardised way.</li>
-<li>test your application in an environment similar to that in which it will be deployed.</li>
-<li>have your users obtain your software and its dependencies, ready to run, with a single command.</li>
-<li>deploy your application to the cloud and scale it easily with systems such as <a href="https://kubernetes.io/">kubernetes</a> to meet demand as needed.</li>
-</ul>
-<p>Read <a href="https://www.docker.com/resources/what-container/">the docker website</a> to learn more about Docker containers and images.</p>
-<p>Dyalog provides pre-made containers for:</p>
-<ul>
-<li><a href="https://hub.docker.com/r/dyalog/dyalog">The Dyalog Interpreter</a></li>
-<li><a href="https://hub.docker.com/r/dyalog/jarvis">The Jarvis web service framework</a></li>
-<li><a href="https://hub.docker.com/r/dyalog/jupyter">Dyalog Jupyter Notebooks</a></li>
-</ul>
-<p>Including support for interactive debugging using the <a href="https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf">Remote IDE</a>:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span><span class="nv">RIDE_INIT</span><span class="o">=</span>serve:*:4502<span class="w"> </span>-p<span class="w"> </span><span class="m">4502</span>:4502<span class="w"> </span>dyalog/dyalog
+<h1 id="github-basics">GitHub basics</h1>
+<p>Dyalog develops some tools using Git and hosts the source code and distributable packages using GitHub.</p>
+<h2 id="import-directly-to-the-workspace">Import directly to the workspace</h2>
+<p>If a tool is purely APL code - a workspace or APL text source files - then it may be possilbe to bring it directly into the workspace using the experimental <code>]Get</code> user command.</p>
+<p>For example, to get the latest release of HttpCommand, navigate to the <a href="https://github.com/Dyalog/HttpCommand/releases">HttpCommand releases page</a>. Under <strong>Assets</strong>, <em>Right click</em> on <strong>HttpCommand.dyalog</strong> then click <em>Copy Link</em>. Then paste that link after <code>]Get</code> in the session and press <kbd>Enter</kbd>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="sr">]</span><span class="nv">Get</span><span class="w"> </span><span class="nv">https</span><span class="bp">:</span><span class="na">//</span><span class="nv">github</span><span class="na">.</span><span class="nv">com</span><span class="na">/</span><span class="nv">Dyalog</span><span class="na">/</span><span class="nv">HttpCommand</span><span class="na">/</span><span class="nv">releases</span><span class="na">/</span><span class="nv">download</span><span class="na">/</span><span class="nv">v5</span><span class="m">.1.15</span><span class="na">/</span><span class="nv">HttpCommand</span><span class="na">.</span><span class="nv">dyalog</span>
+<span class="c1">#.HttpCommand</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">HttpCommand</span><span class="na">.</span><span class="nv">GetJSON</span><span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="s1">&#39;https://catfact.ninja/fact&#39;</span><span class="p">)</span><span class="na">.</span><span class="nv">Data</span><span class="na">.</span><span class="nv">fact</span>
+<span class="nv">Your</span><span class="w"> </span><span class="nv">cat</span><span class="err">&#39;</span><span class="nv">s</span><span class="w"> </span><span class="nv">heart</span><span class="w"> </span><span class="nv">beats</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">almost</span><span class="w"> </span><span class="nv">double</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">yours</span><span class="o">,</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="m">110</span><span class="o">-</span><span class="m">140</span><span class="w"> </span><span class="nv">beats</span><span class="w"> </span><span class="nv">per</span><span class="w"> </span><span class="nv">minute</span><span class="na">.</span>
 </code></pre></div>
-<p>Access from RIDE in a web browser:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">docker</span><span class="w"> </span><span class="nv">run</span><span class="w"> </span><span class="o">-</span><span class="nv">e</span><span class="w"> </span><span class="nv">RIDE_INIT</span><span class="o">=</span><span class="nv">http</span><span class="bp">:</span><span class="o">*</span><span class="bp">:</span><span class="m">8888</span><span class="w"> </span><span class="o">-</span><span class="nv">p</span><span class="w"> </span><span class="m">8888</span><span class="bp">:</span><span class="m">8888</span><span class="w"> </span><span class="nv">dyalog</span><span class="na">/</span><span class="nv">dyalog</span>
-</code></pre></div>
+<p>See <code>]Get -?</code> for more information and examples.</p>
+<h2 id="using-the-latest-development-version">Using the latest development version</h2>
+<p>Where no release is available, or if you want to use the latest development version of a tool, you can download the tool code as a compressed (zipped) folder.</p>
+<ol>
+<li>Open the project of interest.</li>
+<li>Click on <img width="100px" src="../img/button_github_clone.jpg" alt="Clone or Download button" /></li>
+<li>Click on the <strong>Download ZIP</strong> button in the dialog box that is displayed.</li>
+</ol>
+<h2 id="developing-a-tool">Developing a tool</h2>
+<p>This is a very brief summary of the Fork and Pull Request collaborative development procedure - more thorough introductions to Git and GitHub are available:</p>
+<ul>
+<li><a href="https://www.w3schools.com/git/git_intro.asp">W3Schools Git and GitHub introduction</a></li>
+<li><a href="https://docs.github.com/en/get-started/quickstart/hello-world">GitHub Quickstart Hello World</a></li>
+</ul>
+<p>Changes over time can be viewed on the GitHub page for the project. For example, the changes for library-conga can be viewed on <a href="https://github.com/Dyalog/library-conga/commits/master">github.com/Dyalog/library-conga/commits/master</a>.</p>
+<p>To participate in the development of a tool, or to fix an issue that you've spotted:</p>
+<ol>
+<li>Ensure that you have a GitHub account and are logged in.</li>
+<li>Open the project of interest.</li>
+<li>Click on <img width="50px" src="../img/button_github_fork.jpg" alt="Fork button" /></li>
+<li>This takes a copy of the project to your account for you to work on. We recommend that you use a tool such as <a href="https://www.sourcetreeapp.com/">Atlassian SourceTree</a> (unless you are already a seasoned Git user, in which case you already know what to do) – and "clone" the repository from there.</li>
+<li>Once you have made changes to your fork of the project, click on <img width="50px" src="../img/button_github_pullrequest.jpg" alt="Pull request button" /> – this informs us that your changes are ready for us to review and include in the project.</li>
+</ol>
+<p>If you have any issues whilst trying to make updates, please contact us – we're happy to talk you through the necessary process.</p>
 
 
 
