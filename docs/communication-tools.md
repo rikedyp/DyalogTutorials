@@ -1,4 +1,4 @@
-# Web communications
+# Communication and Service Tools
 
 ## HttpCommand 
 [:material-web: HttpCommand online documentation](https://dyalog.github.io/HttpCommand/)
@@ -40,7 +40,6 @@ Conga embeds GnuTLS and supports secure and encrypted communications. APL client
 [:fontawesome-brands-github: github.com/Dyalog/aplssh](https://github.com/Dyalog/aplssh)
 
 This is a wrapper around the **libssh2** library. Currently, it only exposes a small fraction of its functionality. It can execute remote commands, and read and write files.
-
 
 ## Using Microsoft .NET
 Dyalog can be used with industry-standard Microsoft components in the same way as most other programming languages that integrate with Microsoft .NET:

@@ -10,9 +10,13 @@ The advanced user can enhance the IDE through User Commands. As part of the stan
 [:fontawesome-brands-dyalog: Introductory tutorial - Mastering Dyalog APL Chapter 2](https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment)  
 [:fontawesome-brands-github: Dyalog/RIDE](http://github.com/Dyalog/ride)
 
-The RIDE is a cross-platform, graphical development environment capable of producing a rich user experience on a variety of platforms. It can be run on macOS, Linux and Microsoft Windows, and can be used from any one of these platforms as a front end for Dyalog versions from 14.1 onwards. The RIDE comes together with installations of Dyalog for macOS, but must be installed separately on Linux and Microsoft Windows.
+The RIDE is a cross-platform, graphical development environment. It can run on macOS, Linux and Microsoft Windows, and can be used from any one of these platforms as a front end for Dyalog versions from 14.1 onwards.
 
-It can also be used to connect to remote interpreters over a network. The RIDE and connected Dyalog interpreters do not need to be running on the same device, the same type of device or even on the same continent. From Dyalog version 17.0, the RIDE can be served from the host interpreter by using the configuration parameter `RIDE_INIT=http:<IP address>:<port>` and accessed from a compatible web browser.
+The RIDE is available as a standalone application, or it can be accessed via a web browser by using the [configuration parameter](https://help.dyalog.com/latest/index.htm#UserGuide/Installation%20and%20Configuration/Configuration%20Parameters.htm) `RIDE_INIT=HTTP:<IP address>:<port>`. This is known as "zero-footprint" RIDE and is available out-of-the-box with installations of Dyalog on non-Windows platforms.
+
+The standalone RIDE comes together with installations of Dyalog for macOS, but must be installed separately on Linux and Microsoft Windows.
+
+The RIDE can be used to connect to remote interpreters over a network. The RIDE and connected Dyalog interpreters do not need to be running on the same device or platform.
 
 ## Dyalog IDE for Microsoft Windows
 [:fontawesome-solid-file-pdf: Dyalog for Microsoft Windows UI Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20UI%20Guide.pdf)  

@@ -5,9 +5,9 @@
 [:fontawesome-solid-file-pdf: Dyalog for Microsoft Windows .NET Framework Interface Guide](https://docs.dyalog.com/latest/Dyalog%20for%20Microsoft%20Windows%20.NET%20Framework%20Interface%20Guide.pdf)  
 [:fontawesome-solid-file-pdf: Comparison of .NET Core/Framework Interfaces](https://docs.dyalog.com/latest/dotNET%20Differences.pdf)  
 
-Whether you are using the older Microsoft.NET framework for Windows or the new open-source .NET version, Dyalog APL can both call useful .NET libraries to perform activities like encryption and compression - and be integrated as a component within .NET frameworks like ASP.NET Core.
+Whether you are using the .NET Framework for Microsoft Windows or the newer open-source cross-platform .NET Core, Dyalog APL can both call useful .NET libraries to perform activities like encryption and compression - and be integrated as a component within .NET frameworks like ASP.NET Core.
 
-Dyalog’s .NET bridge automatically converts APL arrays to and from .NET types and makes it possible to hook APL functions up to .NET events. APL classes can be exported as .NET assemblies that can be consumed by frameworks and programmes written in other .NET languages like C# and F#.
+Dyalog’s .NET bridge automatically converts APL arrays to and from .NET types and makes it possible to hook APL functions up to .NET events. APL classes can be exported as .NET assemblies that can be consumed by frameworks and programs written in other .NET languages like C# and F#.
 
 To use .NET functions and namespaces, set `⎕USING` and create an instance of a .NET class with `⎕NEW`.
 

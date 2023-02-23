@@ -200,7 +200,7 @@ The term "Native Files" refers to any type of file on a hard disk. Some system f
 If it is only APL systems that need to store data, the most convenient and efficient way to store that data is in APL component files. Component files can store any type of APL array, including namespaces.
 
 ## Downloading data from the internet
-See [HttpCommand](./web-communications.md#httpcommand).
+See [HttpCommand](./communication-tools.md#httpcommand).
 
 ## SQL Interface
 [:fontawesome-solid-file-pdf: SQL Interface Guide](https://docs.dyalog.com/latest/SQL%20Interface%20Guide.pdf)
