@@ -5,6 +5,16 @@ On all platforms, Dyalog includes an Integrated Development Environment (IDE) to
 
 The advanced user can enhance the IDE through User Commands. As part of the standard offering, Dyalog provides user commands that can, for example, interface to external source code management systems and search, replace and refactor code in the active workspace or in external code; you can further extend the IDE by implementing your own user commands.
 
+## Link
+:material-web: [Link User Guide](https://dyalog.github.io/link/)  
+:fontawesome-brands-youtube: [Video: Link 3.0 // Morten Kromberg // Dyalog '21](https://dyalog.tv/Dyalog21/?v=K_-E1tnH06k)  
+
+Link allows you to use Unicode text files to store APL source code, rather than "traditional" binary workspaces. The benefits of using Link and text files include:
+
+- Changes to your code are immediately written to file: there is no need to remember to save your work. The assumption is that you will make the record permanent with a commit to your source code management system, when the time is right.
+- Unlike binary workspaces, text source can be shared between different versions of APL - or even with human readers or writers who don't have APL installed at all.
+- Source code stored in external files is preserved exactly as typed, rather than being reconstructed from the tokenised form.
+
 ## Remote IDE (RIDE)
 [:fontawesome-solid-file-pdf: RIDE User Guide](https://docs.dyalog.com/latest/RIDE%20User%20Guide.pdf)  
 [:fontawesome-brands-dyalog: Introductory tutorial - Mastering Dyalog APL Chapter 2](https://mastering.dyalog.com/Getting-Started.html#the-ride-working-environment)  
