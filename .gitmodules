@@ -1,0 +1,3 @@
+[submodule "notebooks"]
+	path = notebooks
+	url = C:\\Users\\rpark\\Documents\\GitHub\\dyalog-jupyter-notebooks

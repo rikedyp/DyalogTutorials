@@ -1,5 +1,5 @@
-site_name: Developer Center
-site_description: The definitive Dyalog APL reference.
+site_name: Learn Dyalog APL
+site_description: Learning resources, samples and tutorials
 docs_dir: docs/
 theme:
   palette:
@@ -29,8 +29,12 @@ theme:
   custom_dir: overrides
 plugins:
   - mkdocs-jupyter
+  - monorepo
 extra_css:
   - style/main.css
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
+nav:
+  - index.md
+  - Jupyter: '!include ../dyalog-jupyter-notebooks/mkdocs.yml'
