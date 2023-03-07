@@ -1,5 +1,5 @@
-site_name: Tutorials
-site_description: How-to guides and tutorials for Dyalog APL
+site_name: Developer Center
+site_description: The definitive Dyalog APL reference.
 docs_dir: docs/
 theme:
   palette:
@@ -21,27 +21,16 @@ theme:
   features:
     - navigation.instant
     - navigation.tabs
+    - navigation.indexes
     - navigation.top
-    - toc.integrate
   plugins:
     - search:
         lang: en
   custom_dir: overrides
+plugins:
+  - mkdocs-jupyter
 extra_css:
   - style/main.css
   - style/quickstart.css
 extra_javascript:
-  - javascripts/darkmode.js
-markdown_extensions:
-  - abbr
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      use_pygments: true
-  - meta
-  - md_in_html
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - js/announce.js
