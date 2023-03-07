@@ -27,21 +27,10 @@ theme:
     - search:
         lang: en
   custom_dir: overrides
+plugins:
+  - mkdocs-jupyter
 extra_css:
   - style/main.css
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
-nav:
-  - index.md
-  - Learn Dyalog APL:
-    - learn-dyalog-apl/index.md
-    - Getting Started:
-      - getting-started/index.md
-  - APL Language:
-    - apl-language/index.md
-  - Tools:
-    - tools/index.md
-  - Interfaces:
-    - interfaces/index.md
-  - tips-matt.md
