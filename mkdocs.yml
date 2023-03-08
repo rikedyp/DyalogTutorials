@@ -29,7 +29,9 @@ theme:
   custom_dir: overrides
 plugins:
   - mkdocs-jupyter:
-      include: ["notebooks/Boolean Scans and Reductions.ipynb"]
+      include: ["notebooks/Boolean Scans and Reductions.ipynb",
+                "notebooks/Arithmetic Functions.ipynb"
+               ]
 extra_css:
   - style/main.css
   - style/quickstart.css
@@ -38,10 +40,15 @@ extra_javascript:
 markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 nav:
   - Home: "index.md"
   - To do: "todo.md"
   - APL Langauge:
-    - Home: "language/index.md"
-    - Bools: "notebooks/Boolean Scans and Reductions.ipynb"
+    - Getting Started with APL: "language/index.md"
+    - Simple examples: "language/examples.md"
+  - Tutorial library: "library/index.md"
