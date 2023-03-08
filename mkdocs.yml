@@ -29,12 +29,8 @@ theme:
   custom_dir: overrides
 plugins:
   - mkdocs-jupyter
-  - monorepo
 extra_css:
   - style/main.css
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
-nav:
-  - index.md
-  - Jupyter: '!include ../dyalog-jupyter-notebooks/mkdocs.yml'
