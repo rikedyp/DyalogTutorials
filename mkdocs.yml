@@ -28,9 +28,17 @@ theme:
         lang: en
   custom_dir: overrides
 plugins:
-  - mkdocs-jupyter
+  - mkdocs-jupyter:
+      include: ["notebooks/Boolean Scans and Reductions.ipynb"]
 extra_css:
   - style/main.css
   - style/quickstart.css
 extra_javascript:
   - js/announce.js
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: "index.md"
+  - To do: "todo.md"
