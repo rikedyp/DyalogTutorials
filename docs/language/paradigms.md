@@ -38,7 +38,7 @@ The function [replicate](http://help.dyalog.com/latest/#Language/Primitive%20Fun
 ACD
 ```
 
-Dyalog allows you to mix and match the other styles of programming to fit your use case.
+Dyalog allows you to mix and match styles of programming to fit your use case.
 
 ## Procedural
 Traditional APL code often has this flavour. This is probably most relatable to people who have a traditional computer science background, and learned a language like **C** or **Python**.
@@ -47,10 +47,37 @@ In procedural programming, you decompose a problem into the smallest steps that 
 
 It is easily compared to a cooking recipe: *add flour*, *add water*, *mix together to make a dough*, *fry the dumplings*.
 
+Say that we have a list of `salaries`, with corresponding `groups` of employees which are labelled `ABCD...`. We want to increase the salaries for all employees in group 'C' by 
+15%.
+
+We could break this down as a sequence of steps as follows:
+
+1. Begin with first group
+1. Compare group with `'C'`. If the group is equal to `C`:
+	1. If group is equal to `C`, replace the corresponding salary with that salary multiplied by `1.15`
+1. If we have processed all groups, return the list of salaries.
+1. Otherwise, repeat from **2** with the next group.
+
+This can be translated using control structures:
+
 ```APL
-     ∇ grps RaiseBy pcnt                 
-[1]    salaries[⍸groups∊grps]×←1+pcnt÷100
-     ∇
+    ∇  salaries←group RaiseBy percent
+[1]    :For s :In ⍳≢salaries
+[2]        :If groups[s]≡'C'
+[3]            salaries[s]×←1.15
+[4]        :EndIf
+[5]    :EndFor
+    ∇
+```
+
+Because we can processing arrays of data at a time, we can express this algorithm as a single step and translate it directly into a single line of code:
+
+1. Replace salaries where group is equal to `'C'` with corresponding salaries multiplied by `1.15`.
+
+```APL
+    ∇  group RaiseBy percent
+[1]    salaries[⍸groups=group]×←1+percent÷100
+    ∇
 ```
 
 ## Object-oriented
