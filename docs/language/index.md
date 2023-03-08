@@ -12,6 +12,6 @@ The book was originally published in 2009, and although it is being re-worked as
 If you are already familiar with a programming language or two, the book [**Learning APL**](https://xpqz.github.io/learnapl) by Stefan Kruger offers an excellent introduction to modern APL for experienced programmers.
 
 ## Guided problem sets
-Our [APL Course](https://course.dyalog.com) (work in progress) is a set of guided problem sets with examples and explained solutions.
+Our [APL Course](https://course.dyalog.com) is a set of guided problem sets with examples and explained solutions.
 
 It aims to cover the majority of language constructs and is broader in scope than [**Learning APL**](#new-to-apl), but not as comprehensive as [Mastering Dyalog APL](#new-to-programming).
