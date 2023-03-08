@@ -42,3 +42,6 @@ markdown_extensions:
 nav:
   - Home: "index.md"
   - To do: "todo.md"
+  - APL Langauge:
+    - Home: "language/index.md"
+    - Bools: "notebooks/Boolean Scans and Reductions.ipynb"
