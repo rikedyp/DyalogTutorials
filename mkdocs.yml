@@ -20,9 +20,9 @@ theme:
   logo: 'img/dyalog-white.svg'
   features:
     - navigation.instant
-    - navigation.tabs
     - navigation.indexes
     - navigation.top
+    - navigation.tabs.sticky
   plugins:
     - search:
         lang: en
@@ -44,6 +44,14 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+
 
 nav:
   - Home: "index.md"
@@ -52,3 +60,9 @@ nav:
     - Getting Started with APL: "language/index.md"
     - Simple examples: "language/examples.md"
   - Tutorial library: "library/index.md"
+  - Tools and Interfaces:
+    - Application Development and Deployment: "tools/application-development.md"
+    - Asynchronous Programming: "tools/asynchronous-programmind.md"
+    - Communication Services and Frameworks: "tools/communication-tools.md"
+    - External Data Management and Conversion: "tools/external-data-management-conversion.md"
+    - External Language Interfaces and Libraries: "tools/external-language-interfaces-standard-libraries.md"

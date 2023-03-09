@@ -5,7 +5,8 @@
 - [ ] APL Shorts
 - [ ] Development Environment
 - [ ] Getting started with APL
-- [x] Jupyter notebooks (monorepo)?
+- [x] Jupyter notebooks
+- [ ] Tools in context
 - [ ] Obsidian learning resources
 
 - the bare minimum?
