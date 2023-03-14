@@ -32,6 +32,8 @@ plugins:
       include: ["notebooks/Boolean Scans and Reductions.ipynb",
                 "notebooks/Arithmetic Functions.ipynb"
                ]
+  - tags:
+      tags_file: tags.md
 extra_css:
   - style/main.css
   - style/quickstart.css
