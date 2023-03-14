@@ -38,20 +38,19 @@ extra_css:
 extra_javascript:
   - js/announce.js
 markdown_extensions:
-  - pymdownx.tasklist:
-      custom_checkbox: true
+  - md_in_html
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
-
-
 
 nav:
   - Home: "index.md"
