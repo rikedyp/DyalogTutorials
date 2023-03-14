@@ -3,6 +3,11 @@ You do not need to install anything to get started using and learning the APL la
 
 You can get started with the materials listed here using the [TryAPL online interpreter](https://tryapl.org). 
 
+## Quick Start
+If you do decide to install Dyalog, the following
+
+Also check out our [page of tips](./tips.md) suggested by users.
+
 ## New to programming
 The book [Mastering Dyalog APL](https://mastering.dyalog.com) by Bernard Legrand is aimed at new developers and is suitable for people with no prior programming experience. However, it is also a fairly comprehensive guide to the many aspects of both the APL language and the Dyalog development environments, and so intermediate and advanced users will still find it valuable.
 
