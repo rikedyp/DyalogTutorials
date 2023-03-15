@@ -1,4 +1,11 @@
-# File handling and data processing
+---
+tags:
+  - file handling
+  - file reading and writing
+  - format conversion
+---
+
+# External data management and conversion
 Reading data into and getting data out of the workspace.
 
 There are some in-built tools for importing data from files and the internet. If you are already familiar with [python](./external-language-interfaces-standard-libraries.md#python-pynapl), [R](./external-language-interfaces-standard-libraries.md#r-language-rsconnect) or [.NET](./external-language-interfaces-standard-libraries.md#net) then you can use one of the [external language bridges](./external-language-interfaces-standard-libraries.md) to bring data into APL from files via one of these languages. However, it can be simpler and faster in many cases to use one of the following tools.
