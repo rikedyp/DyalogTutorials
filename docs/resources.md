@@ -29,6 +29,8 @@ Download materials and watch recordings from:
 - [APL Seeds '21](https://www.dyalog.com/apl-seeds-user-meetings/aplseeds21.htm)
 - [APL Seeds '22](https://www.dyalog.com/apl-seeds-user-meetings/aplseeds22.htm)
 
+## 
+
 ## Categories / use cases / tags
 - language tutorials
 - community events
@@ -59,3 +61,13 @@ Download materials and watch recordings from:
 - Tutorial
 
 ### domain-specific tutorials
+
+## Sources
+- blog
+- papers
+
+## Asynchronous Programming
+[Blog post: Isolated Mandelbrot Explorer](https://www.dyalog.com/blog/2014/08/isolated-mandelbrot-set-explorer/)
+
+## Application development and debugging
+[Blog post: Enhanced Debugging with Function Keys](https://www.dyalog.com/blog/2018/09/enhanced-debugging-with-function-keys/)

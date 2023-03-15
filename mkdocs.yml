@@ -30,7 +30,10 @@ theme:
 plugins:
   - mkdocs-jupyter:
       include: ["notebooks/Boolean Scans and Reductions.ipynb",
-                "notebooks/Arithmetic Functions.ipynb"
+                "notebooks/Arithmetic Functions.ipynb",
+                "notebooks/Plotting with SharpPlot.ipynb",
+                "notebooks/APL Expressions.ipynb",
+                "notebooks/2020 Problem Solving Competition – Phase II Highlights.ipynb"
                ]
   - tags:
       tags_file: tags.md
@@ -54,16 +57,3 @@ markdown_extensions:
       auto_append:
         - includes/abbreviations.md
 
-nav:
-  - Home: "index.md"
-  - To do: "todo.md"
-  - APL Langauge:
-    - Getting Started with APL: "language/index.md"
-    - Simple examples: "language/examples.md"
-  - Tutorial library: "library/index.md"
-  - Tools and Interfaces:
-    - Application Development and Deployment: "tools/application-development.md"
-    - Asynchronous Programming: "tools/asynchronous-programmind.md"
-    - Communication Services and Frameworks: "tools/communication-tools.md"
-    - External Data Management and Conversion: "tools/external-data-management-conversion.md"
-    - External Language Interfaces and Libraries: "tools/external-language-interfaces-standard-libraries.md"
